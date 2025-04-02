@@ -25,11 +25,11 @@ function page() {
     
       </div>
     </div>
-    <div className="flex bg-[#052C46]   justify-center items-center py-10">
+    <div className="flex bg-[#052C46]  mt-[70px] justify-center items-center py-10">
     <Video  />
     </div>
 
-    <div className="bg-white allcontainer">
+    <div className=" allcontainer">
       <div className="container pt-12 lg:pt-12 lg:!pb-12 mx-auto">
       <section className="mb-12">
           <h2 className="mt-5 text-xl lg:text-[30px] leading-tight lg:text-start text-center mb-5 font-semibold">

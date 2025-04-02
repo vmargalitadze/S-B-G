@@ -8,18 +8,20 @@ import { AiOutlineClose } from "react-icons/ai";
 import { IoIosArrowDown } from "react-icons/io";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import Link from "next/link";
+import logo from "@/public/about/axali.jpg";
+import Image from "next/image";
+import './nav.css'
 
 // Navigation Items
 const navItems = [
-  { label: "მთავარი", link: "/" },
   {
     label: "პროდუქტები",
     link: "/all",
     children: [
-      { label: "ბალიში", link: "#" },
-      { label: "საბანი", link: "#" },
-      { label: "მატრასი", link: "#" },
-      { label: "ტოპერი", link: "#" },
+      { label: "ბალიში", link: "/pillows" },
+      { label: "საბანი", link: "/blanket" },
+      { label: "მატრასი", link: "/matrass" },
+      { label: "ტოპერი", link: "/toper" },
       { label: "კატალოგი", link: "/catalogue" },
     ],
   },
@@ -32,14 +34,13 @@ const navItems = [
 
 export default function ClientNavbar() {
   const [isSideMenuOpen, setSideMenu] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
 
   return (
     <>
       {/* Desktop Navigation */}
-      <nav ref={dropdownRef} className="hidden md:flex items-center gap-4">
+      <nav className="hidden md:flex items-center gap-4">
         {navItems.map((item, i) => (
-          <div key={i} className="relative flex justify-center group">
+          <div key={i} className="relative flex justify-start group">
             {/* Parent Link */}
             <Link
               href={item.link ?? "#"}
@@ -53,12 +54,16 @@ export default function ClientNavbar() {
 
             {/* Dropdown Menu */}
             {item.children && (
-              <div className="absolute top-full rounded-md right-0 w-48 bg-white text-black shadow-md opacity-0 group-hover:opacity-100 transition-all">
-                {item.children.map((child, j) => (
-                  <Link key={j} href={child.link ?? "#"} className="block text-black px-4 py-2 hover:bg-gray-200">
-                    {child.label}
-                  </Link>
-                ))}
+              <div className="absolute top-full left-0 w-64 bg-[#EBEBEB] text-gray-800 shadow-md opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <ul className="bg-[#EBEBEB] text-gray-800 w-full">
+                  {item.children.map((child, j) => (
+                    <li key={j} className="text-sm leading-8 font-normal hover:bg-[#052C46] hover:text-white transition-all duration-300">
+                      <Link href={child.link ?? "#"} className="block pl-20 py-2">
+                        {child.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             )}
           </div>
@@ -76,15 +81,33 @@ export default function ClientNavbar() {
 
 function MobileNav({ closeSideMenu }: { closeSideMenu: () => void }) {
   return (
-    <div className="fixed   left-0 top-0 z-50 flex h-full w-full justify-center bg-[#052C46] md:hidden">
-        <div className="flex  text-white justify-and">
-          <AiOutlineClose onClick={closeSideMenu} className="cursor-pointer text-4xl" />
-        </div>
-      <div className="h-full w-[65%] bg-[#052C46] text-white px-4 py-4">
+    <div className="fixed left-0 top-0 z-50 h-full w-full bg-[#052C46] md:hidden">
+      <div className="relative h-full bg-[#052C46] text-white px-4 py-4">
 
-        <div className="flex flex-col text-[16px] text-white gap-2 mt-4">
+        {/* Close Icon Positioned on Top-Right */}
+        <AiOutlineClose 
+          onClick={closeSideMenu} 
+          className="cursor-pointer text-4xl absolute top-4 right-4" 
+        />
+
+   
+        <Link onClick={closeSideMenu}  href="/" className="flex justify-center w-full">
+          <div className="border-[1px] rounded-full p-1 flex items-center justify-center">
+            <Image 
+              src={logo} 
+              
+              width={80} 
+              height={80} 
+              alt="logo" 
+              className="rounded-full object-contain" 
+            />
+          </div>
+        </Link>
+
+        {/* Navigation Items */}
+        <div className="w-full flex flex-col items-center mt-6">
           {navItems.map((item, i) => (
-            <SingleNavItem key={i} {...item} />
+            <SingleNavItem key={i} {...item} closeSideMenu={closeSideMenu} />
           ))}
         </div>
       </div>
@@ -92,7 +115,17 @@ function MobileNav({ closeSideMenu }: { closeSideMenu: () => void }) {
   );
 }
 
-function SingleNavItem({ label, link, children }: { label: string; link?: string; children?: any }) {
+function SingleNavItem({
+  label,
+  link,
+  children,
+  closeSideMenu,
+}: {
+  label: string;
+  link?: string;
+  children?: any;
+  closeSideMenu: () => void;
+}) {
   const [animationParent] = useAutoAnimate();
   const [isItemOpen, setItemOpen] = useState(false);
   const itemRef = useRef<HTMLDivElement>(null);
@@ -108,9 +141,11 @@ function SingleNavItem({ label, link, children }: { label: string; link?: string
   }, []);
 
   return (
-    <div ref={itemRef} className="relative px-2 text-white py-3 transition-all">
-      <div className="flex justify-between items-center text-white">
-        <Link href={link ?? "#"} className="flex-1">{label}</Link>
+    <div ref={itemRef} className="relative text-white py-3 transition-all">
+      <div className="flex justify-between items-center">
+        <Link href={link ?? "#"} className="flex-1" onClick={closeSideMenu}>
+          {label}
+        </Link>
         {children && (
           <IoIosArrowDown
             className={`text-[20px] transition-all cursor-pointer ${isItemOpen ? "rotate-180" : "rotate-0"}`}
@@ -118,15 +153,22 @@ function SingleNavItem({ label, link, children }: { label: string; link?: string
           />
         )}
       </div>
-
+      
+      {/* Submenu */}
       {isItemOpen && children && (
-        <div ref={animationParent} className="flex flex-col gap-1 rounded-md bg-white py-3 text-black">
-          {children.map((child: { link: any; label: string | number | bigint | boolean | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | Promise<string | number | bigint | boolean | React.ReactPortal | React.ReactElement<unknown, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | null | undefined> | null | undefined; }, i: React.Key | null | undefined) => (
-            <Link key={i} href={child.link ?? "#"} className="block px-4 py-2 " onClick={() => setItemOpen(false)}>
-              {child.label}
-            </Link>
+        <ul ref={animationParent} className="bg-[#EBEBEB] text-gray-800 w-full rounded-md py-3">
+          {children.map((child: { link: string; label: string }, i: number) => (
+            <li key={i} className="text-sm leading-8 font-normal hover:bg-slate-200 transition-all duration-300">
+              <Link 
+                href={child.link} 
+                className="px-4 py-2 flex justify-center items-center" 
+                onClick={closeSideMenu}
+              >
+                {child.label}
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       )}
     </div>
   );

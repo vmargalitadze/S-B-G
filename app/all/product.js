@@ -166,7 +166,7 @@ const products = [
    "material": "ქსოვილი"
 },
 {
-   "id": "15",
+   "id": "20",
    "header": "Sleepandbed_Georgia",
    "image": ["/prod/toperi/1.jpg", "/prod/toperi/2.jpg", "/prod/toperi/3.jpg", "/prod/toperi/4.jpg"],
    "secondtext": "დაამატეთ კომფორტის რბილი ფენა თქვენს იაფ მატრასს. ამ გზით, თქვენ შეგიძლიათ მიიღოთ თქვენთვის სასურველი კომფორტი და თან წაიღოთ სადაც არ უნდა წახვიდეთ.",

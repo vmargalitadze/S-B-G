@@ -29,7 +29,7 @@ function SearchComponent() {
       placeholder="Search"
       onChange={(e) => handleSearch(e.target.value)}
       defaultValue={searchParams.get("query")?.toString()}
-      className="pl-10 pr-4" 
+      className="pl-10 pr-4 border-black" 
     />
     <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500">
       <svg

@@ -22,7 +22,7 @@ function Page() {
           </div>
         </div>
 
-        <div className="bg-white allcontainer">
+        <div className=" allcontainer">
           <div className="container pt-12 lg:pt-16 lg:!pb-16 mx-auto">
             <div className="py-10 px-4">
               <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
