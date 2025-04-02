@@ -7,17 +7,9 @@ import "swiper/css";
 import "swiper/css/pagination";
 import Link from "next/link";
 import Image from "next/image";
-import first from "@/public/prod/1.jpg";
-import second from "@/public/prod/2.jpg";
-import mesame from "@/public/prod/3.jpg";
-import meotxe from "@/public/prod/4.jpg";
-const products = [
-  { id: 1, image: first, title: "Product One", desc: "მატრასი" },
-  { id: 2, image: second, title: "Product Two", desc: "მატრასი" },
-  { id: 3, image: mesame, title: "Product Three", desc: "მატრასი" },
-  { id: 4, image: meotxe, title: "Product Four", desc: "მატრასი" },
+import products from "@/app/all/product";
 
-];
+
 
 function Products() {
   return (
@@ -50,7 +42,7 @@ function Products() {
          <Image 
            fill 
            className="w-full h-full object-cover group-hover:scale-110 duration-500 rounded-lg" 
-           src={i.image} 
+           src={i.image[0]} 
            alt="productImg" 
          />
        </div>
