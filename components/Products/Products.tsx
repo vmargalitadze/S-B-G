@@ -12,6 +12,7 @@ import products from "@/app/all/product";
 
 
 function Products() {
+  const items = products.slice(0, 4)
   return (
 <section className=" mt-5 pt-16  pb-18  lg:pb-16 ">
   <div className="container px-6 mx-auto">
@@ -34,7 +35,7 @@ function Products() {
     {/* Product Grid Section */}
     <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-10">
    
-             {products.map((i) => (
+             {items.map((i) => (
      <div key={i.id} className="max-w-sm w-full rounded-2xl shadow-xl mb-9 relative group">
        
        {/* Image Container */}
