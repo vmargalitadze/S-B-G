@@ -81,8 +81,8 @@ export default function ClientNavbar() {
 
 function MobileNav({ closeSideMenu }: { closeSideMenu: () => void }) {
   return (
-    <div className="fixed left-0 top-0 z-50 h-full w-full bg-[#052C46] md:hidden">
-      <div className="relative h-full bg-[#052C46] text-white px-4 py-4">
+    <div className="fixed left-0 top-0 z-50 h-full w-full bg-[#052032] md:hidden">
+      <div className="relative h-full bg-[#052032] text-white px-4 py-4">
 
         {/* Close Icon Positioned on Top-Right */}
         <AiOutlineClose 

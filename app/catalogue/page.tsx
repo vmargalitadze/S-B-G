@@ -20,7 +20,7 @@ function page() {
 
 
           <div className="text-center z-50 w-full">
-            <h2 className="text-white text-[25px] md:text-[50px] font-normal text-center">
+            <h2 className="text-white text-[25px] mt-10 lg:mt-0  md:text-[50px] font-normal text-center">
             რატომ ჩვენთან?
             </h2>
             <p className="max-w-[672px] text-white mx-auto lg:text-xl">
@@ -42,7 +42,7 @@ function page() {
                     alt="About Us"
                     className="w-full max-w-[250px] lg:max-w-[350px] h-auto object-cover rounded-lg"
                   />
-                  <p className="mt-5 text-xl lg:text-[30px] leading-tight text-center mb-4 font-semibold">
+                  <p className="mt-10 lg:mt-5 text-xl lg:text-[30px] leading-tight text-center mb-4 font-semibold">
                     საუკეთესო ძილი ყველასთვის
                   </p>
                 </div>
@@ -72,11 +72,11 @@ function page() {
               </div>
 
               {/* text */}
-              <div className="flex-1 flex flex-col gap-y-10 justify-center">
-                <h3 className="text-xl lg:text-[30px] leading-tight text-center mb-4 font-semibold">
+              <div className="flex-1 flex flex-col gap-y-7 mt-10 lg:mt-0 justify-center">
+                <h3 className="text-xl lg:text-[30px] leading-tight text-center  font-semibold">
                 Sleep & Bed სრული კოლექცია ENG
                 </h3>
-                <div className="font-normal text-lg max-lg:text-center max-w-2xl mx-auto mb-7 lg:mb-9">
+                <div className="font-normal text-lg max-lg:text-center max-w-2xl mx-auto  lg:mb-9">
                  
                   <p className="text-[18px] text-center lg:text-[20px] leading-relaxed mb-5 lg:mb-9">
                 
@@ -99,11 +99,11 @@ function page() {
           
 
               {/* text */}
-              <div className=" flex-1 flex flex-col gap-y-8 justify-center order-1 lg:-order-1">
-                <h3 className="text-xl lg:text-[30px] leading-tight text-center mb-4 font-semibold">
+              <div className=" flex-1 mt-10 lg:mt-0 flex flex-col gap-y-8 justify-center order-1 lg:-order-1">
+                <h3 className="text-xl lg:text-[30px] leading-tight text-center  font-semibold">
                 Sleep & Bed სრული კოლექცია ENG
                 </h3>
-                <div className="font-normal text-lg max-lg:text-center max-w-2xl mx-auto mb-7 lg:mb-9">
+                <div className="font-normal text-lg max-lg:text-center max-w-2xl mx-auto  lg:mb-9">
                  
                   <p className="text-[18px] text-center lg:text-[20px] leading-relaxed mb-5 lg:mb-9">
                 

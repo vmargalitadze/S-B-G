@@ -5,7 +5,7 @@ import {  FaFacebook, FaInstagram, FaYoutube, FaWhatsappSquare } from 'react-ico
 
 function Footer() {
   return (
-    <footer className="relative bg-[#052C46] text-white pt-8 pb-6">
+    <footer className="relative bg-[#052032] text-white pt-8 pb-6">
       <div className="container mx-auto px-4">
       <nav className="flex flex-wrap justify-center -mx-5 -my-2">
       <div className="px-5 py-2">

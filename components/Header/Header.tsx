@@ -9,7 +9,7 @@ import logo from "@/public/about/axali.jpg";
 
 export default function Navbar() {
   return (
-    <header className="fixed top-0 left-0 w-full bg-[#052C46] shadow-md z-50">
+    <header className="fixed top-0 left-0 w-full bg-[#052032] shadow-md z-50">
       <div className="wrapper container flex  justify-between px-4 py-4">
         
   

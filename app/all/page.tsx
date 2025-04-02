@@ -51,7 +51,7 @@ function PageContent() {
 
         >
             <div className="text-center z-50 w-full">
-              <h2 className="text-white text-[25px] md:text-[50px] font-normal text-center">
+              <h2 className="text-white mt-10 lg:mt-0 text-[25px] md:text-[50px] font-normal text-center">
                 პროდუქტები
               </h2>
               <p className="max-w-[672px] text-white mx-auto lg:text-xl">

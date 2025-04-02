@@ -15,7 +15,7 @@ import Cards from "../Cards/Cards";
 function Products() {
   const items = products.slice(0, 4)
   return (
-<section className=" mt-5 pt-16  pb-18  lg:pb-16 ">
+<section className=" mt-5 pt-16    lg:pb-16 ">
   <div className="container px-6 mx-auto">
     {/* Header Section */}
     <div className="flex flex-col lg:flex-row justify-between items-center mb-6 lg:mb-0">
