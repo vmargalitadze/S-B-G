@@ -2,8 +2,8 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce";
 import { Input } from "@/components/ui/input";
-
-function SearchComponent() {
+import { Suspense } from "react";
+function Search() {
   const searchParams = useSearchParams();
   const { replace, push } = useRouter(); // `push` ensures navigation
   const pathname = usePathname();
@@ -27,6 +27,7 @@ function SearchComponent() {
   }, 300);
 
   return (
+    
     <div className="relative w-full bg-white rounded-md mb-8">
       <Input
         type="text"
@@ -55,4 +56,13 @@ function SearchComponent() {
   );
 }
 
-export default SearchComponent;
+
+
+
+export default function SearchComponent() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Search />
+    </Suspense>
+  );
+}
