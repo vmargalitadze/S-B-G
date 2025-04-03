@@ -5,14 +5,14 @@ function Contact() {
     <section className="  pb-16 text-white ">
     <div className="container px-6 mx-auto">
       <div className="">
-        <h2 className="text-black text-xl  lg:text-[30px] leading-tight text-center mb-10 font-semibold">საკონტაქტო ინფორმაცია</h2>
+        <h2 className="text-black text-xl  lg:text-[25px] leading-tight text-center mb-10 font-semibold">საკონტაქტო ინფორმაცია</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           
           {/* Contact Info */}
           <div className="bg-[#052C46] p-8 rounded-lg">
   <div className="flex items-center mb-4">
     <FaMapMarkerAlt className="text-2xl mr-4 text-white" />
-    <span className="text-[18px]  lg:text-[20px] leading-relaxed text-white">115, 115/117, 117 პუშკინის ქუჩა, ბათუმი</span>
+    <span className="text-[16px]   lg:text-[20px] leading-relaxed text-white">115, 115/117, 117 პუშკინის ქუჩა, ბათუმი</span>
   </div>
 
   <div className="flex items-center mb-4">

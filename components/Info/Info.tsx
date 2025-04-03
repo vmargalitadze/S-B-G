@@ -21,12 +21,12 @@ function Info() {
 
               {/* text */}
               <div className="flex-1 flex flex-col gap-y-10 justify-center">
-                <h3 className="text-xl lg:text-[30px] leading-tight text-center mb-4 font-semibold">
+                <h3 className="text-xl lg:text-[25px] leading-tight text-center mb-4 font-semibold">
                   უზრუნველყოთ თქვენი მშვიდი ძილი
                 </h3>
                 <div className="font-normal text-lg max-lg:text-center max-w-2xl mx-auto mb-7 lg:mb-9">
                  
-                  <p className="text-[18px] text-center lg:text-[20px] leading-relaxed mb-5 lg:mb-9">
+                  <p className="text-[16px] text-center lg:text-[18px] leading-relaxed mb-5 lg:mb-9">
                   ამჟამად კომპანია Sleep & Bed ექსპორტს ახორციელებს 25-ზე მეტ ქვეყანაში და 7 კონტინენტზე. ეს ობიექტი გამოირჩევა ეკოლოგიურად სუფთა ენერგიის წარმოების სისტემით. Sleep & Bed-ის ობიექტები აწარმოებენ საკუთარ ენერგიას 
                   მზის პანელების სისტემის მეშვეობით და იყენებენ მხოლოდ ეკოლოგიურად სუფთა და განახლებად ენერგიის წყაროებს.
                   </p>

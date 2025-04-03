@@ -77,7 +77,7 @@ function Carousel() {
     <section className="mb-10 mt-5">
       {/* Header Section */}
       <div className="flex flex-col text-center items-center">
-        <h2 className="mt-5 text-xl lg:text-[30px] leading-tight text-center mb-4 font-semibold">
+        <h2 className="mt-5 text-xl lg:text-[25px] leading-tight text-center mb-4 font-semibold">
           სერთიფიკატები
         </h2>
         <p className="text-lg max-w-2xl mx-auto">
@@ -101,7 +101,7 @@ function Carousel() {
                 </div>
                 <div className="content text-center p-4">
                   <h2 className="font-semibold text-lg">{i.title}</h2>
-                  <p className="text-sm">{i.description}</p>
+                  <p className="text-[16px] lg:text-[18px]">{i.description}</p>
                 </div>
               </div>
             </div>

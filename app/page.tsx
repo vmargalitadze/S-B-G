@@ -11,12 +11,12 @@ export default function Home() {
   return (
    <>
    
-   <div className="w-full max-w-[1440px] mx-auto bg-[#EBEBEB]">
+   <div className="w-full  mx-auto bg-[#EBEBEB]">
 
    <Hero />
    <SIdeLogo />
    <Info />
-   <div className="flex container bg-[#052C46] mt-10  j py-10">
+   <div className="flex rounded-lg container bg-[#052C46] mt-10  j py-10">
 
    <Video />
    </div>

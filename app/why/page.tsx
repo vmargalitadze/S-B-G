@@ -4,8 +4,8 @@ import './why.css'
 function page() {
 
   return (
-    <section className="w-full mx-auto max-w-[1440px]">
-    <div className="allcontainer">
+    <section className="w-full mx-auto ">
+    <div className="">
       <div
         className="flex h-[50vh] items-center flex-wrap bg-overlay sm:p-6 before:bg-title before:bg-opacity-70"
         style={{ backgroundImage: "url('/prod/why.jpg')" }}
@@ -14,7 +14,7 @@ function page() {
 
 
           <div className="text-center z-50 w-full">
-            <h2 className="text-white mt-10 lg:mt-0 text-[25px] md:text-[50px] font-normal text-center">
+            <h2 className="text-white mt-10 sm:pt-10 pt-[50px] lg:mt-0 text-[25px] md:text-[50px] font-normal text-center">
             რატომ ჩვენთან?
             </h2>
             <p className="max-w-[672px] text-white mx-auto lg:text-xl">
@@ -25,7 +25,7 @@ function page() {
     
       </div>
     </div>
-    <div className="flex bg-[#052C46]  mt-[70px] justify-center items-center py-10">
+    <div className="flex  mt-[70px] justify-center items-center py-10">
     <Video  />
     </div>
 

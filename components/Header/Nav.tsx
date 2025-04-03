@@ -1,18 +1,10 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+"use client";
 
-"use client"; // This makes it a client component
-
-import React, { useState, useRef, useEffect } from "react";
-import { FiMenu } from "react-icons/fi";
-import { AiOutlineClose } from "react-icons/ai";
-import { IoIosArrowDown } from "react-icons/io";
-import { useAutoAnimate } from "@formkit/auto-animate/react";
+import React, { useEffect, useState } from "react";
+import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import Link from "next/link";
-import logo from "@/public/about/axali.jpg";
-import Image from "next/image";
-import './nav.css'
+import { motion, AnimatePresence } from "framer-motion";
 
-// Navigation Items
 const navItems = [
   {
     label: "პროდუქტები",
@@ -32,144 +24,107 @@ const navItems = [
   },
 ];
 
-export default function ClientNavbar() {
-  const [isSideMenuOpen, setSideMenu] = useState(false);
-
+export default function Navbar() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hovered, setHovered] = useState<number | null>(null);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
-    <>
-      {/* Desktop Navigation */}
-      <nav className="hidden md:flex items-center gap-4">
-        {navItems.map((item, i) => (
-          <div key={i} className="relative flex justify-start group">
-            {/* Parent Link */}
-            <Link
-              href={item.link ?? "#"}
-              className="text-white text-2xl px-4 py-3 flex items-center relative"
+    <nav className="fixed z-50 w-full text-white ">
+      <div className="flex items-center justify-between mx-auto  px-6">
+        {/* Logo */}
+
+        {/* Desktop Menu */}
+        <div className="hidden md:flex gap-6">
+          {navItems.map((item, index) => (
+            <div
+              key={index}
+              className="relative"
+              onMouseEnter={() => setHovered(index)}
+              onMouseLeave={() => setHovered(null)}
             >
-              {item.label}
-              {item.children && (
-                <IoIosArrowDown className="absolute px-2 text-[16px] -right-3 top-1/2 transform -translate-y-1/2 transition-transform duration-200 group-hover:rotate-180" />
-              )}
-            </Link>
-
-            {/* Dropdown Menu */}
-            {item.children && (
-              <div className="absolute top-full left-0 w-64 bg-[#EBEBEB] text-gray-800 shadow-md opacity-0 group-hover:opacity-100 transition-all duration-300">
-                <ul className="bg-[#EBEBEB] text-gray-800 w-full">
-                  {item.children.map((child, j) => (
-                    <li key={j} className="text-sm leading-8 font-normal hover:bg-[#052C46] hover:text-white transition-all duration-300">
-                      <Link href={child.link ?? "#"} className="block pl-20 py-2">
-                        {child.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        ))}
-      </nav>
-
-      {/* Mobile Menu Toggle */}
-      <FiMenu onClick={() => setSideMenu(true)} className="cursor-pointer text-white text-4xl md:hidden" />
-
-      {/* Mobile Menu */}
-      {isSideMenuOpen && <MobileNav closeSideMenu={() => setSideMenu(false)} />}
-    </>
-  );
-}
-
-function MobileNav({ closeSideMenu }: { closeSideMenu: () => void }) {
-  return (
-    <div className="fixed left-0 top-0 z-50 h-full w-full bg-[#052032] md:hidden">
-      <div className="relative h-full bg-[#052032] text-white px-4 py-4">
-
-        {/* Close Icon Positioned on Top-Right */}
-        <AiOutlineClose 
-          onClick={closeSideMenu} 
-          className="cursor-pointer text-4xl absolute top-4 right-4" 
-        />
-
-   
-        <Link onClick={closeSideMenu}  href="/" className="flex justify-center w-full">
-          <div className="border-[1px] rounded-full p-1 flex items-center justify-center">
-            <Image 
-              src={logo} 
-              
-              width={80} 
-              height={80} 
-              alt="logo" 
-              className="rounded-full object-contain" 
-            />
-          </div>
-        </Link>
-
-        {/* Navigation Items */}
-        <div className="w-full flex flex-col items-center mt-6">
-          {navItems.map((item, i) => (
-            <SingleNavItem key={i} {...item} closeSideMenu={closeSideMenu} />
+              <Link href={item.link} className="flex  text-[18px] items-center gap-2 hover:text-gray-300">
+                {item.label}
+                {item.children && <FiChevronDown className={`transition ${hovered === index ? "rotate-180" : ""}`} />}
+              </Link>
+              <AnimatePresence>
+                {hovered === index && item.children && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute  left-0 top-full mt-2 w-48 shadow-md bg-[#EBEBEB] p-4 rounded-md"
+                  >
+                    {item.children.map((child, idx) => (
+               <Link
+               key={idx}
+               href={child.link}
+               className="relative block text-center py-2 text-[16px] text-black  after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1px] after:bg-black after:transition-all after:duration-300 hover:after:w-full"
+             >
+               {child.label}
+             </Link>
+             
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           ))}
         </div>
+
+        {/* Mobile Menu Button (Right-aligned) */}
+        <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden  ml-auto">
+          {mobileMenuOpen ? <FiX size={24} /> : <FiMenu  size={24} />}
+        </button>
       </div>
-    </div>
-  );
-}
 
-function SingleNavItem({
-  label,
-  link,
-  children,
-  closeSideMenu,
-}: {
-  label: string;
-  link?: string;
-  children?: any;
-  closeSideMenu: () => void;
-}) {
-  const [animationParent] = useAutoAnimate();
-  const [isItemOpen, setItemOpen] = useState(false);
-  const itemRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (itemRef.current && !itemRef.current.contains(event.target as Node)) {
-        setItemOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  return (
-    <div ref={itemRef} className="relative text-white py-3 transition-all">
-      <div className="flex justify-between items-center">
-        <Link href={link ?? "#"} className="flex-1" onClick={closeSideMenu}>
-          {label}
-        </Link>
-        {children && (
-          <IoIosArrowDown
-            className={`text-[20px] transition-all cursor-pointer ${isItemOpen ? "rotate-180" : "rotate-0"}`}
-            onClick={() => setItemOpen(!isItemOpen)}
-          />
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 20 }}
+            className="absolute -top-8 -right-6  w-full h-screen bg-[#EBEBEB] flex flex-col gap-4 shadow-lg"
+          >
+            <button onClick={() => setMobileMenuOpen(false)} className="self-end">
+              <FiX className="text-black" size={24} />
+            </button>
+            {navItems.map((item, index) => (
+              <div key={index} className="w-full px-3">
+                <Link
+                  href={item.link}
+                  className="block  after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-black after:transition-all after:duration-300 hover:after:w-full text-center text-black text-lg py-3 border-b border-gray-700"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+                {item.children && (
+                  <div className="pl-4 mt-2">
+                    {item.children.map((child, idx) => (
+                      <Link
+                        key={idx}
+                        href={child.link}
+                        className="block text-center py-2 text-black text-[16px] hover:text-gray-300"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {child.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </motion.div>
         )}
-      </div>
-      
-      {/* Submenu */}
-      {isItemOpen && children && (
-        <ul ref={animationParent} className="bg-[#EBEBEB] text-gray-800 w-full rounded-md py-3">
-          {children.map((child: { link: string; label: string }, i: number) => (
-            <li key={i} className="text-sm leading-8 font-normal hover:bg-slate-200 transition-all duration-300">
-              <Link 
-                href={child.link} 
-                className="px-4 py-2 flex justify-center items-center" 
-                onClick={closeSideMenu}
-              >
-                {child.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+      </AnimatePresence>
+    </nav>
   );
 }

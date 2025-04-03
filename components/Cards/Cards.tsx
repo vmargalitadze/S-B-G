@@ -41,7 +41,7 @@ function Cards({ products }: CardsProps) {
               
               <h2 className="text-gray-800 font-bold text-xl">{product.title}</h2>
                </Link>
-              <p className="text-[16px] mb-5 text-gray-600 font-normal">{product.desc}</p>
+              <p className="text-[16px] lg:text-[18px] mb-5 text-gray-600 font-normal">{product.desc}</p>
 
           
             </div>

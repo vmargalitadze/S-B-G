@@ -5,10 +5,10 @@ import React, { useState } from 'react'
 function Video() {
     const [isPlaying, setIsPlaying] = useState(false);
   return (
-    <div className="relative  lg:pt-12    w-full max-w-2xl mx-auto">
+    <div className="relative rounded-lg  lg:pt-12    w-full max-w-2xl mx-auto">
     {!isPlaying ? (
       <div
-        className="relative cursor-pointer"
+        className="relative rounded-lg cursor-pointer"
         onClick={() => setIsPlaying(true)}
       >
      

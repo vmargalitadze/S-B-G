@@ -1,18 +1,29 @@
+"use client"
 import React from "react";
 import "./about.css";
 import image from "@/public/about/sleepandbed.svg";
 import Image from "next/image";
 import bg2 from "@/public/about/Sleep-Bed.jpg";
 import Carousel from "./Carousel";
+import {  useState } from "react";
+
+const pStyles: React.CSSProperties = {
+  WebkitLineClamp: 3,
+  WebkitBoxOrient: 'vertical',
+  overflow: 'hidden',
+  display: '-webkit-box',
+};
+
 
 function Page() {
+  const [open, setOpen] = useState(false)
   return (
     <>
-      <section className="w-full mx-auto max-w-[1440px]">
-        <div className="allcontainer">
+      <section className="w-full mx-auto ">
+        <div className="">
           <div className="flex h-[50vh] items-center flex-wrap bg-overlay sm:p-6 before:bg-title before:bg-opacity-70 aboutbg">
             <div className="text-center z-50 w-full">
-              <h2 className="text-white text-[25px] md:text-[50px] font-normal text-center">
+              <h2 className="text-white sm:pt-10 pt-[50px] text-[25px] md:text-[50px] font-normal text-center">
                 პროდუქტები
               </h2>
               <p className="max-w-[672px] text-white mx-auto lg:text-xl">
@@ -26,19 +37,19 @@ function Page() {
           <div className="container pt-12 lg:pt-16 lg:!pb-16 mx-auto">
             <div className="py-10 px-4">
               <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
-                <div className="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
+                <div className="w-full md:w-1/2 flex justify-center mx-auto flex-col items-center md:items-start text-center md:text-left">
                   <Image
                     src={image}
                     alt="About Us"
-                    className="w-full max-w-[250px] lg:max-w-[350px] h-auto object-cover rounded-lg"
+                    className="w-[250px] lg:max-w-[350px] h-auto object-cover rounded-lg"
                   />
-                  <p className="mt-5 text-xl lg:text-[30px] leading-tight text-center mb-4 font-semibold">
+                  <p className="mt-5 text-xl lg:text-[25px] leading-tight text-center mb-4 font-semibold">
                     საუკეთესო ძილი ყველასთვის
                   </p>
                 </div>
 
                 <div className="w-full md:w-1/2">
-                  <p className="text-lg text-center leading-relaxed md:text-left">
+                  <p className="text-lg text-center leading-relaxed ">
                   ჩვენ გთავაზობთ მაღალი ხარისხის, ეკოლოგიურად სუფთა ძილის პროდუქტებს, 
                   რომლებიც შექმნილია უახლესი ტექნოლოგიით. ჩვენი ვალდებულება სცილდება 
                   მხოლოდ პროდუქტებს - ჩვენ გთავაზობთ საიმედოობას, კომფორტს და ინოვაციებს 
@@ -54,15 +65,29 @@ function Page() {
                   <div className="img-box">
                     <Image src={bg2} alt="About Us tailwind page" className="max-lg:mx-auto rounded-lg object-cover" />
                   </div>
-                  <div className="lg:pl-[100px] flex items-center">
+                  <div className=" flex items-center">
                     <div className="data w-full">
-                      <h2 className="text-xl lg:text-[30px] leading-tight text-center mb-4 font-semibold">
+                      <h2 className="text-xl lg:text-[25px] leading-tight text-center mb-4 font-semibold">
                         ჩვენი ისტორია
                       </h2>
-                      <p className="text-lg leading-8  text-center max-w-2xl mx-auto">
-                      2011 წელს, Mitsan Group-ის კომპანიის სახით და Vizyon Mattress-ის სახელით დაარსებული Sleep&Bed, დღემდე სწრაფად მზარდი ბრენდის სახით განაგრძობს განვითარებას და 4 კონტინენტზე, 25-ზე მეტ ქვეყანაში, ასობით სარეალიზაციო წერტილთან და რამდენიმე ათეული მაღაზიით ერთვის. ჩვენი წარმატება განპირობებულია შიდა წარმოების მაღალი ხარისხის სპონჯებისა და ფელტების წარმოებით, 
-                      სწრაფი წარმოების ციკლებით ინტეგრირებული ფაბრიკების მეშვეობით და ძლიერი, ორიგინალური პროდუქტის კოლექციით.
+                      <p 
+                      style={ open ? {} : pStyles }
+                      className="text-lg leading-8  text-center max-w-2xl mx-auto">
+                      Sleep&Bed, რომელმაც საწოლის წარმოება დაიწყო Vizyon Mattress-ის სახელით 2011 წელს Mitsan Group-ის კომპანიების ქვეშ, აგრძელებს ცხოვრებას, როგორც სწრაფად მზარდი ძილის ბრენდი ასობით აქტიური გაყიდვების პუნქტით და ათობით მაღაზიით 4 კონტინენტზე, მსოფლიოს 25-ზე მეტ ქვეყანაში.
+
+თავისი ეკოლოგიურად სუფთა წარმოების პრინციპებით, ავტომატიზაციის საწარმოო ხაზებით, rollpack ტექნოლოგიით და მაღალი დონის პროდუქტის ხარისხის სტანდარტებით, რომლებიც აწარმოებენ საკუთარ ენერგიას 25000 კვადრატულ მეტრ ფართობზე, Sleep&Bed-ს ჰყავს პროფესიონალი R&D და წარმოების გუნდები, რომლებიც კარგად იცნობენ მის აუდიტორიას ძილის კულტურის, კლიმატური საჭიროებების, ტრადიციების და ძილის ჩვევების შესახებ მსოფლიოს 4 კონტინენტზე. ის არის მსოფლიოში ძილის კულტურის ერთ-ერთი ყველაზე მნიშვნელოვანი მწარმოებელი და წარმომადგენელი.
+
+Sleep&Bed პოზიციონირებულია ინდუსტრიაში წამყვან პოზიციაზე დაარსების დღიდან საკუთარი სპონგებისა და თექის წარმოების უნარით, უნარით უზრუნველყოს სწრაფი წარმოების ციკლები მრავალი ცალკეული ობიექტებით, რომლებიც ინტეგრირებულია ერთმანეთთან იმავე ინდუსტრიულ ზონაში, მისი ძლიერი და ორიგინალური პროდუქციის კოლექცია და ბრენდის აღქმა, რომელიც დომინირებს მთელ მსოფლიო ბაზარზე.
+
                       </p>
+                      <div className="flex justify-center">
+  <button
+    onClick={() => setOpen(!open)}
+    className="outline-none text-[16px] lg:text-[18px] mb-6 mt-6 rounded-lg cursor-pointer transition-all duration-150 ease-in-out border border-solid border-black px-4 py-2 sm:px-6 sm:py-3  sm:text-base uppercase focus:outline-none bg-black text-white"
+  >
+    {open ? "ნახე ცოტა" : "ნახე მეტი"}
+  </button>
+</div>
                     </div>
                   </div>
                 </div>

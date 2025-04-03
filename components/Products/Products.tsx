@@ -19,11 +19,11 @@ function Products() {
   <div className="container px-6 mx-auto">
     {/* Header Section */}
     <div className="flex flex-col lg:flex-row justify-between items-center mb-6 lg:mb-0">
-      <h2 className="text-xl lg:text-[30px] leading-tight text-center mb-4 font-semibold">
+      <h2 className="text-xl lg:text-[25px] leading-tight text-center mb-4 font-semibold">
         ჩვენი პროდუქტები
       </h2>
       <div className="flex items-center gap-2 group"> {/* Add group class here */}
-  <Link className="flex gap-2 items-center hover:text-primary font-medium transition-all border-primary" href="/all">
+  <Link className="flex text-[16px] lg:text-[18px] gap-2 items-center hover:text-primary font-medium transition-all border-primary" href="/all">
     <span>დაათვალიერე</span>
     <span className="transform group-hover:translate-x-2 group-hover:scale-110 transition-all duration-300">
       <FaArrowRight />
