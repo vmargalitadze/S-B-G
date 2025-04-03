@@ -25,7 +25,7 @@ export default function Navbar() {
         </div>
 
         {/* Right: Search */}
-        <div className="hidden mt-11 mr-4 md:block">
+        <div className="hidden z-50 mt-11 mr-4 md:block">
           <Search />
         </div>
       </div>
