@@ -9,7 +9,7 @@ import PaginationComponent from "./PaginationComponent";
 import Filter from "./Filter";
 
 import Cards from "@/components/Cards/Cards";
-import OtherFilters from "@/components/OtherFilters/OtherFilters";
+
 const ITEMS_PER_PAGE = 8;
 
 function PageContent() {
@@ -76,10 +76,7 @@ function PageContent() {
             <div className="col-span-full mb-6 flex justify-center items-center mt-3">
               <PaginationComponent pageCount={pageCount} />
             </div>
-            <div className="mx-auto lg:ml-26 text-center">
-
-          <OtherFilters />
-            </div>
+        
         
         </div>
       </div>
