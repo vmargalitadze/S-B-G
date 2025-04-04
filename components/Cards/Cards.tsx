@@ -35,11 +35,12 @@ function Cards({ products }: CardsProps) {
           </div>
 
           {/* Card Content */}
-          <div className="border border-gray-100 bg-white rounded-b-2xl flex flex-col justify-between leading-normal">
+          <div className="border  border-gray-100 bg-white rounded-b-2xl flex flex-col justify-between leading-normal">
             <div className="p-4">
-              <Link className="hover:underline" href={`/product/${product.id}`} >
-              
-              <h2 className="text-gray-800 font-bold text-xl">{product.title}</h2>
+              <Link className="" href={`/product/${product.id}`} >
+              <h2 className="relative text-gray-800 font-bold text-xl after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1px] after:bg-black after:transition-all after:duration-300 hover:after:w-full">
+  {product.title}
+</h2>
                </Link>
               <p className="text-[16px] lg:text-[18px] mb-5 text-gray-600 font-normal">{product.desc}</p>
 

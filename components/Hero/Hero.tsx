@@ -15,6 +15,9 @@ function Hero() {
   <section className=' bg-hero pt-[225px] pb-[54px] relative  lg:bg-center lg:mb-24  bg-right bg-cover bg-no-repeat text-white  w-full h-[850px]'>
 
       <div className="text-center z-50 w-full">
+            <h2 className=" text-[30px] tracking-[.25em] md:text-[50px]  lg:mb-0 font-normal text-center">
+            GEORGIA
+            </h2>
             <h2 className=" text-[25px] md:text-[50px]  lg:mb-0 font-normal text-center">
             Sleep&Bed
             </h2>

@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 "use client";
 
 import { cn } from "@/lib/utils";
@@ -26,8 +26,8 @@ const ProductImages = ({ images }: { images: string[] }) => {
             key={index}
             onClick={() => setCurrent(index)}
             className={cn(
-              "border p-1 cursor-pointer rounded-md hover:border-black",
-              current === index && "border-white"
+              " p-1 cursor-pointer rounded-md ",
+              current === index && ""
             )}
           >
             <Image src={image} alt="Thumbnail" width={80} height={80} className="w-[80px] h-[80px] object-cover rounded-md" />

@@ -13,14 +13,14 @@ export default function Navbar() {
       <div className="wrapper container flex items-center justify-between px-4 ">
         
   
-        <Link className="p-2" href="/">
-          <div className="border  border-gray-500 rounded-full">
-            <Image src={logo} width={70} alt="logo" className="rounded-full" />
+        <Link className="p-2 cursor-pointer" href="/">
+          <div className="border   border-gray-500 rounded-full">
+            <Image src={logo} width={70} alt="logo" className="rounded-full " />
           </div>
         </Link>
 
         {/* Center: Navbar */}
-        <div className="flex-1 flex lg:mt-0 md:mt-0  mb-6 justify-end md:justify-start lg:justify-start ">
+        <div className="flex-1  flex lg:mt-0 md:mt-0  mb-6 justify-end md:justify-start lg:justify-start ">
           <ShiftingDropDown />
         </div>
 

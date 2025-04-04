@@ -32,9 +32,9 @@ function page() {
       </div>
     </div>
  
-    <div className="bg-white allcontainer">
+    <div className=" allcontainer">
           <div className="container pt-12 lg:pt-16 lg:!pb-16 mx-auto">
-            <div className="py-10 px-4">
+            <div className="">
             <div className="py-10 px-4">
               <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
                 <div className="w-full md:w-1/2 flex justify-center mx-auto flex-col items-center md:items-start text-center md:text-left">
@@ -43,7 +43,7 @@ function page() {
                     alt="About Us"
                     className="w-[250px] lg:max-w-[350px] h-auto object-cover rounded-lg"
                   />
-                  <p className="mt-5 text-xl lg:text-[25px] leading-tight text-center mb-4 font-semibold">
+                  <p className="mt-5 text-xl max-w-[672px]  lg:text-[25px] leading-tight text-center mb-4 font-semibold">
                     საუკეთესო ძილი ყველასთვის
                   </p>
                 </div>

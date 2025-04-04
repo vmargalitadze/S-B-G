@@ -12,27 +12,37 @@ function Contact() {
           <div className="bg-[#052C46] p-8 rounded-lg">
   <div className="flex items-center mb-4">
     <FaMapMarkerAlt className="text-2xl mr-4 text-white" />
-    <span className="text-[16px]   lg:text-[20px] leading-relaxed text-white">115, 115/117, 117 პუშკინის ქუჩა, ბათუმი</span>
+    <span className="text-[13px]   lg:text-[20px] leading-relaxed text-white">ქ.ბათუმი ა.პუშკინის 117, <br /> ქ.ბათუმი ა.პუშკინის 44, <br/> ქ.თბილისი თ.ერისთავის 1</span>
   </div>
 
   <div className="flex items-center mb-4">
     <FaPhone className="text-2xl mr-4 text-white" />
-    <span className="text-[18px]  lg:text-[20px] leading-relaxed text-white">+995 12 34 56</span>
+
+    <span className="text-[13px]  lg:text-[20px] leading-relaxed text-white"> ბათუმი: <br />    +995557394374, <br />  +995568613022 <br /> 
+    თბილისი: 
+    <br />  
+    +995557226880
+    </span>
+
+ 
   </div>
 
   <div className="flex items-center mb-4">
   <FaEnvelope className="text-2xl mr-4 text-white" />
-    <span className="text-[18px]  lg:text-[20px] leading-relaxed text-white">info@example.com</span>
+  <a href="mailto:kipianistore@gmail.com" className="text-[16px] lg:text-[20px] leading-relaxed text-white">
+  kipianistore@gmail.com
+</a>
   </div>
 
   <div className="flex items-center mb-4">
-    <FaClock className="text-2xl mr-4 text-white" />
-    <div className="text-[18px]  lg:text-[20px] leading-relaxed  text-white">
-      <p>ორშაბათი-პარასკევი: <br className='block lg:hidden'/> 09:00 - 18:00</p>
-      <p>შაბათი: 10:00 - 14:00</p>
-      <p>კვირა: დახურული</p>
-    </div>
+  <FaClock className="text-2xl mr-4 text-white" />
+  <div className="text-[13px]  lg:text-[20px] leading-relaxed text-white">
+    <p>ორშაბათი-პარასკევი: </p>
+    <p>09:00 - 18:00</p>
+    <p>შაბათი: 10:00 - 14:00</p>
+    <p>კვირა: დახურული</p>
   </div>
+</div>
 </div>
 
   

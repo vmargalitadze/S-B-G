@@ -20,7 +20,7 @@ const navItems = [
   {
     label: "ჩვენს შესახებ",
     link: "/about",
-    children: [{ label: "რატომ sleep&bad?", link: "/why" }],
+    children: [{ label: "რატომ sleep&bad?", link: "/why" }, { label: "გალერია", link: "/gallery" },  ],
   },
 ];
 
@@ -37,7 +37,7 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
   return (
-    <nav className="fixed z-50 w-full text-white ">
+    <nav className="fixed  z-50 w-full text-white ">
       <div className="flex items-center justify-between mx-auto  px-6">
         {/* Logo */}
 
@@ -112,7 +112,7 @@ export default function Navbar() {
                       <Link
                         key={idx}
                         href={child.link}
-                        className="block text-center py-2 text-black text-[16px] hover:text-gray-300"
+                        className="block text-center  py-2 text-black text-[16px]  after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[1px] after:bg-black after:transition-all after:duration-300 hover:after:w-full"
                         onClick={() => setMobileMenuOpen(false)}
                       >
                         {child.label}

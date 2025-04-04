@@ -25,7 +25,7 @@ function page() {
     
       </div>
     </div>
-    <div className="flex  mt-[70px] justify-center items-center py-10">
+    <div className=" mt-[70px] flex rounded-lg container bg-[#052C46] py-10">
     <Video  />
     </div>
 
