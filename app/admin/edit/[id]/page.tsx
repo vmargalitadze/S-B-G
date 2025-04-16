@@ -6,7 +6,11 @@ import Link from "next/link";
 import { z } from "zod";
 import { ProductSchema } from "@/lib/validators";
 
-export default async function EditProductPage({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: { id: string };
+}
+
+export default async function EditProductPage({ params }: PageProps) {
   const product = await getSingleProduct(params.id);
 
   if (!product) return notFound();
@@ -27,9 +31,10 @@ export default async function EditProductPage({ params }: { params: { id: string
   return (
     <div className="p-6 max-w-4xl mx-auto">
       <h1 className="text-2xl font-semibold mb-4">პროდუქტის რედაქტირება</h1>
-       <Link href='/admin'> უკან დაბრუნება </Link>
-       <AdminProductUpdateForm initialData={flattenedProduct as z.infer<typeof ProductSchema> & { id: string }} />
-
+      <Link href="/admin">უკან დაბრუნება</Link>
+      <AdminProductUpdateForm
+        initialData={flattenedProduct as z.infer<typeof ProductSchema> & { id: string }}
+      />
     </div>
   );
 }
