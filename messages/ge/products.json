@@ -1,0 +1,7 @@
+{
+  "product": {
+    "title": "{{title}}",
+    "description": "{{description}}",
+    "details": "აქედან {{product.name}} ეს {{product.price}}."
+  }
+}

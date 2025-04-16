@@ -1,43 +1,31 @@
-"use client";
-import React from 'react';
-;
-import 'swiper/css'; // Import Swiper styles
-import "swiper/css/effect-coverflow";
+import Image from 'next/image';
+import BgImage from '@/public/hero/hero-bg_cleanup.png'
 
-
-import './hero.css';
-import "swiper/css/pagination";
-import Link from 'next/link';
+import React from 'react'
 
 function Hero() {
   return (
-    <>
-  <section className=' bg-hero pt-[225px] pb-[54px] relative  lg:bg-center lg:mb-24  bg-right bg-cover bg-no-repeat text-white  w-full h-[850px]'>
-
-      <div className="text-center z-50 w-full">
-            <h2 className=" text-[30px] tracking-[.25em] md:text-[50px]  lg:mb-0 font-normal text-center">
-            GEORGIA
-            </h2>
-            <h2 className=" text-[25px] md:text-[50px]  lg:mb-0 font-normal text-center">
-            Sleep&Bed
-            </h2>
-            <p className="max-w-[672px] text-white mx-auto mb-[20px] lg:mb-[40px] lg:text-xl">
-              საუკეთესო ძილი ყველასთვის
-            </p>
-            <Link
-  className="herolink px-[35px] py-[9px] 
-  mb-[160px] text-xl lg:mb-[190px] rounded-md backdrop-blur-md transition lg:py-[16px] lg:px-[80px]"
-  href="/all"
->
-  დაათვალიერე
-</Link>
-          </div>
-  </section>
-
-
+    <section className="relative  w-full h-[850px] text-white flex items-center overflow-hidden">
+    <div className="absolute mt-[80px] inset-0 z-0">
+      <Image 
+        src={BgImage}
+        alt="Hero Background"
       
-    </>
-  );
+     
+        className="w-full h-full object-cover"
+      />
+    </div>
+  
+    <div className="container mx-auto px-4 relative z-10">
+   
+   
+      <h1 className="text-white sm:pt-10 pt-[50px] lg:mt-0 text-[25px] md:text-[50px] font-normal">Sleep & Bed Georgia</h1>
+    
+     
+    </div>
+  </section>
+  
+  )
 }
 
-export default Hero;
+export default Hero

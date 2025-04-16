@@ -31,8 +31,7 @@ module.exports = {
           pink: 'pink',
         },
         backgroundImage: {
-            hero: "url('./public/hero/hero-bg.png')",
-          
+          hero: "url('/hero/hero-bg.png')",
         },
         dropShadow: {
             primary: "0px 4px 10px rgba(15, 27, 51, 0.05)",

@@ -1,0 +1,14 @@
+{
+    "sertificats":{
+        "serf":"Certificates",
+        "serfText":" All products manufactured under our brand comply with international quality and health standards, which are strictly controlled according to different regions of the world.",
+       "BSCI": "BSCI certifies that our production meets international standards in work conditions, employee rights, and social responsibility.",
+      "RCS": "RCS confirms our products are made from recycled materials and support sustainable, eco-friendly production.",
+      "Sertipur": "Sertipur guarantees our foams are safe, chemical-free, and produced with health and sustainability in mind.",
+      "ISO9001": "ISO 9001 shows our commitment to high-quality production, customer satisfaction, and continuous improvement.",
+      "ISO14001": "ISO 14001 proves our processes are environmentally responsible and aligned with global sustainability goals.",
+      "ISO45000": "ISO 45001 reflects our dedication to safe workplaces and employee health through international safety standards.",
+      "GRS": "GRS certifies our use of recycled materials and responsible production practices, supporting a greener future.",
+      "OEKOTEX": "OEKO-TEX ensures our textiles are free from harmful chemicals and meet high safety and eco standards."
+      }
+}

@@ -11,6 +11,16 @@
   width: 100%;
   max-width: 1280px; /* Adjust based on your design needs */
 }
+.allcontainer{
+ 
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  width: 100%;
+  max-width: 1440px; 
+
+}
 
 
 body {
