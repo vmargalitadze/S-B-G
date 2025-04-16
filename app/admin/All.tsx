@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaEdit, FaTrash } from 'react-icons/fa';
+import {  FaTrash } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -55,9 +55,7 @@ export default function All({ products,  }: { products: ProductType[] }) {
                 <td className="p-4 font-medium"> <Link href={`/product/${product.id}`}>{product.titleKa}    </Link></td>
                 <td className="p-4 text-gray-600">{product.type}</td>
                 <td className="p-4 flex justify-center gap-4">
-                  <Link href={`/admin/edit/${product.id}`}>
-                    <FaEdit className="text-blue-600 hover:text-blue-800 cursor-pointer" size={18} />
-                  </Link>
+                  
                   <Button className="cursor-pointer" onClick={() => handleDelete(product.id)}>
                     <FaTrash className="cursor-pointer" size={18} />
                   </Button>
