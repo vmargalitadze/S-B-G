@@ -17,7 +17,7 @@ const pStyles: React.CSSProperties = {
 
 function Page() {
   const [open, setOpen] = useState(false)
-    const t = useTranslations('about');
+    const t = useTranslations();
   return (
     <>
       <section className="w-full mx-auto ">

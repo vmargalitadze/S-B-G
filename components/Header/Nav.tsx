@@ -14,19 +14,19 @@ export default function Navbar() {
       label: t("navItems.products"),
       link: "/all",
       children: [
-        { label: t("navItems.pillows"), link: "/pillows" },
-        { label: t("navItems.blanket"), link: "/blanket" },
-        { label: t("navItems.matrass"), link: "/matrass" },
-        { label: t("navItems.toper"), link: "/toper" },
-        { label: t("navItems.catalogue"), link: "/catalogue" },
+        { label: t("pillows"), link: "/pillows" },
+        { label: t("blanket"), link: "/blanket" },
+        { label: t("matrass"), link: "/matrass" },
+        { label: t("toper"), link: "/toper" },
+        { label: t("catalogue"), link: "/catalogue" },
       ],
     },
     {
       label: t("navItems.aboutUs"),
       link: "/about",
       children: [
-        { label: t("navItems.whySleepAndBed"), link: "/why" },
-        { label: t("navItems.gallery"), link: "/gallery" },
+        { label: t("whySleepAndBed"), link: "/why" },
+        { label: t("gallery"), link: "/gallery" },
       ],
     },
   ];

@@ -16,7 +16,7 @@ function Contact() {
       <div className="container px-6 mx-auto">
         <div className="">
           <h2 className="text-black text-xl lg:text-[25px] leading-tight text-center mb-10 font-semibold">
-            {t('contactinfo.contacts')}
+            {t('contacts')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Contact Info */}
@@ -24,7 +24,7 @@ function Contact() {
               <div className="flex items-center mb-4">
                 <FaMapMarkerAlt className="text-2xl mr-4 text-white" />
                 <span className="text-[13px] lg:text-[20px] leading-relaxed text-white">
-                  {t("contactinfo.address").split('\n').map((line, index) => (
+                  {t("address").split('\n').map((line, index) => (
                     <span key={index}>
                       {line}
                       <br />
@@ -36,8 +36,8 @@ function Contact() {
               <div className="flex items-center mb-4">
                 <FaPhone className="text-2xl mr-4 text-white" />
                 <span className="text-[13px] lg:text-[20px] leading-relaxed text-white">
-                  {t('contactinfo.batumi')}: <br /> +995557394374, <br /> +995568613022 <br />
-                  {t('contactinfo.tbilisi')}: <br /> +995557226880
+                  {t('batumi')}: <br /> +995557394374, <br /> +995568613022 <br />
+                  {t('tbilisi')}: <br /> +995557226880
                 </span>
               </div>
 
@@ -51,10 +51,10 @@ function Contact() {
               <div className="flex items-center mb-4">
                 <FaClock className="text-2xl mr-4 text-white" />
                 <div className="text-[13px] lg:text-[20px] leading-relaxed text-white">
-                  <p>{t('contactinfo.mondayToFriday')}</p>
+                  <p>{t('mondayToFriday')}</p>
                   <p>09:00 - 18:00</p>
-                  <p>{t('contactinfo.saturday')} 10:00 - 14:00</p>
-                  <p>{t('contactinfo.sunday')}</p>
+                  <p>{t('saturday')} 10:00 - 14:00</p>
+                  <p>{t('sunday')}</p>
                 </div>
               </div>
             </div>
