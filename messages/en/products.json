@@ -1,7 +1,0 @@
-{
-  "product": {
-    "title": "{{title}}",
-    "description": "{{description}}",
-    "details": "This product is called {{product.name}} and costs {{product.price}}."
-  }
-}

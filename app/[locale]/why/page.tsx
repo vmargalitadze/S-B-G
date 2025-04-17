@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import Video from './Video';
 import './why.css'
 export default function FranchiseSection() {
-  const t = useTranslations("why");
+  const t = useTranslations();
 
   return (
     <section className="w-full mx-auto">

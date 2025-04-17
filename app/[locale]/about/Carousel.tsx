@@ -14,56 +14,56 @@ function Carousel() {
       title: 'BSCI',
       src: '/about/logo1.jpg',
       alt: 'First Image',
-      description: t('sertificats.BSCI'),
+      description: t('BSCI'),
     },
     {
       id: 2,
       title: 'RCS',
       src: '/about/logo2.jpg',
       alt: 'Second Image',
-      description: t('sertificats.RCS'),
+      description: t('RCS'),
     },
     {
       id: 3,
       title: 'CERTİPUR',
       src: '/about/logo3.jpg',
       alt: 'Third Image',
-      description: t('sertificats.Sertipur'),
+      description: t('Sertipur'),
     },
     {
       id: 4,
       title: 'ISO9001',
       src: '/about/logo4.jpg',
       alt: 'Fourth Image',
-      description: t('sertificats.ISO9001'),
+      description: t('ISO9001'),
     },
     {
       id: 5,
       title: 'ISO14001',
       src: '/about/logo5.jpg',
       alt: 'Fifth Image',
-      description: t('sertificats.ISO14001'),
+      description: t('ISO14001'),
     },
     {
       id: 6,
       title: 'ISO45000',
       src: '/about/logo6.jpg',
       alt: 'Sixth Image',
-      description: t('sertificats.ISO45000'),
+      description: t('ISO45000'),
     },
     {
       id: 7,
       title: 'GRS Nedir',
       src: '/about/logo7.jpg',
       alt: 'Seventh Image',
-      description: t('sertificats.GRS'),
+      description: t('GRS'),
     },
     {
       id: 8,
       title: 'OEKOTEX',
       src: '/about/logo8.jpg',
       alt: 'Eighth Image',
-      description: t('sertificats.OEKOTEX'),
+      description: t('OEKOTEX'),
     },
   ];
   return (
@@ -71,10 +71,10 @@ function Carousel() {
       {/* Header Section */}
       <div className="flex flex-col text-center items-center">
         <h2 className="mt-5 text-xl lg:text-[25px] leading-tight text-center mb-4 font-semibold">
-        {t('sertificats.serf')}
+        {t('serf')}
         </h2>
         <p className="text-lg max-w-2xl mx-auto">
-        {t('sertificats.serfText')}
+        {t('serfText')}
         </p>
       </div>
 

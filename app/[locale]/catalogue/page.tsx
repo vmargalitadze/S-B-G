@@ -20,10 +20,10 @@ function Page() {
       >
         <div className="text-center z-50 w-full">
           <h2 className="text-white text-[25px] sm:pt-10 pt-[50px] md:text-[50px] font-normal text-center">
-            {t('cataloge.whyUsTitle')}
+            {t('whyUsTitle')}
           </h2>
           <p className="max-w-[672px] text-white mx-auto lg:text-xl">
-            {t('cataloge.sleep')}
+            {t('sleep')}
           </p>
         </div>
       </div>

@@ -81,10 +81,10 @@ function PageContentWrapper() {
            style={{ backgroundImage: "url('/prod/breadcumb.jpg')" }}>
         <div className="text-center z-50 w-full">
           <h2 className="text-white sm:pt-10 pt-[50px] lg:mt-0 text-[25px] md:text-[50px] font-normal text-center">
-          {t("about.products")}
+          {t("products")}
           </h2>
           <p className="max-w-[672px] text-white mx-auto lg:text-xl">
-          {t("about.sleep")}
+          {t("sleep")}
           </p>
         </div>
       </div>

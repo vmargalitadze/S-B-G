@@ -1,5 +1,65 @@
 {
-    "whyUsTitle": "Why Us?",
+  "cataloge": {
+    "whyUsTitle": "Why us?",
+    "bestSleepForEveryone": "The Best Sleep for Everyone",
+    "sleep": "The Best Sleep for Everyone",
+    "header": "You can browse our catalogs to get detailed information about our wide range and innovative solutions, and see our logos that reflect the strength and values of our brand. We meticulously work on every detail to offer you the very best.",
+    "first": "Our company, which exports to over 25 countries across 7 continents, stands out with its eco-friendly energy production system. Our facilities generate their own energy through solar panel systems and are entirely based on environmentally friendly and renewable energy sources.",
+    "second": "Our products, designed with powerful and specialized technologies and featuring a comfortable and ergonomic structure, are carefully selected to offer every visitor an unforgettable sleep experience.",
+    "button": "Download",
+    "collection": "Sleep & Bed Full Collection ENG"
+  },
+  "infopage":{
+
+    "Infoheading": "Ensure your peaceful sleep",
+    "Infoparagraph": "Currently, Sleep & Bed exports to more than 25 countries and 7 continents. The facility features an eco-friendly energy production system. Sleep & Bed facilities generate their own energy using solar panel systems and rely exclusively on eco-friendly and renewable energy sources."
+  },
+  "contactinfo": {
+    "address": "Batumi, A. Pushkin St. 117\nBatumi, A. Pushkin St. 44\nTbilisi, T. Eristavi St. 1",
+    "contacts": "Contact Info",
+    "batumi": "batumi",
+    "tbilisi":"tbilisi",
+    "mondayToFriday": "Monday–Friday",
+    "saturday": "Saturday",
+    "sunday": "Sunday: Closed"
+   
+  },
+  "navitems": {
+    "products": "Products",
+    "pillows": "Pillows",
+    "blanket": "Blanket",
+    "matrass": "Matrass",
+    "toper": "Toper",
+    "catalogue": "Catalogue",
+    "aboutUs": "About Us",
+    "whySleepAndBed": "Why Sleep & Bed?",
+    "gallery": "Gallery"
+  },
+  "about": {
+    "products": "Products",
+    "more":"Show more",
+    "wait": "No products found. Please check back later.",
+    "less":"Show",
+    "comf": "Your comfort is our priority.",
+    "sleep":"Best sleep for everyone",
+    
+    "our":"We offer high-quality, environmentally friendly sleep products designed with the latest technology. Our commitment goes beyond just products - we offer reliability, comfort and innovation to improve sleep quality worldwide.",
+    "story":"Our story",
+    "sb":"    Sleep&Bed, originally founded under the name Vizyon Mattress in 2011 as part of the Mitsan Group, has grown into a rapidly expanding sleep brand with hundreds of sales points and dozens of stores across 4 continents in more than 25 countries. With eco-conscious production principles, automated production lines, rollpack technology, and high-quality product standards — all powered by our self-sustaining 25,000 m² facility — Sleep&Bed is driven by experienced R&D and manufacturing teams who understand local sleep cultures, climate needs, and habits across the globe. We’re proud to be one of the leading advocates and producers of sleep culture worldwide. From the very beginning, Sleep&Bed has stood at the forefront of the industry — thanks to our ability to manufacture our own sponge and felt, our fast and integrated production cycle, our unique collection of products, and our brand presence that resonates across the global market."
+  },
+  "sertificats":{
+    "serf":"Certificates",
+    "serfText":" All products manufactured under our brand comply with international quality and health standards, which are strictly controlled according to different regions of the world.",
+   "BSCI": "BSCI certifies that our production meets international standards in work conditions, employee rights, and social responsibility.",
+  "RCS": "RCS confirms our products are made from recycled materials and support sustainable, eco-friendly production.",
+  "Sertipur": "Sertipur guarantees our foams are safe, chemical-free, and produced with health and sustainability in mind.",
+  "ISO9001": "ISO 9001 shows our commitment to high-quality production, customer satisfaction, and continuous improvement.",
+  "ISO14001": "ISO 14001 proves our processes are environmentally responsible and aligned with global sustainability goals.",
+  "ISO45000": "ISO 45001 reflects our dedication to safe workplaces and employee health through international safety standards.",
+  "GRS": "GRS certifies our use of recycled materials and responsible production practices, supporting a greener future.",
+  "OEKOTEX": "OEKO-TEX ensures our textiles are free from harmful chemicals and meet high safety and eco standards."
+  },
+  "whyUsTitle": "Why Us?",
     "bestSleepForEveryone": "The Best Sleep for Everyone",
     "whyFranchise": "Why Become a Sleep&Bed Franchise?",
     "franchiseDescription1": "Sleep&Bed is a mattress manufacturing brand operating successfully in the retail sector since 1976 under the umbrella of Mitsan Group. Thanks to our long-standing history and innovative vision, we stand out not only for our production capacity but also for our comprehensive support to franchisees and sustainable business models.",

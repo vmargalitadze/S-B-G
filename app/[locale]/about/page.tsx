@@ -18,7 +18,7 @@ const pStyles: React.CSSProperties = {
 
 function Page() {
   const [open, setOpen] = useState(false)
-    const t = useTranslations();
+    const t = useTranslations("about");
   return (
     <>
       <section className="w-full mx-auto ">
@@ -26,10 +26,10 @@ function Page() {
           <div className="flex h-[50vh] items-center flex-wrap bg-overlay sm:p-6 before:bg-title before:bg-opacity-70 aboutbg">
             <div className="text-center z-50 w-full">
               <h2 className="text-white sm:pt-10 pt-[50px] text-[25px] md:text-[50px] font-normal text-center">
-              {t('about.products')}
+              {t('products')}
               </h2>
               <p className="max-w-[672px] text-white mx-auto lg:text-xl">
-              {t('about.comf')}
+              {t('comf')}
               </p>
             </div>
           </div>

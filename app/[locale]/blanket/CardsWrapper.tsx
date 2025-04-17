@@ -43,14 +43,14 @@ export default function CardsWrapper({ products }: Props) {
     quality={80}
     className="absolute inset-0 w-full h-full object-cover z-0"
     />
-      <div className="text-center z-50 w-full">
-        <h2 className="text-white text-[25px] sm:pt-10 pt-[50px] md:text-[50px] font-normal text-center">
-          {t('about.products')}
-        </h2>
-        <p className="max-w-[672px] text-white mx-auto lg:text-xl">
-          {t('about.sleep')}
-        </p>
-      </div>
+   <div className="text-center z-20 px-4">
+    <h2 className="text-white text-[25px] sm:pt-10 pt-[50px] md:text-[50px] font-normal">
+      {t("products")}
+    </h2>
+    <p className="max-w-[672px] text-white mx-auto lg:text-xl">
+      {t("sleep")}
+    </p>
+  </div>
     </div>
 
     {/* Product List Section */}
