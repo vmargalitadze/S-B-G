@@ -47,13 +47,13 @@ function Page() {
                     className="w-[250px] lg:max-w-[350px] h-auto object-cover rounded-lg"
                   />
                   <p className="mt-5 text-xl lg:text-[25px] leading-tight text-center mb-4 font-semibold">
-                  {t('about.sleep')}
+                  {t('sleep')}
                   </p>
                 </div>
 
                 <div className="w-full md:w-1/2">
                   <p className="text-lg text-center leading-relaxed ">
-                  {t('about.our')}
+                  {t('our')}
                   </p>
                 </div>
               </div>
@@ -68,19 +68,19 @@ function Page() {
                   <div className=" flex items-center">
                     <div className="data w-full">
                       <h2 className="text-xl lg:text-[25px] leading-tight text-center mb-4 font-semibold">
-                      {t('about.story')}
+                      {t('story')}
                       </h2>
                       <p 
                       style={ open ? {} : pStyles }
                       className="text-lg leading-8  text-center max-w-2xl mx-auto">
-                      {t('about.sb')}
+                      {t('sb')}
                       </p>
                       <div className="flex justify-center">
   <button
     onClick={() => setOpen(!open)}
     className="outline-none text-[16px] lg:text-[18px] mb-6 mt-6 rounded-lg cursor-pointer transition-all duration-150 ease-in-out border border-solid border-black px-4 py-2 sm:px-6 sm:py-3  sm:text-base uppercase focus:outline-none bg-black text-white"
   >
-    {open ?  t('about.less') : t('about.more')}
+    {open ?  t('less') : t('more')}
   </button>
 </div>
                     </div>
