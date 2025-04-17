@@ -7,7 +7,7 @@ import { ProductSchema, updateProductSchema} from "../validators";
 
 
 import { revalidatePath } from "next/cache";
-import { Mattress, Pillow, Quilt, Pad, Product } from "@prisma/client";
+import { Mattress, Pillow, Quilt, Pad, Product, ProductType } from "@prisma/client";
 
 
  function formatError(error: any) {
@@ -184,10 +184,10 @@ washable: parsed.washable ,
     } as SingleProduct;
   }
   
-  export async function getAllProduct() {
-   
+  export async function getAllProduct(type?: ProductType) {
     try {
       const products = await prisma.product.findMany({
+        where: type ? { type: type } : {}, // Filtering by ProductType if provided
         select: {
           id: true,
           titleEn: true,
@@ -198,13 +198,15 @@ washable: parsed.washable ,
         },
         orderBy: { createdAt: "desc" },
       });
-
+  
       return { data: products };
     } catch (error) {
       console.error("Error fetching products", error);
       return { data: [] };
     }
   }
+  
+  
 
 // ახალი ფუნქცია ფილტრაციისთვის
 export async function getFilteredProducts(filters: any) {

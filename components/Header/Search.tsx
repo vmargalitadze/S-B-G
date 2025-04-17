@@ -4,12 +4,14 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useDebouncedCallback } from "use-debounce";
 import { Input } from "@/components/ui/input";
 import { useEffect, useState } from "react";
-import { SearchIcon } from "lucide-react"; // ან გამოიყენე სხვა აიკონი ან custom SVG
+import { SearchIcon } from "lucide-react";
+import { useLocale } from "next-intl";
 
 export default function SearchComponent() {
   const searchParams = useSearchParams();
   const { replace, push } = useRouter();
   const pathname = usePathname();
+  const locale = useLocale(); // მოაქვს მიმდინარე ენა: "ge" ან "en"
 
   const [query, setQuery] = useState(searchParams.get("query") || "");
 
@@ -27,10 +29,13 @@ export default function SearchComponent() {
       params.delete("query");
     }
 
-    if (pathname !== "/all") {
-      push(`/all?${params.toString()}`);
+    // ვამოწმებთ არის თუ არა უკვე /[locale]/all
+    const path = pathname.includes("/all") ? pathname : `/${locale}/all`;
+
+    if (pathname !== path) {
+      push(`${path}?${params.toString()}`);
     } else {
-      replace(`${pathname}?${params.toString()}`);
+      replace(`${path}?${params.toString()}`);
     }
   }, 300);
 

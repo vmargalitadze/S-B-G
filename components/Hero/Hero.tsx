@@ -1,31 +1,36 @@
-import Image from 'next/image';
-import BgImage from '@/public/hero/hero-bg_cleanup.png'
+import Image from "next/image";
+import BgImage from "@/public/hero/1.webp";
 
-import React from 'react'
+import React from "react";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 function Hero() {
+  const t = useTranslations("hero");
   return (
     <section className="relative  w-full h-[850px] text-white flex items-center overflow-hidden">
-    <div className="absolute mt-[80px] inset-0 z-0">
-      <Image 
-        src={BgImage}
-        alt="Hero Background"
-      
-     
-        className="w-full h-full object-cover"
-      />
-    </div>
-  
-    <div className="container mx-auto px-4 relative z-10">
-   
-   
-      <h1 className="text-white sm:pt-10 pt-[50px] lg:mt-0 text-[25px] md:text-[50px] font-normal">Sleep & Bed Georgia</h1>
-    
-     
-    </div>
-  </section>
-  
-  )
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={BgImage}
+          alt="Hero Background"
+          className="w-full h-full object-cover"
+        />
+      </div>
+      <div className="absolute inset-0 bg-black/30 z-10" />
+      <div className="container mx-auto flex flex-col  relative z-10  items-center justify-center h-full">
+        <h1 className="text-white text-center text-[25px] md:text-[50px] font-normal">
+          Sleep & Bed Georgia
+        </h1>
+        <p className="max-w-[672px] mb-7 text-white mx-auto lg:text-xl">
+        {t("heroheader")}
+        </p>
+        <Link href='/all' className=" outline-none rounded-lg cursor-pointer transition-all duration-150 ease-in-out 
+                border border-solid border-black px-4 py-2 sm:px-6 sm:py-3 
+                text-[14px] sm:text-[18px] uppercase focus:outline-none 
+              bg-[#052C46] hover:text-white">{t("herolink")}</Link>
+      </div>
+    </section>
+  );
 }
 
-export default Hero
+export default Hero;

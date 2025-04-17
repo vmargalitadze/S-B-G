@@ -35,6 +35,18 @@
     "whySleepAndBed": "Why Sleep & Bed?",
     "gallery": "Gallery"
   },
+  "products": {
+  "all": "all",
+  "MATTRESS": "MATTRESS",
+  "PILLOW": "PILLOW",
+  "QUILT": "QUILT",
+  "PAD": "TOPPER",
+  "noProducts": "There are no products in this category."
+},
+"hero":{
+"heroheader":"The latest stylish and useful products are waiting for you.",
+"herolink":"Explore our products"
+},
   "about": {
     "products": "Products",
     "more":"Show more",

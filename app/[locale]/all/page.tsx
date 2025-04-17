@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-/* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import React, { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
@@ -12,44 +11,43 @@ import OtherFilters from "@/components/OtherFilters/OtherFilters";
 import { getAllProduct } from "@/lib/actions/actions";
 import dynamic from "next/dynamic";
 import { useTranslations } from "next-intl";
+import { ProductType } from "@prisma/client";
 
 const ITEMS_PER_PAGE = 8;
 
 type Product = {
   id: string;
-
-  type: "MATTRESS" | "PILLOW" | "QUILT" | "PAD";
+  type: ProductType;
   images: string[];
   titleEn: string;
   titleKa: string;
   categoryEn: string;
   categoryKa: string;
-
 };
 
-async function fetchProducts() {
-  const { data } = await getAllProduct(); 
+async function fetchProducts(type?: ProductType) {
+  const { data } = await getAllProduct(type); 
   return data.map((product: any) => ({
     ...product,
-    
   }));
 }
+
 const Loader = dynamic(() => import("./Loader"), { ssr: false });
 
 function PageContentWrapper() {
   const searchParams = useSearchParams();
   const [products, setProducts] = useState<Product[]>([]);
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState(""); 
+  const [selectedCategory, setSelectedCategory] = useState<ProductType | undefined>(undefined);
   const t = useTranslations("about");
   const query = searchParams.get("query") || "";
   const currentPage = Number(searchParams.get("page")) || 1;
 
   useEffect(() => {
-    fetchProducts().then((data) => {
-      setProducts(data); 
+    fetchProducts(selectedCategory).then((data) => {
+      setProducts(data);
     });
-  }, []);
+  }, [selectedCategory]);
 
   useEffect(() => {
     let updated = [...products];
@@ -61,12 +59,10 @@ function PageContentWrapper() {
     }
 
     if (selectedCategory) {
-      updated = updated.filter(
-        (product) => product.categoryEn === selectedCategory
-      );
+      updated = updated.filter((product) => product.type === selectedCategory); // Filter by ProductType
     }
 
-    setFilteredProducts(updated); // Set the filtered data based on search and category
+    setFilteredProducts(updated);
   }, [products, query, selectedCategory]);
 
   const pageCount = Math.ceil(filteredProducts.length / ITEMS_PER_PAGE);
@@ -81,26 +77,29 @@ function PageContentWrapper() {
            style={{ backgroundImage: "url('/prod/breadcumb.jpg')" }}>
         <div className="text-center z-50 w-full">
           <h2 className="text-white sm:pt-10 pt-[50px] lg:mt-0 text-[25px] md:text-[50px] font-normal text-center">
-          {t("products")}
+            {t("products")}
           </h2>
           <p className="max-w-[672px] text-white mx-auto lg:text-xl">
-          {t("sleep")}
+            {t("sleep")}
           </p>
         </div>
       </div>
 
       <div className="allcontainer">
         <div className="container pt-12 lg:pt-16 lg:!pb-16 mx-auto">
-          <Filter selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} />
+        <Filter
+  selectedCategory={selectedCategory}
+  setSelectedCategory={setSelectedCategory}
+/>
           <SearchComponent />
           {products.length === 0 ? (
-  <div className="flex justify-center items-center h-96">
-    <Loader />
-  </div>
-) : (
-  <Cards products={currentPageProducts} />
-)}
-          
+            <div className="flex justify-center items-center h-96">
+              <Loader />
+            </div>
+          ) : (
+            <Cards products={currentPageProducts} />
+          )}
+
           <div className="col-span-full mb-6 flex justify-center items-center mt-3">
             <PaginationComponent pageCount={pageCount} />
           </div>
