@@ -1,12 +1,10 @@
 {
-    "contactinfo": {
-        "address": "Batumi, A. Pushkin St. 117\nBatumi, A. Pushkin St. 44\nTbilisi, T. Eristavi St. 1",
-        "contacts": "Contact Info",
-        "batumi": "batumiი",
-        "tbilisi":"tbilisi",
-        "mondayToFriday": "Monday–Friday",
-        "saturday": "Saturday",
-       "sunday":"Sunday"
-       
-      }
+    "address": "Batumi, A. Pushkin St. 117\nBatumi, A. Pushkin St. 44\nTbilisi, T. Eristavi St. 1",
+    "contacts": "Contact Info",
+    "batumi": "batumiი",
+    "tbilisi":"tbilisi",
+    "mondayToFriday": "Monday–Friday",
+    "saturday": "Saturday",
+   "sunday":"Sunday"
+ 
 }

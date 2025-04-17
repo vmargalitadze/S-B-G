@@ -1,3 +1,4 @@
+
 "use client";
 import React, { useMemo } from "react";
 import Cards from "@/components/Cards/Cards";
@@ -51,10 +52,10 @@ export default function CardsWrapper({ products }: Props) {
   <div className="absolute inset-0 bg-black/60 z-10" />
   <div className="text-center z-20 px-4">
     <h2 className="text-white text-[25px] sm:pt-10 pt-[50px] md:text-[50px] font-normal">
-      {t("about.products")}
+      {t("products")}
     </h2>
     <p className="max-w-[672px] text-white mx-auto lg:text-xl">
-      {t("about.sleep")}
+      {t("sleep")}
     </p>
   </div>
 </div>
