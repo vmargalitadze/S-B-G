@@ -11,7 +11,7 @@ export default function Navbar() {
 
   const navItems = [
     {
-      label: t("navItems.products"),
+      label: t("products"),
       link: "/all",
       children: [
         { label: t("pillows"), link: "/pillows" },
@@ -22,7 +22,7 @@ export default function Navbar() {
       ],
     },
     {
-      label: t("navItems.aboutUs"),
+      label: t("aboutUs"),
       link: "/about",
       children: [
         { label: t("whySleepAndBed"), link: "/why" },
