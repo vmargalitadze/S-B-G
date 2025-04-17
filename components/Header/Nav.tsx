@@ -7,7 +7,7 @@ import LocalSwitcher from "../switcher";
 import { useTranslations } from "next-intl";
 
 export default function Navbar() {
-  const t = useTranslations("navitems");
+  const t = useTranslations();
 
   const navItems = [
     {
