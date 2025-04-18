@@ -5,8 +5,11 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { z } from "zod";
 import { ProductSchema } from "@/lib/validators";
+interface EditProductPageProps {
+  params: { id: string };
+}
 
-export default async function EditProductPage({ params }: { params: { id: string } }) {
+export default async function EditProductPage({ params }: EditProductPageProps) {
   const product = await getSingleProduct(params.id);
 
   if (!product) return notFound();
