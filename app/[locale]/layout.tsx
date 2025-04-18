@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
 import "../globals.css";
 import Header from "@/components/Header/Header";
+
 import Footer from "@/components/Footer/Footer";
 import {NextIntlClientProvider} from 'next-intl';
 import SIdeLogo from "@/components/SideLogo/SideLogo";

@@ -1,13 +1,18 @@
 import { useState } from 'react';
-import {  FaTrash } from 'react-icons/fa';
+import { FaEdit, FaTrash } from 'react-icons/fa';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { deleteProduct } from '@/lib/actions/actions';
-import { ProductType } from '@/lib/ProductType';
 
+type Product = {
+  id: string;
+  images: string[];
+  titleKa: string;
+  type: string;
+};
 
-export default function All({ products,  }: { products: ProductType[] }) {
+export default function All({ products,  }: { products: Product[] }) {
   const [productList, setProductList] = useState(products);
 
   const handleDelete = async (id: string) => {
@@ -43,10 +48,10 @@ export default function All({ products,  }: { products: ProductType[] }) {
               <tr key={product.id} className="border-b hover:bg-gray-50 transition">
                 <td className="p-4">
                   <div className="w-12 h-12 relative rounded-full overflow-hidden">
-                    <Image  loading="lazy"  quality={80}
+                    <Image
                       src={product.images?.[0] ?? '/placeholder.jpg'}
                       alt={product.titleKa}
-                      width={48} height={48}
+                      fill
                       className="object-cover"
                       unoptimized
                     />
@@ -55,7 +60,9 @@ export default function All({ products,  }: { products: ProductType[] }) {
                 <td className="p-4 font-medium"> <Link href={`/product/${product.id}`}>{product.titleKa}    </Link></td>
                 <td className="p-4 text-gray-600">{product.type}</td>
                 <td className="p-4 flex justify-center gap-4">
-                  
+                  <Link href={`/admin/edit/${product.id}`}>
+                    <FaEdit className="text-blue-600 hover:text-blue-800 cursor-pointer" size={18} />
+                  </Link>
                   <Button className="cursor-pointer" onClick={() => handleDelete(product.id)}>
                     <FaTrash className="cursor-pointer" size={18} />
                   </Button>

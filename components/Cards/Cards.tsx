@@ -18,13 +18,13 @@ function Cards({ products }: CardsProps) {
 
   
   return (
-    <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-10">
+    <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-5">
       {products.map((product) => {
         const title = isGe ? product.titleKa : product.titleEn;
         const category = isGe ? product.categoryKa : product.categoryEn;
 
         return (
-          <div key={product.id} className="max-w-sm w-full rounded-2xl shadow-xl mb-9 relative group">
+          <div key={product.id} className="max-w-sm w-full rounded-2xl shadow-xl  lg:mb-9 relative group">
             <div className="w-full h-96 cursor-pointer overflow-hidden relative rounded-lg">
               <Link href={`/product/${product.id}`}>
                 <Image height={384} width={384} quality={80} loading="lazy"

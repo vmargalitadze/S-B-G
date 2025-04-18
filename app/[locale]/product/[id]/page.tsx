@@ -124,7 +124,7 @@ const DetailPage = async(props: {
                             href={feature.href}
                             className="font-semibold flex items-center gap-2 p-2 text-[15px] text-gray-800 hover:underline"
                           >
-                            <Image loading="lazy"
+                            <Image
                               src={feature.logo}
                               alt="logo"
                               width={42}
