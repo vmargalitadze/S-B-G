@@ -5,12 +5,13 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { z } from "zod";
 import { ProductSchema } from "@/lib/validators";
-interface EditProductPageProps {
-  params: { id: string };
-}
 
-export default async function EditProductPage({ params }: EditProductPageProps) {
-  const product = await getSingleProduct(params.id);
+
+const DetailPage = async(props: {
+  params:Promise< {id:string} >
+}) =>  {
+  const { id} = await props.params;
+  const product = await getSingleProduct(id);
 
   if (!product) return notFound();
 
@@ -36,3 +37,4 @@ export default async function EditProductPage({ params }: EditProductPageProps) 
     </div>
   );
 }
+export default DetailPage;
