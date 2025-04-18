@@ -43,6 +43,10 @@
   "PAD": "TOPPER",
   "noProducts": "There are no products in this category."
 },
+"slice":{
+"ourProducts":"Our products",
+"viewAll":"Exolore"
+},
 "hero":{
 "heroheader":"The latest stylish and useful products are waiting for you",
 "herolink":"Explore our products"

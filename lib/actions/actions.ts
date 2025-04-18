@@ -196,7 +196,7 @@ washable: parsed.washable ,
           createdAt: true,
           images: true,
         },
-        orderBy: { createdAt: "desc" },
+        orderBy: { createdAt: "asc" },
       });
   
       return { data: products };
