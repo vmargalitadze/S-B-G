@@ -4,15 +4,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { deleteProduct } from '@/lib/actions/actions';
+import { ProductType } from '@/lib/ProductType';
 
-type Product = {
-  id: string;
-  images: string[];
-  titleKa: string;
-  type: string;
-};
 
-export default function All({ products,  }: { products: Product[] }) {
+export default function All({ products,  }: { products: ProductType[] }) {
   const [productList, setProductList] = useState(products);
 
   const handleDelete = async (id: string) => {
