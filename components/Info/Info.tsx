@@ -9,11 +9,11 @@ function Info() {
   
   return (
     <>
-      <section className="lg:py-[50px]">
+      <section className="lg:py-[50px] mt-[50px] lg:mt-0">
         <section className="py-[20px] lg:py-[70px]">
           <div className="container mx-auto">
             <div className="flex flex-col md:flex-row lg:flex-row lg:gap-x-[100px]">
-              {/* image */}
+          
               <div className="flex-1 order-1 lg:-order-1">
                 <Image   loading="lazy" quality={80}
                   alt="..."
