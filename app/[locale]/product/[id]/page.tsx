@@ -92,24 +92,43 @@ const DetailPage = async(props: {
             </p>
 
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {product.type === 'PILLOW' && product.pillow && (
-                <>
-                  <p><strong>{isGe ? 'ზომა' : 'Size'}:</strong> {product.pillow.size}</p>
-                  <p><strong>{isGe ? 'წონა' : 'Weight'}:</strong> {product.pillow.weight} გრ</p>
-                  <p><strong>{isGe ? 'გარეთა ქსოვილი' : 'Outer Fabric'}:</strong> {isGe ? product.pillow.outerFabric : product.pillow.outerFabricEn}</p>
-                  <p><strong>{isGe ? 'შევსება' : 'Filling'}:</strong> {isGe ? product.pillow.filling : product.pillow.fillingEn}</p>
-                  <p><strong>{isGe ? 'შეფუთვა' : 'Packaging'}:</strong> {isGe ? product.pillow.packaging : product.pillow.packagingEn}</p>
-                </>
-              )}
+            {product.type === 'PILLOW' && product.pillow && (
+  <>
+    {product.pillow.size && (
+      <p><strong>{isGe ? 'ზომა' : 'Size'}:</strong> {product.pillow.size}</p>
+    )}
+    {product.pillow.weight && (
+      <p><strong>{isGe ? 'წონა' : 'Weight'}:</strong> {product.pillow.weight} გრ</p>
+    )}
+    {(isGe ? product.pillow.outerFabric : product.pillow.outerFabricEn) && (
+      <p><strong>{isGe ? 'გარეთა ქსოვილი' : 'Outer Fabric'}:</strong> {isGe ? product.pillow.outerFabric : product.pillow.outerFabricEn}</p>
+    )}
+    {(isGe ? product.pillow.filling : product.pillow.fillingEn) && (
+      <p><strong>{isGe ? 'შევსება' : 'Filling'}:</strong> {isGe ? product.pillow.filling : product.pillow.fillingEn}</p>
+    )}
+    {(isGe ? product.pillow.packaging : product.pillow.packagingEn) && (
+      <p><strong>{isGe ? 'შეფუთვა' : 'Packaging'}:</strong> {isGe ? product.pillow.packaging : product.pillow.packagingEn}</p>
+    )}
+  </>
+)}
 
-              {product.type === 'QUILT' && product.quilt && (
-                <>
-                  <p><strong>{isGe ? 'ზომა' : 'Dimensions'}:</strong> {product.quilt.dimensions}</p>
-                  <p><strong>{isGe ? 'ქსოვილი' : 'Fabric'}:</strong> {isGe ? product.quilt.fabric : product.quilt.fabricEn}</p>
-                  <p><strong>{isGe ? 'შევსება' : 'Filling'}:</strong> {isGe ? product.quilt.filling : product.quilt.fillingEn}</p>
-                  <p><strong>{isGe ? 'წონა' : 'Weight'}:</strong> {product.quilt.weight}</p>
-                </>
-              )}
+{product.type === 'QUILT' && product.quilt && (
+  <>
+    {product.quilt.dimensions && (
+      <p><strong>{isGe ? 'ზომა' : 'Dimensions'}:</strong> {product.quilt.dimensions}</p>
+    )}
+    {(isGe ? product.quilt.fabric : product.quilt.fabricEn) && (
+      <p><strong>{isGe ? 'ქსოვილი' : 'Fabric'}:</strong> {isGe ? product.quilt.fabric : product.quilt.fabricEn}</p>
+    )}
+    {(isGe ? product.quilt.filling : product.quilt.fillingEn) && (
+      <p><strong>{isGe ? 'შევსება' : 'Filling'}:</strong> {isGe ? product.quilt.filling : product.quilt.fillingEn}</p>
+    )}
+    {product.quilt.weight && (
+      <p><strong>{isGe ? 'წონა' : 'Weight'}:</strong> {product.quilt.weight}</p>
+    )}
+  </>
+)}
+
 
               {(product.type === 'PAD' || product.type === 'MATTRESS') && (
                 <>
