@@ -164,17 +164,21 @@ const DetailPage = async(props: {
         </div>
 
        
-        <div className="container mt-10 text-center mx-auto gap-6 lg:gap-12">
-          <h1 className="text-3xl font-semibold">{isGe ? 'აღწერა' : 'Description'}:</h1>
-          <p className="mt-4 text-[16px]">
-            {product.type === 'MATTRESS' && product.mattress && (
-              isGe ? product.mattress.descriptionKa : product.mattress.descriptionEn
-            )}
-            {product.type === 'PAD' && product.pad && (
-              isGe ? product.pad.descriptionKa : product.pad.descriptionEn
-            )}
-          </p>
-        </div>
+        {(product.type === 'MATTRESS' && product.mattress && (isGe ? product.mattress.descriptionKa : product.mattress.descriptionEn)) ||
+ (product.type === 'PAD' && product.pad && (isGe ? product.pad.descriptionKa : product.pad.descriptionEn)) ? (
+  <div className="container mt-10 text-center mx-auto gap-6 lg:gap-12">
+    <h1 className="text-3xl font-semibold">{isGe ? 'აღწერა' : 'Description'}:</h1>
+    <p className="mt-4 text-[16px]">
+      {product.type === 'MATTRESS' && product.mattress && (
+        isGe ? product.mattress.descriptionKa : product.mattress.descriptionEn
+      )}
+      {product.type === 'PAD' && product.pad && (
+        isGe ? product.pad.descriptionKa : product.pad.descriptionEn
+      )}
+    </p>
+  </div>
+) : null}
+
       </div>
     </section>
   );
