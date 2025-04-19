@@ -129,7 +129,7 @@ const DetailPage = async(props: {
                               alt="logo"
                               width={42}
                               height={42}
-                              quality={80}
+                            
                               className="object-contain"
                             />
                             {isGe ? feature.label : feature.labelEn}
@@ -144,7 +144,7 @@ const DetailPage = async(props: {
           </div>
         </div>
 
-        {/* Description */}
+       
         <div className="container mt-10 text-center mx-auto gap-6 lg:gap-12">
           <h1 className="text-3xl font-semibold">{isGe ? 'აღწერა' : 'Description'}:</h1>
           <p className="mt-4 text-[16px]">

@@ -11,7 +11,7 @@ const ProductImages = ({ images }: { images: string[] }) => {
   return (
     <div className="flex mt-[200px] flex-col  space-y-4">
     
-      <Image   quality={80}
+      <Image   
         src={images[current]}
         alt="Product Image"
         width={400}
@@ -30,7 +30,7 @@ const ProductImages = ({ images }: { images: string[] }) => {
               current === index && ""
             )}
           >
-            <Image    quality={80} src={image} alt="Thumbnail" width={80} height={80} className="w-[80px] h-[80px] object-cover rounded-md" />
+            <Image   src={image} alt="Thumbnail" width={80} height={80} className="w-[80px] h-[80px] object-cover rounded-md" />
           </div>
         ))}
       </div>
