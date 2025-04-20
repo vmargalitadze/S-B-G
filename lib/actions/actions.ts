@@ -109,7 +109,8 @@ washable: parsed.washable ,
               fabricEn: parsed.fabricEn,
               fillingEn: parsed.fillingEn,
               weight: parsed.weight,
-        
+              minitext: parsed.minitext,
+              minitextEn: parsed.minitextEn,
             },
           });
 

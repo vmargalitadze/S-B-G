@@ -100,6 +100,8 @@ CREATE TABLE "Quilt" (
     "fabricEn" TEXT NOT NULL,
     "fillingEn" TEXT NOT NULL,
     "weight" TEXT NOT NULL,
+    "minitext" TEXT NOT NULL,
+    "minitextEn" TEXT NOT NULL,
 
     CONSTRAINT "Quilt_pkey" PRIMARY KEY ("id")
 );

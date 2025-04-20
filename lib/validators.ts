@@ -69,6 +69,8 @@ export const QuiltSchema = z.object({
   filling: z.string(),
   fillingEn: z.string(),
   weight: z.string(),
+  minitext: z.string(),
+  minitextEn: z.string(),
 });
 
 

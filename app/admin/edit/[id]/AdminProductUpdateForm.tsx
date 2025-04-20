@@ -311,8 +311,7 @@ export default function AdminProductUpdateForm({
           {productType === "PILLOW" && (
   <>
     <Input {...form.register("size")} placeholder="ზომა" className={inputClass} />
-    <Input {...form.register("minitext")} placeholder="აღწერისთვის ქართულად" className={inputClass} />
-    <Input {...form.register("minitextEn")} placeholder="აღწერისთვის" className={inputClass} />
+
     <Input type="number" {...form.register("weight", { valueAsNumber: true })} placeholder="წონა" className={inputClass} />
     <Input {...form.register("outerFabric")} placeholder="გარე ქსოვილი (KA)" className={inputClass} />
     <Input {...form.register("outerFabricEn")} placeholder="გარე ქსოვილი (EN)" className={inputClass} />
@@ -320,6 +319,14 @@ export default function AdminProductUpdateForm({
     <Input {...form.register("fillingEn")} placeholder="შევსება (EN)" className={inputClass} />
     <Input {...form.register("packaging")} placeholder="შეფუთვა (KA)" className={inputClass} />
     <Input {...form.register("packagingEn")} placeholder="შეფუთვა (EN)" className={inputClass} />
+    
+    <div className="flex gap-y-5 flex-col">
+
+<textarea {...form.register("minitext")} placeholder="აღწერა (EN)" 
+className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+<textarea {...form.register("minitextEn")} placeholder="აღწერა (KA)" 
+className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+</div>
   </>
 )}
 {productType === "PAD" && (
@@ -391,6 +398,14 @@ export default function AdminProductUpdateForm({
       <textarea {...form.register("descriptionEn")} placeholder="აღწერა (EN)" className={inputClass} />
       <textarea {...form.register("descriptionKa")} placeholder="აღწერა (KA)" className={inputClass} />
     </div>
+    
+    <div className="flex gap-y-5 flex-col">
+
+<textarea {...form.register("minitext")} placeholder="აღწერა (EN)" 
+className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+<textarea {...form.register("minitextEn")} placeholder="აღწერა (KA)" 
+className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+</div>
   </>
 )}
 

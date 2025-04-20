@@ -116,5 +116,6 @@ model Quilt {
     fabricEn        String
   fillingEn       String
   weight        String
-
+ minitext    String
+  minitextEn  String
 }
