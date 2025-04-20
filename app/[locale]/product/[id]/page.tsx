@@ -4,7 +4,8 @@ import { getSingleProduct } from '@/lib/actions/actions';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Mattress, Pad } from '@prisma/client';
-
+import ProductCarousel from '../ProductCarousel';
+import { getAllProduct } from '@/lib/actions/actions';
 type Feature = {
   key: keyof Pad & keyof Mattress;
   label: string;
@@ -75,7 +76,8 @@ const DetailPage = async(props: {
       ? product.pad?.[key]
       : undefined;
   };
-
+  const { data: allSameTypeProducts } = await getAllProduct(product.type);
+  const filtered = allSameTypeProducts.filter(p => p.id !== id).slice(0, 4);
   return (
     <section className="w-full mx-auto max-w-[1440px]">
       <div className="text-black py-10">
@@ -109,8 +111,8 @@ const DetailPage = async(props: {
     {(isGe ? product.pillow.packaging : product.pillow.packagingEn) && (
       <p><strong>{isGe ? 'შეფუთვა' : 'Packaging'}:</strong> {isGe ? product.pillow.packaging : product.pillow.packagingEn}</p>
     )}
-     {(isGe ? product.pillow.packaging : product.pillow.packagingEn) && (
-      <p><strong>{isGe ? 'აღწერა' : 'Description'}:</strong> {isGe ? product.pillow.minitext : product.pillow.minitextEn}</p>
+     {(isGe ? product.pillow.minitext : product.pillow.minitextEn) && (
+      <p><strong></strong> {isGe ? product.pillow.minitext : product.pillow.minitextEn}</p>
     )}
   </>
 )}
@@ -129,39 +131,55 @@ const DetailPage = async(props: {
     {product.quilt.weight && (
       <p><strong>{isGe ? 'წონა' : 'Weight'}:</strong> {product.quilt.weight}</p>
     )}
+
+{(isGe ? product.quilt.minitext : product.quilt.minitextEn) && (
+      <p><strong></strong> {isGe ? product.quilt.minitext : product.quilt.minitextEn}</p>
+    )}
   </>
 )}
 
 
-              {(product.type === 'PAD' || product.type === 'MATTRESS') && (
-                <>
-                  {ALL_FEATURES.map((feature, index) => {
-                    const value = getFeatureValue(feature.key);
-                    if (!value) return null;
+{(product.type === 'PAD' || product.type === 'MATTRESS') && (
+  <>
+    {ALL_FEATURES.map((feature, index) => {
+      const value = getFeatureValue(feature.key);
+      if (!value) return null;
 
-                    return (
-                      <div key={index}>
-                        <div className="flex items-center space-x-2 p-2 rounded-lg transition">
-                          <Link
-                            href={feature.href}
-                            className="font-semibold flex items-center gap-2 p-2 text-[15px] text-gray-800 hover:underline"
-                          >
-                            <Image
-                              src={feature.logo}
-                              alt="logo"
-                              width={42}
-                              height={42}
-                            
-                              className="object-contain"
-                            />
-                            {isGe ? feature.label : feature.labelEn}
-                          </Link>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </>
-              )}
+      return (
+        <div key={index}>
+          <div className="flex items-center space-x-2 p-2 rounded-lg transition">
+            <Link
+              href={feature.href}
+              className="font-semibold flex items-center gap-2 p-2 text-[15px] text-gray-800 hover:underline"
+            >
+              <Image
+                src={feature.logo}
+                alt="logo"
+                width={42}
+                height={42}
+                className="object-contain"
+              />
+              {isGe ? feature.label : feature.labelEn}
+            </Link>
+          </div>
+        </div>
+      );
+    })}
+
+    {/* აქ დავამატოთ minitext */}
+    {(product.type === 'PAD' && product.pad?.minitext) && (
+      <p className="mt-2 text-[15px]">
+        {isGe ? product.pad.minitext : product.pad.minitextEn}
+      </p>
+    )}
+    {(product.type === 'MATTRESS' && product.mattress?.minitext) && (
+      <p className="mt-2 text-[15px]">
+        {isGe ? product.mattress.minitext : product.mattress.minitextEn}
+      </p>
+    )}
+  </>
+)}
+
             </div>
           </div>
         </div>
@@ -181,7 +199,7 @@ const DetailPage = async(props: {
     </p>
   </div>
 ) : null}
-
+      <ProductCarousel products={filtered} locale={locale} />
       </div>
     </section>
   );

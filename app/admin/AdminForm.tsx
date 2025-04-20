@@ -334,9 +334,9 @@ const onSubmit = async (data: z.infer<typeof ProductSchema>) => {
 
 <div className="flex gap-y-5 flex-col">
 
-<textarea {...form.register("minitext")} placeholder="აღწერა (EN)" 
+<textarea {...form.register("minitext")} placeholder="აღწერის ტექსტი ქართულად (EN)" 
 className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
-<textarea {...form.register("minitextEn")} placeholder="აღწერა (KA)" 
+<textarea {...form.register("minitextEn")} placeholder="აღწერის ტექსტი ინგლისურად" 
 className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 </div>
   </>
@@ -352,12 +352,11 @@ className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:bord
     <Input {...form.register("fillingEn")} placeholder="შევსება (EN)" className={inputClass} />
     <Input {...form.register("packaging")} placeholder="შეფუთვა (KA)" className={inputClass} />
     <Input {...form.register("packagingEn")} placeholder="შეფუთვა (EN)" className={inputClass} />
-
     <div className="flex gap-y-5 flex-col">
 
-<textarea {...form.register("minitext")} placeholder="აღწერა (EN)" 
+<textarea {...form.register("minitext")} placeholder="აღწერის ტექსტი ქართულად (EN)" 
 className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
-<textarea {...form.register("minitextEn")} placeholder="აღწერა (KA)" 
+<textarea {...form.register("minitextEn")} placeholder="აღწერის ტექსტი ინგლისურად" 
 className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 </div>
   </>
@@ -425,9 +424,9 @@ className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:bord
 
     <div className="flex gap-y-5 flex-col">
 
-<textarea {...form.register("minitext")} placeholder="აღწერა (EN)" 
+<textarea {...form.register("minitext")} placeholder="აღწერის ტექსტი ქართულად (EN)" 
 className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
-<textarea {...form.register("minitextEn")} placeholder="აღწერა (KA)" 
+<textarea {...form.register("minitextEn")} placeholder="აღწერის ტექსტი ინგლისურად" 
 className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 </div>
   </>
