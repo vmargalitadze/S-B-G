@@ -86,13 +86,39 @@ const DetailPage = async(props: {
           <div className="w-full lg:w-1/2 flex justify-center">
             <ProductImages images={product.images} />
           </div>
-          <div className="w-full lg:w-1/2 lg:mt-16 p-4 sm:p-6 flex flex-col">
+          <div className="w-full lg:w-1/2 lg:mt-28 p-4 sm:p-6 flex flex-col">
             <h2 className="mt-5 text-xl lg:text-[30px] text-center lg:text-start mb-5 font-semibold">
               {title}
             </h2>
             <p className="text-[15px] lg:text-[17px] leading-tight mb-4 font-semibold">
               {second}
             </p>
+
+<div className="">
+{product.type === 'PILLOW' && product.pillow?.minitext && (
+  <p className="mt-4 text-[15px] w-full">
+    {isGe ? product.pillow.minitext : product.pillow.minitextEn}
+  </p>
+)}
+
+{product.type === 'QUILT' && product.quilt?.minitext && (
+  <p className="mt-4 text-[15px] w-full">
+    {isGe ? product.quilt.minitext : product.quilt.minitextEn}
+  </p>
+)}
+
+{product.type === 'PAD' && product.pad?.minitext && (
+  <p className="mt-4 text-[15px] w-full">
+    {isGe ? product.pad.minitext : product.pad.minitextEn}
+  </p>
+)}
+
+{product.type === 'MATTRESS' && product.mattress?.minitext && (
+  <p className="mt-4 text-[15px] w-full">
+    {isGe ? product.mattress.minitext : product.mattress.minitextEn}
+  </p>
+)}
+</div>
 
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {product.type === 'PILLOW' && product.pillow && (
@@ -169,29 +195,7 @@ const DetailPage = async(props: {
 )}
 
             </div>
-            {product.type === 'PILLOW' && product.pillow?.minitext && (
-  <p className="mt-4 text-[15px] w-full">
-    {isGe ? product.pillow.minitext : product.pillow.minitextEn}
-  </p>
-)}
 
-{product.type === 'QUILT' && product.quilt?.minitext && (
-  <p className="mt-4 text-[15px] w-full">
-    {isGe ? product.quilt.minitext : product.quilt.minitextEn}
-  </p>
-)}
-
-{product.type === 'PAD' && product.pad?.minitext && (
-  <p className="mt-4 text-[15px] w-full">
-    {isGe ? product.pad.minitext : product.pad.minitextEn}
-  </p>
-)}
-
-{product.type === 'MATTRESS' && product.mattress?.minitext && (
-  <p className="mt-4 text-[15px] w-full">
-    {isGe ? product.mattress.minitext : product.mattress.minitextEn}
-  </p>
-)}
           </div>
           
         </div>
