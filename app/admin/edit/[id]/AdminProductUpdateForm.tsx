@@ -311,6 +311,8 @@ export default function AdminProductUpdateForm({
           {productType === "PILLOW" && (
   <>
     <Input {...form.register("size")} placeholder="ზომა" className={inputClass} />
+    <Input {...form.register("minitext")} placeholder="აღწერისთვის ქართულად" className={inputClass} />
+    <Input {...form.register("minitextEn")} placeholder="აღწერისთვის" className={inputClass} />
     <Input type="number" {...form.register("weight", { valueAsNumber: true })} placeholder="წონა" className={inputClass} />
     <Input {...form.register("outerFabric")} placeholder="გარე ქსოვილი (KA)" className={inputClass} />
     <Input {...form.register("outerFabricEn")} placeholder="გარე ქსოვილი (EN)" className={inputClass} />

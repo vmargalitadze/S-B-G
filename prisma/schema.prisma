@@ -96,7 +96,8 @@ model Pillow {
   product     Product  @relation(fields: [id], references: [id])
   size        String
   weight      Int
-  
+  minitext    String
+  minitextEn  String
   outerFabric String
   filling     String
   packaging   String

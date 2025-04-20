@@ -4,7 +4,7 @@
 import { z } from "zod";
 import { prisma } from "../prisma";
 import { ProductSchema, updateProductSchema} from "../validators";
-
+import { writeFileSync } from "fs";
 
 import { revalidatePath } from "next/cache";
 import { Mattress, Pillow, Quilt, Pad, Product, ProductType } from "@prisma/client";
@@ -92,6 +92,8 @@ washable: parsed.washable ,
               outerFabricEn: parsed.outerFabricEn,
               fillingEn: parsed.fillingEn,
               packagingEn: parsed.packagingEn,
+              minitext: parsed.minitext,
+              minitextEn: parsed.minitextEn,
             },
           });
        

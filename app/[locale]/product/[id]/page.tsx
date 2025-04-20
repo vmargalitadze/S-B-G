@@ -109,6 +109,9 @@ const DetailPage = async(props: {
     {(isGe ? product.pillow.packaging : product.pillow.packagingEn) && (
       <p><strong>{isGe ? 'შეფუთვა' : 'Packaging'}:</strong> {isGe ? product.pillow.packaging : product.pillow.packagingEn}</p>
     )}
+     {(isGe ? product.pillow.packaging : product.pillow.packagingEn) && (
+      <p><strong>{isGe ? 'აღწერა' : 'Description'}:</strong> {isGe ? product.pillow.minitext : product.pillow.minitextEn}</p>
+    )}
   </>
 )}
 

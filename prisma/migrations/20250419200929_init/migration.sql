@@ -79,6 +79,8 @@ CREATE TABLE "Pillow" (
     "id" UUID NOT NULL DEFAULT gen_random_uuid(),
     "size" TEXT NOT NULL,
     "weight" INTEGER NOT NULL,
+    "minitext" TEXT NOT NULL,
+    "minitextEn" TEXT NOT NULL,
     "outerFabric" TEXT NOT NULL,
     "filling" TEXT NOT NULL,
     "packaging" TEXT NOT NULL,

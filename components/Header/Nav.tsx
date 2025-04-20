@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import Link from "next/link";
-import LocalSwitcher from "../switcher";
+
 import { useTranslations } from "next-intl";
 import LocalLanguage from "./language";
 
@@ -97,7 +97,7 @@ export default function Navbar() {
               )}
             </div>
           ))}
-          <LocalSwitcher />
+      
         </div>
 
         {/* Mobile Toggle Button */}

@@ -21,8 +21,8 @@ const OtherFilters = () => {
       className="flex flex-col items-center justify-center text-center p-4  transition-shadow duration-200"
     >
       <Image
-        width={50}
-        height={50}
+        width={70}
+        height={70}
         src={item.logo}
         alt={isGe ? item.label : item.labelEn}
         className="mb-2 object-contain"

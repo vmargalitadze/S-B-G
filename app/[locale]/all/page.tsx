@@ -100,7 +100,7 @@ function PageContentWrapper() {
             <Cards products={currentPageProducts} />
           )}
 
-          <div className="col-span-full mb-6 flex justify-center items-center mt-3">
+          <div className="col-span-full mb-6 flex justify-center items-center mt-2">
             <PaginationComponent pageCount={pageCount} />
           </div>
 

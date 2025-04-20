@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 const images = Array.from({ length: 12 }, (_, i) => `/gallery/${i + 1}.jpg`);
 
@@ -28,14 +29,14 @@ export default function GalleryPage() {
       setData({ img: images[data.i - 1], i: data.i - 1 });
     }
   };
-
+  const t = useTranslations("navitems");
   return (
     <section className="w-full mx-auto">
       {/* Header */}
       <div className="flex h-[50vh] items-center flex-wrap bg-overlay sm:p-6 before:bg-title before:bg-opacity-70" style={{ backgroundImage: "url('/prod/breadcumb.jpg')" }}>
         <div className="text-center z-50 w-full">
           <h2 className="text-white text-[25px] sm:pt-10 pt-[50px] md:text-[50px] font-normal text-center">
-          გალერია
+          {t('gallery')}
           </h2>
       
         </div>

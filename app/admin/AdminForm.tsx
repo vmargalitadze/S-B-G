@@ -335,6 +335,8 @@ const onSubmit = async (data: z.infer<typeof ProductSchema>) => {
 {productType === "PILLOW" && (
   <>
     <Input {...form.register("size")} placeholder="ზომა" className={inputClass} />
+    <Input {...form.register("minitext")} placeholder="აღწერა ქართულად" className={inputClass} />
+    <Input {...form.register("minitextEn")} placeholder="აღწერა ინგლისურად" className={inputClass} />
     <Input type="number" {...form.register("weight", { valueAsNumber: true })} placeholder="წონა" className={inputClass} />
     <Input {...form.register("outerFabric")} placeholder="გარე ქსოვილი (KA)" className={inputClass} />
     <Input {...form.register("outerFabricEn")} placeholder="გარე ქსოვილი (EN)" className={inputClass} />
@@ -344,6 +346,8 @@ const onSubmit = async (data: z.infer<typeof ProductSchema>) => {
     <Input {...form.register("packagingEn")} placeholder="შეფუთვა (EN)" className={inputClass} />
   </>
 )}
+
+
 
 {productType === "PAD" && (
   <>

@@ -28,7 +28,7 @@ export default function FranchiseSection() {
       <div className="allcontainer">
         <div className="container pt-12 lg:pt-12 lg:!pb-12 mx-auto">
           <section className="mb-12">
-            <h2 className="mt-5 text-xl lg:text-[30px] leading-tight lg:text-start text-center mb-5 font-semibold">
+            <h2 className="mt-5 text-xl lg:text-[25px] leading-tight lg:text-start text-center mb-5 font-semibold">
               {t('whyFranchise')}
             </h2>
             <p className="text-lg text-center leading-relaxed md:text-left">

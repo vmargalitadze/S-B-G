@@ -16,7 +16,7 @@ export default function Home() {
     <Hero />
 
    <Info />
-   <div className="flex rounded-lg container bg-[#052C46] mt-10  j py-10">
+   <div className="flex rounded-lg container bg-[#052C46] mt-8 lg:mt-0  j py-10">
 
    <Video />
    </div>

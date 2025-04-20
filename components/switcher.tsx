@@ -33,10 +33,10 @@ export default function LocaleSwitcher() {
   const currentLocale = locales.find(l => l.code === localeActive);
 
   return (
-    <div className="relative inline-block text-left">
+    <div className="relative inline-block h-[40px] text-left">
       <button
         onClick={() => setOpen(prev => !prev)}
-        className="inline-flex items-center gap-2 px-3 w-[120px] py-2 border rounded bg-white  text-black"
+        className="inline-flex items-center gap-2  h-[40px] px-3 w-[140px] py-2 border rounded bg-white  text-black"
       >
         <Image src={currentLocale?.flag || Am} alt="flag" width={20} height={20} className="rounded-full" />
         {currentLocale?.label}

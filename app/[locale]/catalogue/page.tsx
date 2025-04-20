@@ -33,7 +33,7 @@ function Page() {
         <div className="container pt-12 lg:pt-16 lg:!pb-16 mx-auto">
           <div className="py-10 px-4">
             <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
-              <div className="w-full md:w-1/2 flex justify-center mx-auto flex-col items-center md:items-start text-center md:text-left">
+              <div className="w-full md:ml-6 md:w-1/2 flex justify-center mx-auto flex-col items-center md:items-start text-center md:text-left">
                 <Image
                   loading="lazy"
                   quality={80}
@@ -55,8 +55,8 @@ function Page() {
           </div>
 
           {/* First Content Block */}
-          <section className="lg:py-[50px]">
-            <section className="py-[20px] lg:py-[50px]">
+          <section className="lg:py-[40px]">
+            <section className="py-[20px] ">
               <div className="container mx-auto">
                 <div className="flex flex-col md:flex-row lg:flex-row lg:gap-x-[100px]">
                   <div className="flex-1 order-1 lg:-order-1">
@@ -92,7 +92,7 @@ function Page() {
           </section>
 
           {/* Second Content Block */}
-          <section className="py-[20px] lg:py-[50px]">
+          <section className="py-[20px] lg:py-[30px]">
             <div className="container mx-auto">
               <div className="flex justify-center items-center flex-col md:flex-row lg:flex-row lg:gap-x-[100px]">
                 <div className="flex-1 mt-10 lg:mt-0 flex flex-col gap-y-4 justify-center order-1 lg:-order-1">

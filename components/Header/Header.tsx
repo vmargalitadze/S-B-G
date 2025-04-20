@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-
+import LocalSwitcher from "../switcher";
 import Search from "./Search";
 import ShiftingDropDown from "./Nav"
 
@@ -27,9 +27,17 @@ export default function Navbar() {
         </div>
 
         {/* Right: Search */}
-        <div className="hidden z-50 mt-11 md:block">
-          <Search />
-        </div>
+        <div className="hidden md:flex items-center gap-4 z-50">
+          <div className="mt-9 mr-6">
+
+  <Search />
+          </div>
+          <div className="mt-2">
+
+  <LocalSwitcher />
+          </div>
+</div>
+
       </div>
     </header>
   );

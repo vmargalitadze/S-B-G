@@ -57,6 +57,8 @@ export const PillowSchema = z.object({
   outerFabricEn: z.string(),
   fillingEn: z.string(),
   packagingEn: z.string(),
+  minitext: z.string(),
+  minitextEn: z.string(),
 });
 
 // Quilt-specific schema

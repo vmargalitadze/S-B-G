@@ -68,7 +68,7 @@ export default function CardsWrapper({ products }: Props) {
           ) : (
             <>
               <Cards products={paginatedProducts} />
-              <div className="col-span-full flex justify-center items-center mt-3">
+              <div className="col-span-full flex justify-center items-center ">
                 <PaginationComponent pageCount={pageCount} />
               </div>
             </>
