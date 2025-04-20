@@ -56,7 +56,8 @@ model Mattress {
   height          String
   descriptionEn String
   descriptionKa String
-  
+   minitext    String
+  minitextEn  String
   springTech   Boolean
   breathable      Boolean
   doubleSided     Boolean
@@ -78,7 +79,8 @@ model Pad {
 
   descriptionEn String
   descriptionKa String
-
+ minitext    String
+  minitextEn  String
   springTech   Boolean
   breathable      Boolean
   doubleSided     Boolean

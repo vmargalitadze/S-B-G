@@ -26,6 +26,8 @@ export const MattressSchema = z.object({
   dns: z.boolean(),
   latex: z.boolean(),
   washable: z.boolean(),
+  minitext: z.string(),
+  minitextEn: z.string(),
 });
 
 // Pad-specific schema
@@ -45,6 +47,8 @@ export const PadSchema = z.object({
   dns: z.boolean(),
   latex: z.boolean(),
   washable: z.boolean(),
+  minitext: z.string(),
+  minitextEn: z.string(),
 });
 
 // Pillow-specific schema

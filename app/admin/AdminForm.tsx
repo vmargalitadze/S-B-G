@@ -30,6 +30,8 @@ const BooleanSchema = z.object({
   titleKa: z.string(),
   categoryEn: z.string(),
   categoryKa: z.string(),
+  minitext:z.string().optional(),
+  minitextEn:z.string().optional(),
   secondtext: z.string().optional(),
   secondtextEn: z.string().optional(),
   images: z.array(z.string()),
@@ -329,6 +331,14 @@ const onSubmit = async (data: z.infer<typeof ProductSchema>) => {
     <textarea {...form.register("descriptionKa")} placeholder="აღწერა (KA)" 
   className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 </div>
+
+<div className="flex gap-y-5 flex-col">
+
+<textarea {...form.register("minitext")} placeholder="აღწერა (EN)" 
+className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+<textarea {...form.register("minitextEn")} placeholder="აღწერა (KA)" 
+className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+</div>
   </>
 )}
 
@@ -412,6 +422,14 @@ className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:bord
     <textarea {...form.register("descriptionKa")} placeholder="აღწერა (KA)" 
   className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
     </div>
+
+    <div className="flex gap-y-5 flex-col">
+
+<textarea {...form.register("minitext")} placeholder="აღწერა (EN)" 
+className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+<textarea {...form.register("minitextEn")} placeholder="აღწერა (KA)" 
+className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+</div>
   </>
 )}
 

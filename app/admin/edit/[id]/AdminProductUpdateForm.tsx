@@ -410,7 +410,7 @@ className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:bord
 )}
 
 
-          {/* დანარჩენი productType-ებიც დაამატე იმავე ლოგიკით რაც შენს შექმნის ფორმაში გაქვს */}
+
 
           <Button type="submit" className="mx-auto w-[200px] cursor-pointer bg-white text-black hover:bg-white">
             განაახლე პროდუქტი
