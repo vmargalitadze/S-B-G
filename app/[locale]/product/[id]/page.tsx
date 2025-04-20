@@ -101,7 +101,7 @@ const DetailPage = async(props: {
       <p><strong>{isGe ? 'ზომა' : 'Size'}:</strong> {product.pillow.size}</p>
     )}
     {product.pillow.weight && (
-      <p><strong>{isGe ? 'წონა' : 'Weight'}:</strong> {product.pillow.weight} გრ</p>
+      <p><strong>{isGe ? 'წონა' : 'Weight'}:</strong> {product.pillow.weight} {isGe ? 'გრამი' : 'gram'}</p>
     )}
     {(isGe ? product.pillow.outerFabric : product.pillow.outerFabricEn) && (
       <p><strong>{isGe ? 'გარეთა ქსოვილი' : 'Outer Fabric'}:</strong> {isGe ? product.pillow.outerFabric : product.pillow.outerFabricEn}</p>
