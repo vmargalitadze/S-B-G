@@ -27,7 +27,7 @@ function Cards({ products }: CardsProps) {
           <div key={product.id} className="max-w-sm w-full rounded-2xl shadow-xl  lg:mb-9 relative group">
             <div className="w-full h-96 cursor-pointer overflow-hidden relative rounded-lg">
               <Link href={`/product/${product.id}`}>
-                <Image height={384} width={384} quality={80} loading="lazy"
+                <Image height={384} width={384} 
                   className="w-full h-full object-cover group-hover:scale-110 duration-500 rounded-lg"
                   src={product.images?.[0] ?? '/default-image.jpg'} 
                   alt={title}

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import ProductImages from '../ProductImage';
 import { getSingleProduct } from '@/lib/actions/actions';
@@ -85,13 +86,39 @@ const DetailPage = async(props: {
           <div className="w-full lg:w-1/2 flex justify-center">
             <ProductImages images={product.images} />
           </div>
-          <div className="w-full lg:w-1/2 lg:mt-16 p-4 sm:p-6 flex flex-col">
+          <div className="w-full lg:w-1/2 lg:mt-28 p-4 sm:p-6 flex flex-col">
             <h2 className="mt-5 text-xl lg:text-[30px] text-center lg:text-start mb-5 font-semibold">
               {title}
             </h2>
             <p className="text-[15px] lg:text-[17px] leading-tight mb-4 font-semibold">
               {second}
             </p>
+
+<div className="">
+{product.type === 'PILLOW' && product.pillow?.minitext && (
+  <p className="mt-4 text-[15px] w-full">
+    {isGe ? product.pillow.minitext : product.pillow.minitextEn}
+  </p>
+)}
+
+{product.type === 'QUILT' && product.quilt?.minitext && (
+  <p className="mt-4 text-[15px] w-full">
+    {isGe ? product.quilt.minitext : product.quilt.minitextEn}
+  </p>
+)}
+
+{product.type === 'PAD' && product.pad?.minitext && (
+  <p className="mt-4 text-[15px] w-full">
+    {isGe ? product.pad.minitext : product.pad.minitextEn}
+  </p>
+)}
+
+{product.type === 'MATTRESS' && product.mattress?.minitext && (
+  <p className="mt-4 text-[15px] w-full">
+    {isGe ? product.mattress.minitext : product.mattress.minitextEn}
+  </p>
+)}
+</div>
 
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
             {product.type === 'PILLOW' && product.pillow && (
@@ -100,7 +127,7 @@ const DetailPage = async(props: {
       <p><strong>{isGe ? 'ზომა' : 'Size'}:</strong> {product.pillow.size}</p>
     )}
     {product.pillow.weight && (
-      <p><strong>{isGe ? 'წონა' : 'Weight'}:</strong> {product.pillow.weight} გრ</p>
+      <p><strong>{isGe ? 'წონა' : 'Weight'}:</strong> {product.pillow.weight} {isGe ? 'გრამი' : 'gram'}</p>
     )}
     {(isGe ? product.pillow.outerFabric : product.pillow.outerFabricEn) && (
       <p><strong>{isGe ? 'გარეთა ქსოვილი' : 'Outer Fabric'}:</strong> {isGe ? product.pillow.outerFabric : product.pillow.outerFabricEn}</p>
@@ -111,9 +138,7 @@ const DetailPage = async(props: {
     {(isGe ? product.pillow.packaging : product.pillow.packagingEn) && (
       <p><strong>{isGe ? 'შეფუთვა' : 'Packaging'}:</strong> {isGe ? product.pillow.packaging : product.pillow.packagingEn}</p>
     )}
-     {(isGe ? product.pillow.minitext : product.pillow.minitextEn) && (
-      <p><strong></strong> {isGe ? product.pillow.minitext : product.pillow.minitextEn}</p>
-    )}
+ 
   </>
 )}
 
@@ -132,9 +157,7 @@ const DetailPage = async(props: {
       <p><strong>{isGe ? 'წონა' : 'Weight'}:</strong> {product.quilt.weight}</p>
     )}
 
-{(isGe ? product.quilt.minitext : product.quilt.minitextEn) && (
-      <p><strong></strong> {isGe ? product.quilt.minitext : product.quilt.minitextEn}</p>
-    )}
+
   </>
 )}
 
@@ -166,22 +189,15 @@ const DetailPage = async(props: {
       );
     })}
 
-    {/* აქ დავამატოთ minitext */}
-    {(product.type === 'PAD' && product.pad?.minitext) && (
-      <p className="mt-2 text-[15px]">
-        {isGe ? product.pad.minitext : product.pad.minitextEn}
-      </p>
-    )}
-    {(product.type === 'MATTRESS' && product.mattress?.minitext) && (
-      <p className="mt-2 text-[15px]">
-        {isGe ? product.mattress.minitext : product.mattress.minitextEn}
-      </p>
-    )}
+
+
   </>
 )}
 
             </div>
+
           </div>
+          
         </div>
 
        
@@ -199,7 +215,10 @@ const DetailPage = async(props: {
     </p>
   </div>
 ) : null}
+<div className="container">
+
       <ProductCarousel products={filtered} locale={locale} />
+</div>
       </div>
     </section>
   );

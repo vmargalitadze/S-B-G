@@ -6,7 +6,7 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 const images = Array.from({ length: 12 }, (_, i) => `/gallery/${i + 1}.jpg`);
-
+import bg from '@/public/prod/breadcumb.jpg'
 export default function GalleryPage() {
   const [data, setData] = useState({ img: "", i: 0 });
 
@@ -32,17 +32,23 @@ export default function GalleryPage() {
   const t = useTranslations("navitems");
   return (
     <section className="w-full mx-auto">
-      {/* Header */}
-      <div className="flex h-[50vh] items-center flex-wrap bg-overlay sm:p-6 before:bg-title before:bg-opacity-70" style={{ backgroundImage: "url('/prod/breadcumb.jpg')" }}>
-        <div className="text-center z-50 w-full">
-          <h2 className="text-white text-[25px] sm:pt-10 pt-[50px] md:text-[50px] font-normal text-center">
-          {t('gallery')}
-          </h2>
-      
-        </div>
-      </div>
-
-      {/* Fullscreen Image Viewer */}
+                <div className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+   <Image
+     src={bg}
+     alt="Background"
+     fill
+ 
+     className="object-cover z-0"
+   />
+   <div className="absolute inset-0 bg-black/60 z-10" />
+   <div className="text-center z-20 px-4">
+     <h2 className="text-white text-[25px] sm:pt-10 pt-[50px] md:text-[50px] font-normal">
+       {t("gallery")}
+     </h2>
+  
+   </div>
+ </div>
+ 
       {data.img && (
         <div
           className="fixed inset-0 z-[9999] bg-black bg-opacity-90 flex justify-center items-center"
@@ -64,10 +70,10 @@ export default function GalleryPage() {
             </button>
           )}
 
-          <Image   loading="lazy"  quality={80}
+          <Image   
             alt="fullscreen"
             src={data.img}
-            width={150} height={150}
+            width={350} height={350}
             className="max-w-[90%] max-h-[90%] object-contain"
           />
 
@@ -88,7 +94,7 @@ export default function GalleryPage() {
           <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
             <Masonry gutter="10px">
               {images.map((image, i) => (
-                <Image  loading="lazy"  quality={80}
+                <Image  
                   key={i} width={300} height={300}
                   src={image}
                   onClick={() => viewImage(image, i)}
