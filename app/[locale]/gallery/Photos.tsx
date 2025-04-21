@@ -32,23 +32,17 @@ export default function GalleryPage() {
   const t = useTranslations("navitems");
   return (
     <section className="w-full mx-auto">
-                <div className="relative h-[50vh] flex items-center justify-center overflow-hidden">
-   <Image
-     src={bg}
-     alt="Background"
-     fill
- 
-     className="object-cover z-0"
-   />
-   <div className="absolute inset-0 bg-black/60 z-10" />
-   <div className="text-center z-20 px-4">
-     <h2 className="text-white text-[25px] sm:pt-10 pt-[50px] md:text-[50px] font-normal">
-       {t("gallery")}
-     </h2>
-  
-   </div>
- </div>
- 
+      {/* Header */}
+      <div className="flex h-[50vh] items-center flex-wrap bg-overlay sm:p-6 before:bg-title before:bg-opacity-70" style={{ backgroundImage: "url('/prod/breadcumb.jpg')" }}>
+        <div className="text-center z-50 w-full">
+          <h2 className="text-white text-[25px] sm:pt-10 pt-[50px] md:text-[50px] font-normal text-center">
+          {t('gallery')}
+          </h2>
+      
+        </div>
+      </div>
+
+      {/* Fullscreen Image Viewer */}
       {data.img && (
         <div
           className="fixed inset-0 z-[9999] bg-black bg-opacity-90 flex justify-center items-center"
@@ -70,7 +64,7 @@ export default function GalleryPage() {
             </button>
           )}
 
-          <Image   
+          <Image   loading="lazy"  quality={80}
             alt="fullscreen"
             src={data.img}
             width={350} height={350}

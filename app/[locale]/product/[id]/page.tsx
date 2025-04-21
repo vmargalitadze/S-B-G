@@ -191,6 +191,10 @@ const DetailPage = async(props: {
 
 
 
+
+  
+
+
   </>
 )}
 

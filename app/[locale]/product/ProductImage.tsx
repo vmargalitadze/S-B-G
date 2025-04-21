@@ -15,7 +15,7 @@ const ProductImages = ({ images }: { images: string[] }) => {
         src={images[current]}
         alt="Product Image"
         width={400}
-        height={400}
+        height={400} priority
         className="w-[450px] h-[450px] object-cover rounded-md"
       />
       
