@@ -33,14 +33,23 @@ export default function GalleryPage() {
   return (
     <section className="w-full mx-auto">
       {/* Header */}
-      <div className="flex h-[50vh] items-center flex-wrap bg-overlay sm:p-6 before:bg-title before:bg-opacity-70" style={{ backgroundImage: "url('/prod/breadcumb.jpg')" }}>
-        <div className="text-center z-50 w-full">
-          <h2 className="text-white text-[25px] sm:pt-10 pt-[50px] md:text-[50px] font-normal text-center">
-          {t('gallery')}
-          </h2>
-      
-        </div>
-      </div>
+      <div className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+   <Image
+     src={bg}
+     alt="Background"
+     fill
+     priority={false}
+     quality={80}
+     className="object-cover z-0"
+   />
+   <div className="absolute inset-0 bg-black/60 z-10" />
+   <div className="text-center z-20 px-4">
+     <h2 className="text-white text-[25px] sm:pt-10 pt-[50px] md:text-[50px] font-normal">
+       {t("gallery")}
+     </h2>
+  
+   </div>
+ </div>
 
       {/* Fullscreen Image Viewer */}
       {data.img && (
