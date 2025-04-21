@@ -87,7 +87,7 @@ function Carousel() {
                 <div className="imgBox">
                   <Image width={300} height={300}
                     src={i.src}
-                    quality={80} loading="lazy"
+                 
                     alt={i.title}
                     className="w-full h-full object-cover"
                   />

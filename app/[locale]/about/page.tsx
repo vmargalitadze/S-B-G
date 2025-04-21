@@ -41,8 +41,8 @@ function Page() {
               <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
                 <div className="w-full md:w-1/2 flex justify-center mx-auto flex-col items-center md:items-start text-center md:text-left">
                   <Image
-                    src={image} loading="lazy"
-                    quality={80}
+                    src={image} 
+             
                     alt="About Us"
                     className="w-[250px] lg:max-w-[350px] h-auto object-cover rounded-lg"
                   />
@@ -63,7 +63,7 @@ function Page() {
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-9">
                   <div className="img-box">
-                    <Image loading="lazy"   quality={80} src={bg2} alt="About Us tailwind page" className="max-lg:mx-auto rounded-lg object-cover" />
+                    <Image src={bg2} alt="About Us tailwind page" className="max-lg:mx-auto rounded-lg object-cover" />
                   </div>
                   <div className=" flex items-center">
                     <div className="data w-full">

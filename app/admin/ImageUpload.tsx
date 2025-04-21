@@ -36,7 +36,7 @@ const ImageUpload = ({ onChange, value }: ImageUploadProps) => {
           <h2 className="text-lg font-semibold">Uploaded Images</h2>
           <div className="grid grid-cols-2 gap-4">
             {imageUrls.map((url, index) => (
-              <Image  loading="lazy"  quality={80}
+              <Image  
                 key={index}
                 src={url}
                 alt={`Uploaded ${index}`}

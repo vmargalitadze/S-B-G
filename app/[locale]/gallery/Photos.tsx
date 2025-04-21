@@ -73,7 +73,7 @@ export default function GalleryPage() {
             </button>
           )}
 
-          <Image   loading="lazy"  quality={80}
+          <Image  
             alt="fullscreen"
             src={data.img}
             width={350} height={350}

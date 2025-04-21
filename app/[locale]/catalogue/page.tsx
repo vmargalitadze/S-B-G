@@ -35,8 +35,7 @@ function Page() {
             <div className="flex flex-col md:flex-row items-center gap-10 md:gap-20">
               <div className="w-full md:ml-6 md:w-1/2 flex justify-center mx-auto flex-col items-center md:items-start text-center md:text-left">
                 <Image
-                  loading="lazy"
-                  quality={80}
+       
                   src={image}
                   alt="About Us"
                   className="w-[250px] lg:max-w-[350px] h-auto object-cover rounded-lg"
@@ -61,8 +60,7 @@ function Page() {
                 <div className="flex flex-col md:flex-row lg:flex-row lg:gap-x-[100px]">
                   <div className="flex-1 order-1 lg:-order-1">
                     <Image
-                      loading="lazy"
-                      quality={80}
+              
                       alt="..."
                       className="max-w-full rounded-lg shadow-lg"
                       src={first}
@@ -114,8 +112,7 @@ function Page() {
                 </div>
                 <div className="flex-1 flex flex-col">
                   <Image
-                    loading="lazy"
-                    quality={80}
+          
                     alt="..."
                     className="max-w-full h-[30vh] mb-5 lg:h-[50vh] rounded-lg shadow-lg"
                     src={sec}

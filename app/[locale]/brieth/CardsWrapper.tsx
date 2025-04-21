@@ -44,8 +44,7 @@ export default function CardsWrapper({ products }: Props) {
           alt="Background"
           width={1920}
           height={500}
-          loading="lazy"
-          quality={80}
+
           className="absolute inset-0 w-full h-full object-cover z-0"
         />
       <div className="text-center z-20 px-4">

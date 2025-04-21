@@ -67,7 +67,7 @@ function Contact() {
           height="100%"
           className="border-0 w-full h-full"
           allowFullScreen
-          loading="lazy"
+     
           referrerPolicy="no-referrer-when-downgrade"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2933.203682968321!2d41.6285049!3d41.6399867!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40678700245cd783%3A0xa1c772006499c03c!2sSleep%26Bed%20Georgia!5e0!3m2!1sen!2s!4v1712549012345"
         ></iframe>

@@ -15,7 +15,7 @@ function Info() {
             <div className="flex flex-col md:flex-row lg:flex-row lg:gap-x-[100px]">
           
               <div className="flex-1 order-1 lg:-order-1">
-                <Image   loading="lazy" quality={80}
+                <Image 
                   alt="..."
                   className="max-w-full rounded-lg shadow-lg"
                   src={first}

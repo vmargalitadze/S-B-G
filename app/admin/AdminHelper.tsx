@@ -14,7 +14,7 @@ async function AdminHelper() {
         <div className="mr-6">
           <Link className="p-2 w-[200px] cursor-pointer" href="/">
             <div className="border w-[70px] border-gray-500 rounded-full">
-              <Image src={logo} height={70}  loading="lazy"  quality={80} width={70} alt="logo" className="rounded-full" />
+              <Image src={logo} height={70}  width={70} alt="logo" className="rounded-full" />
             </div>
           </Link>
           <h2 className="text-gray-600 text-4xl ml-0.5">Sleepandbad.ge</h2>

@@ -12,7 +12,7 @@ function Video() {
         onClick={() => setIsPlaying(true)}
       >
      
-        <Image height={300} width={300} loading="lazy"   quality={80}
+        <Image height={300} width={300} 
           src="/prod/408326498_360902273177384_5389513661708983494_n.jpg"
           alt="Video Thumbnail"
           className="w-full  rounded-lg shadow-lg"
@@ -24,7 +24,7 @@ function Video() {
         </div>
       </div>
     ) : (
-      <iframe width="100%" loading="lazy" height="450" src="https://www.youtube.com/embed/jfV1TpkrP7g?si=Q4WHYxYI240ARtt0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+      <iframe width="100%" height="450" src="https://www.youtube.com/embed/jfV1TpkrP7g?si=Q4WHYxYI240ARtt0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
     )}
   </div>
   )

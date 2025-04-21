@@ -16,7 +16,7 @@ export default function Navbar() {
   
         <Link className="p-2 cursor-pointer" href="/">
           <div className="border   border-gray-500 rounded-full">
-            <Image src={logo} loading="lazy"   quality={70}  height={70} width={70} alt="logo" className="rounded-full " />
+            <Image src={logo}  height={70} width={70} alt="logo" className="rounded-full " />
           </div>
         </Link>
 
