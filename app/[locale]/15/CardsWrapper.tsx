@@ -1,4 +1,3 @@
-
 "use client";
 import React, { useMemo } from "react";
 import Cards from "@/components/Cards/Cards";
@@ -19,7 +18,7 @@ export default function CardsWrapper({ products }: Props) {
   const searchParams = useSearchParams();
   const currentPage = Number(searchParams.get("page")) || 1;
   const t = useTranslations("about");
-  // სწორად გაფილტრე პროდუქტები - breathable მეშვეობით
+  
   const filteredProducts = useMemo(() => {
     return (products ?? []).filter(
       (product) =>
@@ -52,10 +51,10 @@ export default function CardsWrapper({ products }: Props) {
   <div className="absolute inset-0 bg-black/60 z-10" />
   <div className="text-center z-20 px-4">
     <h2 className="text-white text-[25px] sm:pt-10 pt-[50px] md:text-[50px] font-normal">
-      {t("products")}
+      {t("about.products")}
     </h2>
     <p className="max-w-[672px] text-white mx-auto lg:text-xl">
-      {t("sleep")}
+      {t("about.sleep")}
     </p>
   </div>
 </div>
@@ -68,7 +67,7 @@ export default function CardsWrapper({ products }: Props) {
           ) : (
             <>
               <Cards products={paginatedProducts} />
-              <div className="col-span-full flex justify-center items-center ">
+              <div className="col-span-full flex justify-center items-center mt-3">
                 <PaginationComponent pageCount={pageCount} />
               </div>
             </>
