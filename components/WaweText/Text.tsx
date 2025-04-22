@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import bg from '@/public/hero/hero-bg_cleanup.png'
 import Image from "next/image";
 import { useTranslations } from 'next-intl';
+import logo from "@/public/about/axali.jpg";
 const Text = () => {
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const [hide, setHide] = useState(true);
@@ -77,7 +78,6 @@ const Text = () => {
   {/* Overlay */}
   <div className="absolute inset-0 bg-black/40 z-10" />
 
-  {/* Animated Text */}
   <motion.div
     className="absolute z-20 px-4 text-center"
     variants={wordVariants}
@@ -85,6 +85,9 @@ const Text = () => {
     animate={hide ? "hidden" : "visible"}
   >
     <div className="text-2xl md:text-4xl font-semibold leading-snug">
+  <div className="border w-[18%] mx-auto border-gray-500 rounded-full">
+            <Image src={logo}  height={70} width={70} alt="logo" className="rounded-full " />
+          </div>
       {currentWord.map((letter, idx) => (
         <motion.span
           key={idx}

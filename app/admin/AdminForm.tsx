@@ -161,23 +161,25 @@ const onSubmit = async (data: z.infer<typeof ProductSchema>) => {
   render={({ field }) => (
     <FormItem>
       <FormLabel className="text-black">კატეგორია (EN)</FormLabel>
-      <FormControl>
-        <select
-          {...field}
-          className={cn(inputClass, "bg-white text-black")}
-        >
-          <option value="">Select category</option>
+      <Select onValueChange={field.onChange} defaultValue={field.value}>
+        <FormControl>
+          <SelectTrigger className={inputClass}>
+            <SelectValue placeholder="Select category" />
+          </SelectTrigger>
+        </FormControl>
+        <SelectContent className="bg-black border border-gray-700 text-white">
           {categoryOptions.map((option) => (
-            <option key={option.en} value={option.en}>
+            <SelectItem key={option.en} value={option.en}>
               {option.en}
-            </option>
+            </SelectItem>
           ))}
-        </select>
-      </FormControl>
+        </SelectContent>
+      </Select>
       <FormMessage />
     </FormItem>
   )}
 />
+
 
 <FormField
   control={form.control}
@@ -185,23 +187,25 @@ const onSubmit = async (data: z.infer<typeof ProductSchema>) => {
   render={({ field }) => (
     <FormItem>
       <FormLabel className="text-black">კატეგორია (KA)</FormLabel>
-      <FormControl>
-        <select
-          {...field}
-          className={cn(inputClass, "bg-white text-black")}
-        >
-          <option value="">აირჩიე კატეგორია</option>
+      <Select onValueChange={field.onChange} defaultValue={field.value}>
+        <FormControl>
+          <SelectTrigger className={inputClass}>
+            <SelectValue placeholder="აირჩიე კატეგორია" />
+          </SelectTrigger>
+        </FormControl>
+        <SelectContent className="bg-black border border-gray-700 text-white">
           {categoryOptions.map((option) => (
-            <option key={option.ka} value={option.ka}>
+            <SelectItem key={option.ka} value={option.ka}>
               {option.ka}
-            </option>
+            </SelectItem>
           ))}
-        </select>
-      </FormControl>
+        </SelectContent>
+      </Select>
       <FormMessage />
     </FormItem>
   )}
 />
+
 
           <FormField
             control={form.control}
@@ -312,7 +316,7 @@ const onSubmit = async (data: z.infer<typeof ProductSchema>) => {
     render={({ field }) => (
       <label className="flex items-center gap-2">
        <Checkbox
-  checked={Boolean(field.value)}
+  checked={Boolean(field.value)} className='border-black shadow-2xl'
   onCheckedChange={(checked) => field.onChange(Boolean(checked))}
 />
         <span>{label}</span>
@@ -327,17 +331,17 @@ const onSubmit = async (data: z.infer<typeof ProductSchema>) => {
 <div className="flex gap-y-5 flex-col">
 
     <textarea {...form.register("descriptionEn")} placeholder="აღწერა (EN)" 
-  className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+  className="w-full h-32 resize-none rounded-2xl border border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
     <textarea {...form.register("descriptionKa")} placeholder="აღწერა (KA)" 
-  className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+  className="w-full h-32 resize-none rounded-2xl border border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 </div>
 
 <div className="flex gap-y-5 flex-col">
 
 <textarea {...form.register("minitext")} placeholder="აღწერის ტექსტი ქართულად (EN)" 
-className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+className="w-full h-32 resize-none rounded-2xl border border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 <textarea {...form.register("minitextEn")} placeholder="აღწერის ტექსტი ინგლისურად" 
-className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+className="w-full h-32 resize-none rounded-2xl border border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 </div>
   </>
 )}
@@ -380,9 +384,9 @@ className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:bord
             <SelectValue placeholder="აირჩიე სიმაღლე" />
           </SelectTrigger>
         </FormControl>
-        <SelectContent className="bg-black border border-gray-700 text-white">
+        <SelectContent className="bg-black border rounded-2xl border-gray-700 text-white">
           {heightOptions.map((option) => (
-            <SelectItem key={option.value} value={option.value}>
+            <SelectItem key={option.value} className='rounded-2xl' value={option.value}>
               {option.text}
             </SelectItem>
           ))}
@@ -402,7 +406,7 @@ className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:bord
     render={({ field }) => (
       <label className="flex items-center gap-2">
        <Checkbox
-  checked={Boolean(field.value)}
+  checked={Boolean(field.value)} className='border-black'
   onCheckedChange={(checked) => field.onChange(Boolean(checked))}
 />
         <span>{label}</span>
@@ -451,7 +455,7 @@ className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:bord
   </>
 )}
 
-          <Button type="submit" className="mx-auto w-[200px] cursor-pointer bg-white text-black hover:bg-white">
+          <Button type="submit" className="mx-auto w-[200px] cursor-pointer border border-black bg-white text-black hover:bg-white">
             შექმენი პროდუქტი
           </Button>
         </form>
