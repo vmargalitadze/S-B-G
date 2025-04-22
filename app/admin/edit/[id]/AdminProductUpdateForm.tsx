@@ -312,13 +312,13 @@ export default function AdminProductUpdateForm({
          ))}
               </div>
               <div className="flex flex-col gap-y-5">
-                <textarea {...form.register('descriptionEn')} placeholder="აღწერა (EN)" className="w-full h-32 resize-none rounded-3xl border border-black  focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
-                <textarea {...form.register('descriptionKa')} placeholder="აღწერა (KA)" className="w-full h-32 resize-none rounded-3xl border border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+                <textarea {...form.register('descriptionEn')} placeholder="აღწერა (EN)" className="w-full h-32 resize-none rounded-1xl border border-black  focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+                <textarea {...form.register('descriptionKa')} placeholder="აღწერა (KA)" className="w-full h-32 resize-none rounded-1xl border border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
               </div>
               <textarea {...form.register("minitext")} placeholder="აღწერის ტექსტი ქართულად " 
-className="w-full h-32 resize-none rounded-3xl border border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+className="w-full h-32 resize-none rounded-1xl border border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 <textarea {...form.register("minitextEn")} placeholder="აღწერის ტექსტი ინგლისურად" 
-className="w-full h-32 resize-none rounded-3xl order border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+className="w-full h-32 resize-none rounded-1xl order border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
             </>
           )}
           {productType === "PILLOW" && (
@@ -336,9 +336,9 @@ className="w-full h-32 resize-none rounded-3xl order border-black focus:border-p
     <div className="flex gap-y-5 flex-col">
 
 <textarea {...form.register("minitext")} placeholder="აღწერის ტექსტი ქართულად " 
-className="w-full h-32 resize-none rounded-3xl border border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+className="w-full h-32 resize-none rounded-1xl border border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 <textarea {...form.register("minitextEn")} placeholder="აღწერის ტექსტი ინგლისურად" 
-className="w-full h-32 resize-none rounded-3xl border border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+className="w-full h-32 resize-none rounded-1xl border border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 </div>
   </>
 )}
@@ -394,9 +394,9 @@ className="w-full h-32 resize-none rounded-3xl border border-black focus:border-
     <div className="flex gap-y-5 flex-col">
 
 <textarea {...form.register("minitext")} placeholder="აღწერის ტექსტი ქართულად (EN)" 
-className="w-full h-32 resize-none rounded-3xl border border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+className="w-full h-32 resize-none rounded-1xl border border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 <textarea {...form.register("minitextEn")} placeholder="აღწერის ტექსტი ინგლისურად" 
-className="w-full h-32 resize-none rounded-3xl border border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+className="w-full h-32 resize-none rounded-1xl border border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 </div>
     <div className="flex flex-col gap-y-5">
       <textarea {...form.register("descriptionEn")} placeholder="აღწერა (EN)" className={inputClass} />
@@ -419,9 +419,9 @@ className="w-full h-32 resize-none rounded-3xl border border-black focus:border-
     <div className="flex gap-y-5 flex-col">
 
 <textarea {...form.register("minitext")} placeholder="აღწერის ტექსტი ქართულად (EN)" 
-className="w-full h-32 resize-none rounded-3xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+className="w-full h-32 resize-none rounded-1xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 <textarea {...form.register("minitextEn")} placeholder="აღწერის ტექსტი ინგლისურად" 
-className="w-full h-32 resize-none rounded-3xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+className="w-full h-32 resize-none rounded-1xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 </div>
   </>
 )}

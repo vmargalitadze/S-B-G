@@ -78,27 +78,28 @@ const Text = () => {
   {/* Overlay */}
   <div className="absolute inset-0 bg-black/40 z-10" />
 
-  <motion.div
-    className="absolute z-20 px-4 text-center"
-    variants={wordVariants}
-    initial="hidden"
-    animate={hide ? "hidden" : "visible"}
-  >
-    <div className="text-2xl md:text-4xl font-semibold leading-snug">
-  <div className="border w-[18%] mx-auto border-gray-500 rounded-full">
-            <Image src={logo}  height={70} width={70} alt="logo" className="rounded-full " />
-          </div>
-      {currentWord.map((letter, idx) => (
-        <motion.span
-          key={idx}
-          className="inline-block text-xl lg:text-[25px]"
-          variants={letterVariants}
-        >
-          {letter === " " ? "\u00A0" : letter}
-        </motion.span>
-      ))}
+    <div className="border absolute  mx-auto border-white z-20 rounded-full mb-14">
+      <Image src={logo} height={70} width={70} alt="logo" className="rounded-full" />
     </div>
-  </motion.div>
+  <motion.div
+  className="absolute z-20  mt-28 text-center min-h-[100px]" // ← აქ დავამატე min-h
+  variants={wordVariants}
+  initial="hidden"
+  animate={hide ? "hidden" : "visible"}
+>
+  <div className="text-2xl md:text-4xl font-semibold leading-snug">
+    {currentWord.map((letter, idx) => (
+      <motion.span
+        key={idx}
+        className="inline-block text-xl lg:text-[25px]"
+        variants={letterVariants}
+      >
+        {letter === " " ? "\u00A0" : letter}
+      </motion.span>
+    ))}
+  </div>
+</motion.div>
+
 </div>
     
  
