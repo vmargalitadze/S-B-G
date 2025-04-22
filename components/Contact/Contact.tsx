@@ -12,13 +12,13 @@ function Contact() {
   }, []);
 
   return (
-    <section className="pb-16 text-white">
-      <div className="container px-6 mx-auto">
+    <section className="mt-10   py-10 text-white">
+      <div className="container  mx-auto">
         <div className="">
           <h2 className="text-black text-xl lg:text-[25px] leading-tight text-center mb-10 font-semibold">
             {t('contacts')}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Contact Info */}
             <div className="bg-[#052C46] p-8 rounded-lg">
               <div className="flex items-center mb-4">

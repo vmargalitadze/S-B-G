@@ -405,10 +405,7 @@ className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:bord
     <Input {...form.register("fillingEn")} placeholder="შევსება (EN)" className={inputClass} />
     <Input type="number" {...form.register("weight", { valueAsNumber: true })} placeholder="წონა" className={inputClass} />
 
-    <div className="flex flex-col gap-y-5">
-      <textarea {...form.register("descriptionEn")} placeholder="აღწერა (EN)" className={inputClass} />
-      <textarea {...form.register("descriptionKa")} placeholder="აღწერა (KA)" className={inputClass} />
-    </div>
+
     
     <div className="flex gap-y-5 flex-col">
 

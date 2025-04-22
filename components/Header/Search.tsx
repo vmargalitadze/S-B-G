@@ -40,7 +40,7 @@ export default function SearchComponent() {
   }, 300);
 
   return (
-    <div className="relative w-full bg-white rounded-md mb-8">
+    <div className="relative w-full  bg-white rounded-md mb-8">
       <Input
         type="text"
         placeholder="Search"

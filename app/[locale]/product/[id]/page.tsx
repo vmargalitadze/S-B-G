@@ -68,7 +68,7 @@ const DetailPage = async(props: {
   const ALL_FEATURES = matchedHeightFeature
     ? [matchedHeightFeature, ...FEATURES]
     : [...FEATURES];
-
+    const isFlexMode = product.type === 'PILLOW' || product.type === 'QUILT';
   const getFeatureValue = (key: keyof Mattress & keyof Pad) => {
     if (key === 'height') return true;
     return product.type === 'MATTRESS'
@@ -120,85 +120,74 @@ const DetailPage = async(props: {
 )}
 </div>
 
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {product.type === 'PILLOW' && product.pillow && (
-  <>
-    {product.pillow.size && (
-      <p><strong>{isGe ? 'ზომა' : 'Size'}:</strong> {product.pillow.size}</p>
-    )}
-    {product.pillow.weight && (
-      <p><strong>{isGe ? 'წონა' : 'Weight'}:</strong> {product.pillow.weight} {isGe ? 'გრამი' : 'gram'}</p>
-    )}
-    {(isGe ? product.pillow.outerFabric : product.pillow.outerFabricEn) && (
-      <p><strong>{isGe ? 'გარეთა ქსოვილი' : 'Outer Fabric'}:</strong> {isGe ? product.pillow.outerFabric : product.pillow.outerFabricEn}</p>
-    )}
-    {(isGe ? product.pillow.filling : product.pillow.fillingEn) && (
-      <p><strong>{isGe ? 'შევსება' : 'Filling'}:</strong> {isGe ? product.pillow.filling : product.pillow.fillingEn}</p>
-    )}
-    {(isGe ? product.pillow.packaging : product.pillow.packagingEn) && (
-      <p><strong>{isGe ? 'შეფუთვა' : 'Packaging'}:</strong> {isGe ? product.pillow.packaging : product.pillow.packagingEn}</p>
-    )}
- 
-  </>
-)}
+<div className={`mt-4 ${isFlexMode ? 'flex flex-col gap-y-2' : 'grid grid-cols-1 sm:grid-cols-2 gap-4'}`}>
+  {product.type === 'PILLOW' && product.pillow && (
+    <>
+      {product.pillow.size && (
+        <p><strong>{isGe ? 'ზომა' : 'Size'}:</strong> {product.pillow.size}</p>
+      )}
+      {product.pillow.weight && (
+        <p><strong>{isGe ? 'წონა' : 'Weight'}:</strong> {product.pillow.weight} {isGe ? 'გრამი' : 'gram'}</p>
+      )}
+      {(isGe ? product.pillow.outerFabric : product.pillow.outerFabricEn) && (
+        <p><strong>{isGe ? 'გარეთა ქსოვილი' : 'Outer Fabric'}:</strong> {isGe ? product.pillow.outerFabric : product.pillow.outerFabricEn}</p>
+      )}
+      {(isGe ? product.pillow.filling : product.pillow.fillingEn) && (
+        <p><strong>{isGe ? 'შევსება' : 'Filling'}:</strong> {isGe ? product.pillow.filling : product.pillow.fillingEn}</p>
+      )}
+      {(isGe ? product.pillow.packaging : product.pillow.packagingEn) && (
+        <p><strong>{isGe ? 'შეფუთვა' : 'Packaging'}:</strong> {isGe ? product.pillow.packaging : product.pillow.packagingEn}</p>
+      )}
+    </>
+  )}
 
-{product.type === 'QUILT' && product.quilt && (
-  <>
-    {product.quilt.dimensions && (
-      <p><strong>{isGe ? 'ზომა' : 'Dimensions'}:</strong> {product.quilt.dimensions}</p>
-    )}
-    {(isGe ? product.quilt.fabric : product.quilt.fabricEn) && (
-      <p><strong>{isGe ? 'ქსოვილი' : 'Fabric'}:</strong> {isGe ? product.quilt.fabric : product.quilt.fabricEn}</p>
-    )}
-    {(isGe ? product.quilt.filling : product.quilt.fillingEn) && (
-      <p><strong>{isGe ? 'შევსება' : 'Filling'}:</strong> {isGe ? product.quilt.filling : product.quilt.fillingEn}</p>
-    )}
-    {product.quilt.weight && (
-      <p><strong>{isGe ? 'წონა' : 'Weight'}:</strong> {product.quilt.weight}</p>
-    )}
+  {product.type === 'QUILT' && product.quilt && (
+    <>
+      {product.quilt.dimensions && (
+        <p><strong>{isGe ? 'ზომა' : 'Dimensions'}:</strong> {product.quilt.dimensions}</p>
+      )}
+      {(isGe ? product.quilt.fabric : product.quilt.fabricEn) && (
+        <p><strong>{isGe ? 'ქსოვილი' : 'Fabric'}:</strong> {isGe ? product.quilt.fabric : product.quilt.fabricEn}</p>
+      )}
+      {(isGe ? product.quilt.filling : product.quilt.fillingEn) && (
+        <p><strong>{isGe ? 'შევსება' : 'Filling'}:</strong> {isGe ? product.quilt.filling : product.quilt.fillingEn}</p>
+      )}
+      {product.quilt.weight && (
+        <p><strong>{isGe ? 'წონა' : 'Weight'}:</strong> {product.quilt.weight}</p>
+      )}
+    </>
+  )}
 
+  {(product.type === 'PAD' || product.type === 'MATTRESS') && (
+    <>
+      {ALL_FEATURES.map((feature, index) => {
+        const value = getFeatureValue(feature.key);
+        if (!value) return null;
 
-  </>
-)}
-
-
-{(product.type === 'PAD' || product.type === 'MATTRESS') && (
-  <>
-    {ALL_FEATURES.map((feature, index) => {
-      const value = getFeatureValue(feature.key);
-      if (!value) return null;
-
-      return (
-        <div key={index}>
-          <div className="flex items-center space-x-2 p-2 rounded-lg transition">
-            <Link
-              href={feature.href}
-              className="font-semibold flex items-center gap-2 p-2 text-[15px] text-gray-800 hover:underline"
-            >
-              <Image
-                src={feature.logo}
-                alt="logo"
-                width={42}
-                height={42}
-                className="object-contain"
-              />
-              {isGe ? feature.label : feature.labelEn}
-            </Link>
-          </div>
-        </div>
-      );
-    })}
-
-
-
-
-  
-
-
-  </>
-)}
-
+        return (
+          <div key={index}>
+            <div className="flex items-center space-x-2 p-2 rounded-lg transition">
+              <Link
+                href={feature.href}
+                className="font-semibold flex items-center gap-2 p-2 text-[15px] text-gray-800 hover:underline"
+              >
+                <Image
+                  src={feature.logo}
+                  alt="logo"
+                  width={42}
+                  height={42}
+                  className="object-contain"
+                />
+                {isGe ? feature.label : feature.labelEn}
+              </Link>
             </div>
+          </div>
+        );
+      })}
+    </>
+  )}
+</div>
+
 
           </div>
           

@@ -5,7 +5,7 @@ import Image from 'next/image';
 function Video() {
     const [isPlaying, setIsPlaying] = useState(false);
   return (
-    <div className="relative rounded-lg  lg:pt-10    w-full max-w-2xl mx-auto">
+    <div className="relative rounded-lg    w-full max-w-2xl mx-auto">
     {!isPlaying ? (
       <div
         className="relative rounded-lg cursor-pointer"

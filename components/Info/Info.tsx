@@ -9,7 +9,7 @@ function Info() {
   
   return (
     <>
-      <section className="lg:py-[50px] mt-[50px] lg:mt-0">
+      <section className="lg:py-[50px] mt-[50px] pt-16 lg:pb-16 lg:mt-0">
         <section className="py-[20px] lg:py-[70px]">
           <div className="container mx-auto">
             <div className="flex flex-col md:flex-row lg:flex-row lg:gap-x-[100px]">
