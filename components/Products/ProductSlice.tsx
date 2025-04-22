@@ -15,12 +15,10 @@ export default function ProductSlice({ products }: { products: ProductType[] }) 
   const locale = useLocale();
 
   return (
-    <section className="mt-5 pt-16 lg:pb-16">
-      <div className="container mx-auto">
+    <section className="mt-5 pt-16">
+      <div className="container px-6 mx-auto">
         <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center mb-6 lg:mb-0">
-        <div className="container flex justify-between">
-
-          <h2 className="text-xl lg:text-[25px] leading-tight lg:mr-16 text-center mb-4 font-semibold">
+          <h2 className="text-xl lg:text-[25px] leading-tight text-center mb-4 font-semibold">
             {t("ourProducts")} 
           </h2>
           <div className="flex items-center gap-2 group">
@@ -34,7 +32,6 @@ export default function ProductSlice({ products }: { products: ProductType[] }) 
               </span>
             </Link>
           </div>
-        </div>
         </div>
 
         <Cards products={products} />
