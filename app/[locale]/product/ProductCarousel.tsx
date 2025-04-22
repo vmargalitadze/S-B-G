@@ -62,22 +62,7 @@ const ProductCarousel = ({ products, locale }: Props) => {
               </div>
             </div>
           </div>
-            {/* <Link href={`/${locale}/product/${product.id}`}>
-              <div className="bg-white shadow-md rounded-xl overflow-hidden p-4 flex flex-col items-center">
-                {product.images.length > 0 && (
-                  <Image
-                    src={product.images[0]}
-                    alt="product"
-                    width={200}
-                    height={200}
-                    className="object-contain mb-4"
-                  />
-                )}
-                <h3 className="text-center text-sm font-medium">
-                  {isGe ? product.titleKa : product.titleEn}
-                </h3>
-              </div>
-            </Link> */}
+           
           </SwiperSlide>
         ))}
       </Swiper>

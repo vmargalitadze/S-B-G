@@ -11,7 +11,7 @@ const Thumbnail = ({ src, index, current, setCurrent }: { src: string; index: nu
       onClick={() => setCurrent(index)}
       className={cn(
         "p-1 cursor-pointer rounded-md relative w-[80px] h-[80px]",
-     
+        
       )}
     >
       {/* Skeleton Placeholder */}
@@ -24,6 +24,7 @@ const Thumbnail = ({ src, index, current, setCurrent }: { src: string; index: nu
         src={src}
         alt="Thumbnail"
         width={80}
+        quality={70}
         height={80}
         className="w-[80px] h-[80px] object-cover rounded-md z-10"
         onLoad={() => setLoaded(true)}
@@ -32,6 +33,7 @@ const Thumbnail = ({ src, index, current, setCurrent }: { src: string; index: nu
     </div>
   );
 };
+
 
 const ProductImages = ({ images }: { images: string[] }) => {
   const [current, setCurrent] = useState(0);
@@ -44,6 +46,7 @@ const ProductImages = ({ images }: { images: string[] }) => {
         width={400}
         height={400}
         priority
+        quality={70}
         className="w-[450px] h-[450px] object-cover rounded-md"
       />
 
@@ -55,6 +58,7 @@ const ProductImages = ({ images }: { images: string[] }) => {
             index={index}
             current={current}
             setCurrent={setCurrent}
+            
           />
         ))}
       </div>
