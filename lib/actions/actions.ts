@@ -355,6 +355,8 @@ export async function updateProduct(data: z.infer<typeof updateProductSchema>) {
           wool: product.wool,
           visco: product.visco,
           dns: product.dns,
+          minitext:product.minitext,
+          minitextEn:product.minitextEn,
           latex: product.latex,
           washable: product.washable,
         },
@@ -378,6 +380,8 @@ export async function updateProduct(data: z.infer<typeof updateProductSchema>) {
           dns: product.dns,
           latex: product.latex,
           washable: product.washable,
+          minitext:product.minitext,
+          minitextEn:product.minitextEn,
         },
       });
     } else if (product.type === "PILLOW") {
@@ -392,6 +396,8 @@ export async function updateProduct(data: z.infer<typeof updateProductSchema>) {
           fillingEn: product.fillingEn,
           packaging: product.packaging,
           packagingEn: product.packagingEn,
+          minitext:product.minitext,
+          minitextEn:product.minitextEn,
         },
       });
     } else if (product.type === "QUILT") {
@@ -404,6 +410,8 @@ export async function updateProduct(data: z.infer<typeof updateProductSchema>) {
           filling: product.filling,
           fillingEn: product.fillingEn,
           weight: product.weight,
+          minitext:product.minitext,
+          minitextEn:product.minitextEn,
         },
       });
     }

@@ -303,9 +303,13 @@ export default function AdminProductUpdateForm({
          ))}
               </div>
               <div className="flex flex-col gap-y-5">
-                <textarea {...form.register('descriptionEn')} placeholder="აღწერა (EN)" className={inputClass} />
-                <textarea {...form.register('descriptionKa')} placeholder="აღწერა (KA)" className={inputClass} />
+                <textarea {...form.register('descriptionEn')} placeholder="აღწერა (EN)" className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+                <textarea {...form.register('descriptionKa')} placeholder="აღწერა (KA)" className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
               </div>
+              <textarea {...form.register("minitext")} placeholder="აღწერის ტექსტი ქართულად " 
+className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+<textarea {...form.register("minitextEn")} placeholder="აღწერის ტექსტი ინგლისურად" 
+className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
             </>
           )}
           {productType === "PILLOW" && (
@@ -322,13 +326,14 @@ export default function AdminProductUpdateForm({
     
     <div className="flex gap-y-5 flex-col">
 
-<textarea {...form.register("minitext")} placeholder="აღწერის ტექსტი ქართულად (EN)" 
+<textarea {...form.register("minitext")} placeholder="აღწერის ტექსტი ქართულად " 
 className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 <textarea {...form.register("minitextEn")} placeholder="აღწერის ტექსტი ინგლისურად" 
 className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 </div>
   </>
 )}
+
 {productType === "PAD" && (
   <>
     <Input {...form.register("firmness")} placeholder="სიმაგრე (KA)" className={inputClass} />
