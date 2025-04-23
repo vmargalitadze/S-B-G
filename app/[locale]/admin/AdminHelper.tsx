@@ -10,7 +10,7 @@ async function AdminHelper() {
   const productsData = await getAllProduct();
 
   return (
-    <main className=" space-y-6 items-center">
+    <main className="mt-7 space-y-6 items-center">
         <div className="ml-10">
           <Link className="w-[200px] cursor-pointer" href="/">
             <div className="border w-[70px] border-gray-500 rounded-full">

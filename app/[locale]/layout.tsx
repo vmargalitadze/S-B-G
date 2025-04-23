@@ -7,10 +7,7 @@ import Footer from "@/components/Footer/Footer";
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import {notFound} from 'next/navigation';
 import SIdeLogo from "@/components/SideLogo/SideLogo";
-import {
-  ClerkProvider,
 
-} from '@clerk/nextjs'
 import { getMessages } from "next-intl/server";
 
 const quicksand = Quicksand({
@@ -37,9 +34,6 @@ export default async function RootLayout({
   }
   const messages = await getMessages();
   return (
-    <ClerkProvider>
-
-
     <html lang={locale} >
       <body
         className={`${quicksand.variable}  antialiased`}
@@ -54,6 +48,7 @@ export default async function RootLayout({
         </NextIntlClientProvider>
       </body>
     </html>
-    </ClerkProvider>
+ 
+ 
   );
 }
