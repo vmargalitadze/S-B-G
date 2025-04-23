@@ -81,13 +81,13 @@ const DetailPage = async(props: {
   const filtered = allSameTypeProducts.filter(p => p.id !== id).slice(0, 4);
   return (
     <section className="w-full mx-auto max-w-[1440px]">
-      <div className="text-black py-10">
+      <div className="text-black ">
         <div className="container mx-auto flex flex-col md:flex-row gap-6 lg:gap-12 items-center">
           <div className="w-full lg:w-1/2 flex justify-center">
             <ProductImages images={product.images} />
           </div>
-          <div className="w-full lg:w-1/2 lg:mt-28 p-4 sm:p-6 flex flex-col">
-            <h2 className="mt-5 text-xl lg:text-[30px] text-center lg:text-start mb-5 font-semibold">
+          <div className="w-full lg:w-1/2 lg:mt-28 p-4  sm:p-6 flex flex-col">
+            <h2 className="lg:mt-[120px] text-xl lg:text-[25px]  text-center lg:text-start mb-5 font-semibold">
               {title}
             </h2>
             <p className="text-[15px] lg:text-[17px] leading-tight mb-4 font-semibold">
@@ -197,7 +197,7 @@ const DetailPage = async(props: {
         {(product.type === 'MATTRESS' && product.mattress && (isGe ? product.mattress.descriptionKa : product.mattress.descriptionEn)) ||
  (product.type === 'PAD' && product.pad && (isGe ? product.pad.descriptionKa : product.pad.descriptionEn)) ? (
   <div className="container mt-10 text-center mx-auto gap-6 lg:gap-12">
-    <h1 className="text-3xl font-semibold">{isGe ? 'აღწერა' : 'Description'}:</h1>
+    <h1 className="text-xl lg:text-[25px] font-semibold">{isGe ? 'აღწერა' : 'Description'}:</h1>
     <p className="mt-4 text-[16px]">
       {product.type === 'MATTRESS' && product.mattress && (
         isGe ? product.mattress.descriptionKa : product.mattress.descriptionEn
