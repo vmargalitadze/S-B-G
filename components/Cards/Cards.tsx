@@ -16,7 +16,7 @@ function Cards({ products }: CardsProps) {
   const isGe = locale === 'ge';
 
   return (
-    <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-10">
+    <div className="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-4">
       {products.map((product) => {
         const title = isGe ? product.titleKa : product.titleEn;
         const category = isGe ? product.categoryKa : product.categoryEn;
