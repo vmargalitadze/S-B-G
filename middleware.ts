@@ -9,19 +9,22 @@ const isProtectedRoute = createRouteMatcher(['/admin(.*)']);
 export async function middleware(request: NextRequest, event: NextFetchEvent) {
   const { pathname } = request.nextUrl;
 
-  // 🛡️ თუ არის ადმინისტრაციის გზები, შემოწმება Clerk-ით
+  console.log("Request Pathname:", pathname); 
+
   if (isProtectedRoute(request)) {
+    console.log("Protected Route: Admin area detected");
     return clerkMiddleware()(request, event);
   }
 
-  // 🌐 ენას URL-ში თუ აქვს, არ შეცვლის მას
   if (pathname.startsWith('/en') || pathname.startsWith('/ge')) {
+    console.log("Locale found in URL:", pathname);
     return intlMiddleware(request);
   }
 
-  // 🌀 სხვა შემთხვევაში, intlMiddleware დააყენებს ენას
+  console.log("Default Locale middleware");
   return intlMiddleware(request);
 }
+
 
 export const config = {
   matcher: ['/((?!api|_next|.*\\..*).*)'],
