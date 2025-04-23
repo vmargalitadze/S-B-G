@@ -36,5 +36,5 @@ export function middleware(request: NextRequest) {
 
 // ყველა როუტზე გავუშვათ middleware გარდა სისტემური ფაილებისა
 export const config = {
-  matcher: ["/((?!_next|.*\\..*|favicon.ico).*)"],
+  matcher: ["/admin/:path*", "/ge/admin/:path*", "/en/admin/:path*"],
 };
