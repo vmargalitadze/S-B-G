@@ -213,7 +213,7 @@ export async function getAllProduct(type?: ProductType) {
   }
 }
 
-// ახალი ფუნქცია ფილტრაციისთვის
+
 export async function getFilteredProducts(filters: any) {
   try {
     const products = await prisma.product.findMany({

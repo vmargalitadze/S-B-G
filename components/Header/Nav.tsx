@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
-
+import LocalLanguage from "./language";
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
@@ -141,7 +141,7 @@ export default function Navbar() {
               )}
             </div>
           ))}
-         
+              < LocalLanguage />
         </div>
       )}
     </nav>
