@@ -114,7 +114,7 @@ export default function AdminForm() {
   });
  
   const productType = form.watch('type');
-const categoryKa = form.watch('categoryKa');
+
 
 const onSubmit = async (data: z.infer<typeof ProductSchema>) => {
 

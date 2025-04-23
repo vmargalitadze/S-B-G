@@ -52,9 +52,8 @@ function Contact() {
                 <FaClock className="text-2xl mr-4 text-white" />
                 <div className="text-[13px] lg:text-[20px] leading-relaxed text-white">
                   <p>{t('mondayToFriday')}</p>
-                  <p>09:00 - 18:00</p>
-                  <p>{t('saturday')} 10:00 - 14:00</p>
-                  <p>{t('sunday')}</p>
+                  <p>10:00 - 19:00</p>
+              
                 </div>
               </div>
             </div>

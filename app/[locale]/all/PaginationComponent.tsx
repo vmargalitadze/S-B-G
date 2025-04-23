@@ -3,6 +3,7 @@
 import React, { FC, useCallback } from "react";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 
 interface PaginationProps {
   pageCount: number;
@@ -38,7 +39,7 @@ const PaginationComponent: FC<PaginationProps> = ({ pageCount }) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
-
+ const t = useTranslations("about");
   const currentPage = Number(searchParams.get("page")) || 1;
 
   const createPageURL = useCallback(
@@ -67,7 +68,7 @@ const PaginationComponent: FC<PaginationProps> = ({ pageCount }) => {
         isDisabled={currentPage <= 1}
       />
       <span className="p-2 font-semibold text-gray-500">
-        გვერდი {currentPage}
+      {t("page")}{currentPage}
       </span>
       <PaginationArrow
         direction="right"
