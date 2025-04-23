@@ -11,6 +11,7 @@ import {
   ClerkProvider,
 
 } from '@clerk/nextjs'
+import { getMessages } from "next-intl/server";
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",  
@@ -34,6 +35,7 @@ export default async function RootLayout({
   if (!hasLocale(routing.locales, locale)) {
     notFound();
   }
+  const messages = await getMessages();
   return (
     <ClerkProvider>
 
@@ -42,7 +44,7 @@ export default async function RootLayout({
       <body
         className={`${quicksand.variable}  antialiased`}
       >
-        <NextIntlClientProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
 
 
         <Header />
