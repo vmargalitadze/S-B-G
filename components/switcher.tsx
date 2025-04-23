@@ -26,8 +26,8 @@ export default function LocaleSwitcher() {
   };
 
   const locales = [
-    { code: 'en', label: 'English', flag: Am },
     { code: 'ge', label: 'ქართული', flag: Ge },
+    { code: 'en', label: 'English', flag: Am },
   ];
 
   const currentLocale = locales.find(l => l.code === localeActive);
