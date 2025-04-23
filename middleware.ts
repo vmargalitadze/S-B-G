@@ -7,8 +7,8 @@ const intlMiddleware = createMiddleware(routing);
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // /admin, /ge/admin, /en/admin და ქვეგზების იდენტიფიცირება
-  const isAdminPath = /^\/(ge|en)(\/admin.*)?$|^\/admin(\/.*)?$/.test(pathname);
+  // ვამოწმებთ მხოლოდ admin როუტებს (/admin, /ge/admin, /en/admin და მათი ქვე-გვერდები)
+  const isAdminPath = /^\/(ge|en)\/admin(\/.*)?$|^\/admin(\/.*)?$/.test(pathname);
 
   if (isAdminPath) {
     const basicAuth = request.headers.get("authorization");
@@ -20,21 +20,21 @@ export function middleware(request: NextRequest) {
       const validPassword = process.env.BASIC_AUTH_PASSWORD;
 
       if (user === validUser && pwd === validPassword) {
-        return intlMiddleware(request);
+        return intlMiddleware(request); // წარმატებული ავტორიზაცია
       }
     }
 
-    // Basic auth წარუმატებლობის შემთხვევაში გადაამისამართე API გვერდზე
+    // თუ ავტორიზაცია არ იყო — დავაბრუნოთ 401 გვერდი
     const url = request.nextUrl.clone();
     url.pathname = "/api/basicauth";
     return NextResponse.rewrite(url);
   }
 
-  // სხვა ყველაფერზე მხოლოდ i18n
+  // ყველა სხვა გვერდზე უბრალოდ i18n იმუშავოს
   return intlMiddleware(request);
 }
 
-// ყველა როუტზე გავუშვათ middleware გარდა სისტემური ფაილებისა
+// ყველა გვერდზე გაშვება, მაგრამ მხოლოდ შიგნით admin-ებს ვამოწმებთ
 export const config = {
-  matcher: ["/admin/:path*", "/ge/admin/:path*", "/en/admin/:path*"],
+  matcher: ["/((?!_next|.*\\..*|favicon.ico).*)"],
 };
