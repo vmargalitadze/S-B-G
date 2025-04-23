@@ -1,61 +1,38 @@
 'use client';
 
-import { useRouter, usePathname, useSearchParams } from 'next/navigation';
 import { useLocale } from 'next-intl';
-import { useTransition, useState } from 'react';
-import Image from 'next/image';
-import Am from '@/public/hero/america.png';
-import Ge from '@/public/hero/georgia.png';
+import { useRouter } from 'next/navigation';
+import { ChangeEvent, useTransition } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation'; // Import hooks for path and query
 
-export default function LocaleSwitcher() {
-  const [, startTransition] = useTransition();
-  const [open, setOpen] = useState(false);
+export default function LocalSwitcher() {
+  const [isPending, startTransition] = useTransition();
   const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const localeActive = useLocale();
+  const localActive = useLocale();
+  const pathname = usePathname(); // Get the current pathname
+  const searchParams = useSearchParams(); // Get the current search parameters
 
-  
-  const handleChange = (nextLocale: string) => {
-    setOpen(false);
+  const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    const nextLocale = e.target.value;
     startTransition(() => {
-      const newPath = `/${nextLocale}${pathname.replace(/^\/[a-zA-Z]+/, '')}`;
-      const query = searchParams?.toString();
-      router.replace(`${newPath}${query ? `?${query}` : ''}`);
+      // Manually handle the language change in the URL path
+      const newPath = `/${nextLocale}${pathname.replace(/^\/[a-zA-Z]+/, '')}`; // Replace the existing language in path
+      router.replace(`${newPath}${searchParams ? `?${searchParams.toString()}` : ''}`); // Preserve query params
     });
   };
 
-  const locales = [
-    { code: 'en', label: 'English', flag: Am },
-    { code: 'ge', label: 'ქართული', flag: Ge },
-  ];
-
-  const currentLocale = locales.find(l => l.code === localeActive);
-
   return (
-    <div className="relative inline-block h-[40px] text-left">
-      <button
-        onClick={() => setOpen(prev => !prev)}
-        className="inline-flex items-center gap-2  h-[40px] px-3 w-[140px] py-2 border rounded bg-white  text-black"
+    <label className='border-2 bg-white rounded'>
+      <p className='sr-only'>change language</p>
+      <select
+        defaultValue={localActive}
+        className='bg-transparent py-2'
+        onChange={onSelectChange}
+        disabled={isPending}
       >
-        <Image src={currentLocale?.flag || Am} alt="flag" width={20} height={20} className="rounded-full" />
-        {currentLocale?.label}
-      </button>
-
-      {open && (
-        <ul className="absolute z-10 mt-2 w-full bg-white border rounded shadow-lg">
-          {locales.map(locale => (
-            <li
-              key={locale.code}
-              className="flex items-center gap-2 px-3 text-black py-2 hover:bg-gray-100 cursor-pointer"
-              onClick={() => handleChange(locale.code)}
-            >
-              <Image src={locale.flag} alt={`${locale.label} flag`} width={20} height={20} className="rounded-full" />
-              {locale.label}
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
+        <option value='en' className='text-black'>En</option>
+        <option value='ge' className='text-black'>Ka</option>
+      </select>
+    </label>
   );
 }
