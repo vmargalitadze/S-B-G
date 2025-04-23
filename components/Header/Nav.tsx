@@ -5,7 +5,7 @@ import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import Link from "next/link";
 
 import { useTranslations } from "next-intl";
-import LocalLanguage from "./language";
+
 
 export default function Navbar() {
   const t = useTranslations("navitems");
@@ -140,7 +140,7 @@ export default function Navbar() {
               )}
             </div>
           ))}
-          < LocalLanguage />
+         
         </div>
       )}
     </nav>
