@@ -141,47 +141,56 @@ export default function AdminProductUpdateForm({
             )}
           />
 
-          <FormField
-            control={form.control}
-            name="categoryEn"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>კატეგორია (EN)</FormLabel>
-                <FormControl>
-                  <select {...field} className={cn(inputClass, 'bg-white text-black')}>
-                    <option value="">Select category</option>
-                    {categoryOptions.map((option) => (
-                      <option key={option.en} value={option.en}>
-                        {option.en}
-                      </option>
-                    ))}
-                  </select>
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="categoryKa"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>კატეგორია (KA)</FormLabel>
-                <FormControl>
-                  <select {...field} className={cn(inputClass, 'bg-white text-black')}>
-                    <option value="">აირჩიე კატეგორია</option>
-                    {categoryOptions.map((option) => (
-                      <option key={option.ka} value={option.ka}>
-                        {option.ka}
-                      </option>
-                    ))}
-                  </select>
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+   <FormField
+     control={form.control}
+     name="categoryEn"
+     render={({ field }) => (
+       <FormItem>
+         <FormLabel className="text-black">კატეგორია (EN)</FormLabel>
+         <Select onValueChange={field.onChange} defaultValue={field.value}>
+           <FormControl>
+             <SelectTrigger className={inputClass}>
+               <SelectValue placeholder="Select category" />
+             </SelectTrigger>
+           </FormControl>
+           <SelectContent className="bg-black border border-gray-700 text-white">
+             {categoryOptions.map((option) => (
+               <SelectItem key={option.en} value={option.en}>
+                 {option.en}
+               </SelectItem>
+             ))}
+           </SelectContent>
+         </Select>
+         <FormMessage />
+       </FormItem>
+     )}
+   />
+   
+   
+   <FormField
+     control={form.control}
+     name="categoryKa"
+     render={({ field }) => (
+       <FormItem>
+         <FormLabel className="text-black">კატეგორია (KA)</FormLabel>
+         <Select onValueChange={field.onChange} defaultValue={field.value}>
+           <FormControl>
+             <SelectTrigger className={inputClass}>
+               <SelectValue placeholder="აირჩიე კატეგორია" />
+             </SelectTrigger>
+           </FormControl>
+           <SelectContent className="bg-black border border-gray-700 text-white">
+             {categoryOptions.map((option) => (
+               <SelectItem key={option.ka} value={option.ka}>
+                 {option.ka}
+               </SelectItem>
+             ))}
+           </SelectContent>
+         </Select>
+         <FormMessage />
+       </FormItem>
+     )}
+   />
 
           <FormField
             control={form.control}
@@ -309,7 +318,7 @@ export default function AdminProductUpdateForm({
               <textarea {...form.register("minitext")} placeholder="აღწერის ტექსტი ქართულად " 
 className="w-full h-32 resize-none rounded-1xl border border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 <textarea {...form.register("minitextEn")} placeholder="აღწერის ტექსტი ინგლისურად" 
-className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+className="w-full h-32 resize-none rounded-1xl order border-black focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
             </>
           )}
           {productType === "PILLOW" && (
@@ -403,20 +412,16 @@ className="w-full h-32 resize-none rounded-1xl border border-black focus:border-
     <Input {...form.register("fabricEn")} placeholder="ქსოვილი (EN)" className={inputClass} />
     <Input {...form.register("filling")} placeholder="შევსება (KA)" className={inputClass} />
     <Input {...form.register("fillingEn")} placeholder="შევსება (EN)" className={inputClass} />
-    <Input type="text" {...form.register("weight")} placeholder="წონა" className={inputClass} />
+    <Input type="number" {...form.register("weight", { valueAsNumber: true })} placeholder="წონა" className={inputClass} />
 
 
-    <div className="flex flex-col gap-y-5">
-      <textarea {...form.register("descriptionEn")} placeholder="აღწერა (EN)" className={inputClass} />
-      <textarea {...form.register("descriptionKa")} placeholder="აღწერა (KA)" className={inputClass} />
-    </div>
     
     <div className="flex gap-y-5 flex-col">
 
 <textarea {...form.register("minitext")} placeholder="აღწერის ტექსტი ქართულად (EN)" 
-className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+className="w-full h-32 resize-none rounded-1xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 <textarea {...form.register("minitextEn")} placeholder="აღწერის ტექსტი ინგლისურად" 
-className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
+className="w-full h-32 resize-none rounded-1xl border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/30 bg-white p-4 text-sm placeholder-gray-400 shadow-sm transition-all duration-200" />
 </div>
   </>
 )}
