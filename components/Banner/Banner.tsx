@@ -1,6 +1,6 @@
 import React from 'react';
 import './banner.css';
-import Link from 'next/link';
+import { Link } from "@/i18n/navigation";
 
 function Banner() {
   return (

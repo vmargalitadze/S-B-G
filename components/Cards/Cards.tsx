@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import React from "react";
 import { useLocale } from 'next-intl';
 import { ProductType } from "@/lib/ProductType";

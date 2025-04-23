@@ -1,10 +1,11 @@
 import React from "react";
 
 import logo from "@/public/about/axali.jpg";
-import Link from "next/link";
+
 import Image from "next/image";
 import { getAllProduct } from "@/lib/actions/actions";
 import AdminSwitch from "./AdminSwitch";
+import { Link } from "@/i18n/navigation";
 
 async function AdminHelper() {
   const productsData = await getAllProduct();

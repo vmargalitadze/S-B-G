@@ -2,7 +2,7 @@
 import React from 'react';
 import ProductImages from '../ProductImage';
 import { getSingleProduct } from '@/lib/actions/actions';
-import Link from 'next/link';
+import { Link } from "@/i18n/navigation";
 import Image from 'next/image';
 import { Mattress, Pad } from '@prisma/client';
 import ProductCarousel from '../ProductCarousel';

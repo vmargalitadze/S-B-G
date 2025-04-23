@@ -2,7 +2,7 @@
 import { getSingleProduct } from "@/lib/actions/actions";
 import AdminProductUpdateForm from "./AdminProductUpdateForm";
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { z } from "zod";
 import { ProductSchema } from "@/lib/validators";
 

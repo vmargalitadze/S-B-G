@@ -2,9 +2,10 @@
 
 import React, { useState } from "react";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
-import Link from "next/link";
+
 
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 
 export default function Navbar() {
@@ -47,7 +48,7 @@ export default function Navbar() {
   const handleMouseLeave = () => {
     const timeout = setTimeout(() => {
       setHovered(null);
-    }, 200); // Delay to allow mouse transition
+    }, 200); 
     setSubmenuCloseTimeout(timeout);
   };
 
