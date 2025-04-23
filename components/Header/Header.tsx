@@ -28,11 +28,11 @@ export default function Navbar() {
 
         {/* Right: Search */}
         <div className="hidden md:flex items-center gap-4 z-50">
-          <div className="mt-9 mr-6">
+          <div className="mt-8 mr-6">
 
   <Search />
           </div>
-          <div className="mt-2">
+          <div className="mt-0.5">
 
   <LocalSwitcher />
           </div>

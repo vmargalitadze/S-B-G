@@ -9,8 +9,8 @@ function Info() {
   
   return (
     <>
-      <section className="lg:py-[50px] mt-[50px] lg:mt-0">
-        <section className="py-[20px] lg:py-[70px]">
+      <section className=" mt-[50px]  lg:mt-0">
+        <section className="">
           <div className="container mx-auto">
             <div className="flex flex-col md:flex-row lg:flex-row lg:gap-x-[100px]">
           

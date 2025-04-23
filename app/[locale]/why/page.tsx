@@ -49,7 +49,7 @@ export default function FranchiseSection() {
           </section>
 
           <section className="mb-12 border-t border-gray-300">
-            <h2 className="mt-5 text-xl lg:text-[30px] leading-tight lg:text-start text-center mb-5 font-semibold">
+            <h2 className="mt-5 text-xl lg:text-[25px] leading-tight lg:text-start text-center mb-5 font-semibold">
               {t('targetMarketPosition')}
             </h2>
             <p className="text-lg text-center leading-relaxed md:text-left">
@@ -75,7 +75,7 @@ export default function FranchiseSection() {
           </section>
 
           <section className="mb-5 border-t border-gray-300 py-6">
-            <h2 className="mt-5 text-xl lg:text-[30px] leading-tight lg:text-start text-center mb-5 font-semibold">
+            <h2 className="mt-5 text-xl lg:text-[25px] leading-tight lg:text-start text-center mb-5 font-semibold">
               {t('franchiseBenefits')}
             </h2>
             <p className="text-lg text-center leading-relaxed md:text-left px-4">
@@ -95,7 +95,7 @@ export default function FranchiseSection() {
           </section>
 
           <section className="mb-5 border-t border-gray-300 py-6">
-            <h2 className="mt-5 text-xl lg:text-[30px] leading-tight lg:text-start text-center mb-5 font-semibold">
+            <h2 className="mt-5 text-xl lg:text-[25px] leading-tight lg:text-start text-center mb-5 font-semibold">
               {t('advertisingSupport')}
             </h2>
 
@@ -108,7 +108,7 @@ export default function FranchiseSection() {
           </section>
 
           <section className="mb-5 border-t border-gray-300 py-6">
-            <h2 className="mt-5 text-xl lg:text-[30px] leading-tight lg:text-start text-center mb-5 font-semibold">
+            <h2 className="mt-5 text-xl lg:text-[25px] leading-tight lg:text-start text-center mb-5 font-semibold">
               {t('franchiseApplicationProcess')}
             </h2>
             <p className="text-lg text-center leading-relaxed md:text-left px-4">
@@ -136,7 +136,7 @@ export default function FranchiseSection() {
           </section>
 
           <section className="border-t border-gray-300 py-6">
-            <h2 className="mt-5 text-xl lg:text-[30px] leading-tight lg:text-start text-center mb-5 font-semibold">
+            <h2 className="mt-5 text-xl lg:text-[25px] leading-tight lg:text-start text-center mb-5 font-semibold">
               {t('buildBetterSleep')}
             </h2>
 
@@ -168,7 +168,7 @@ export default function FranchiseSection() {
           </section>
 
           <section className="border-t border-gray-300 py-6">
-            <h2 className="mt-5 text-xl lg:text-[30px] leading-tight lg:text-start text-center mb-5 font-semibold">
+            <h2 className="mt-5 text-xl lg:text-[25px] leading-tight lg:text-start text-center mb-5 font-semibold">
               {t('joinUs')}
             </h2>
 

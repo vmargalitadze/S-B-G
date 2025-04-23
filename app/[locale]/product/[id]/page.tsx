@@ -16,28 +16,28 @@ type Feature = {
 };
 
 const HEIGHT_FEATURES: Feature[] = [
-  { key: 'height', label: '6 სმ', labelEn: '6 cm', href: '/6', logo: '/filters/6.jpg' },
-  { key: 'height', label: '7 სმ', labelEn: '7 cm', href: '/7', logo: '/filters/7.jpg' },
-  { key: 'height', label: '25 სმ', labelEn: '25 cm', href: '/25', logo: '/filters/25.jpg' },
-  { key: 'height', label: '26 სმ', labelEn: '26 cm', href: '/26', logo: '/filters/26.jpg' },
-  { key: 'height', label: '27 სმ', labelEn: '27 cm', href: '/27', logo: '/filters/27.jpg' },
-  { key: 'height', label: '28 სმ', labelEn: '28 cm', href: '/28', logo: '/filters/28.jpg' },
-  { key: 'height', label: '30 სმ', labelEn: '30 cm', href: '/30', logo: '/filters/30.jpg' },
-  { key: 'height', label: '32 სმ', labelEn: '32 cm', href: '/32', logo: '/filters/32.jpg' },
-  { key: 'height', label: '33 სმ', labelEn: '33 cm', href: '/33', logo: '/filters/33.jpg' },
+  { key: 'height', label: '6 სიმაღლე', labelEn: '6 height', href: '/6', logo: '/filters/6.jpg' },
+  { key: 'height', label: '7 სიმაღლე', labelEn: '7 height', href: '/7', logo: '/filters/7.jpg' },
+  { key: 'height', label: '25 სიმაღლე', labelEn: '25 height', href: '/25', logo: '/filters/25.jpg' },
+  { key: 'height', label: '26 სიმაღლე', labelEn: '26 height', href: '/26', logo: '/filters/26.jpg' },
+  { key: 'height', label: '27 სიმაღლე', labelEn: '27 height', href: '/27', logo: '/filters/27.jpg' },
+  { key: 'height', label: '28 სიმაღლე', labelEn: '28 height', href: '/28', logo: '/filters/28.jpg' },
+  { key: 'height', label: '30 სიმაღლე', labelEn: '30 height', href: '/30', logo: '/filters/30.jpg' },
+  { key: 'height', label: '32 სიმაღლე', labelEn: '32 height', href: '/32', logo: '/filters/32.jpg' },
+  { key: 'height', label: '33 სიმაღლე', labelEn: '33 height', href: '/33', logo: '/filters/33.jpg' },
 ];
 
 const FEATURES: Feature[] = [
-  { key: 'springTech', label: '7 ზონიანი ჯიბის ზამბარის ტექნოლოგია', labelEn: '7 Zone Pocket Spring Technology', href: '/zone', logo: '/filters/zone.jpg' },
+  { key: 'springTech', label: '7 ზონიანი შეფუთული ზამბარა', labelEn: '7 Zone Pocket Spring Technology', href: '/zone', logo: '/filters/zone.jpg' },
   { key: 'breathable', label: 'სუნთქვადი', labelEn: 'Breathable', href: '/brieth', logo: '/filters/brieth1.jpg' },
   { key: 'doubleSided', label: 'ორმხრივი', labelEn: 'Double Sided', href: '/double', logo: '/filters/ds.jpg' },
   { key: 'orthopaedic', label: 'ორთოპედიული', labelEn: 'Orthopaedic', href: '/ort', logo: '/filters/ort.jpg' },
   { key: 'knitte', label: 'ნაქსოვი', labelEn: 'Knitted', href: '/knitte', logo: '/filters/knitted.jpg' },
   { key: 'wool', label: 'ბამბა', labelEn: 'Wool', href: '/wool', logo: '/filters/wool.jpg' },
   { key: 'visco', label: 'ვისკო', labelEn: 'Visco', href: '/visco', logo: '/filters/visco.jpg' },
-  { key: 'dns', label: 'მაღალი  საჰაერო სადინარიანი დამხმარე სპონჯი', labelEn: 'High Dns Air Ducted Support Sponge', href: '/dns', logo: '/filters/dns.jpg' },
+  { key: 'dns', label: 'მაღალი საჰაერო გამტარობის DNS ღრუბელი', labelEn: 'High Dns Air Ducted Support Sponge', href: '/dns', logo: '/filters/dns.jpg' },
   { key: 'latex', label: 'ლატექსი', labelEn: 'Latex', href: '/latex', logo: '/filters/latex.jpg' },
-  { key: 'washable', label: 'გასარეცხი ჩასადები ქეისი', labelEn: 'Washable', href: '/wash', logo: '/filters/wash.jpg' },
+  { key: 'washable', label: 'რეცხვადი ქეისი', labelEn: 'Washable', href: '/wash', logo: '/filters/wash.jpg' },
 ];
 
 const DetailPage = async(props: {
@@ -68,7 +68,7 @@ const DetailPage = async(props: {
   const ALL_FEATURES = matchedHeightFeature
     ? [matchedHeightFeature, ...FEATURES]
     : [...FEATURES];
-
+    const isFlexMode = product.type === 'PILLOW' || product.type === 'QUILT';
   const getFeatureValue = (key: keyof Mattress & keyof Pad) => {
     if (key === 'height') return true;
     return product.type === 'MATTRESS'
@@ -120,85 +120,74 @@ const DetailPage = async(props: {
 )}
 </div>
 
-            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {product.type === 'PILLOW' && product.pillow && (
-  <>
-    {product.pillow.size && (
-      <p><strong>{isGe ? 'ზომა' : 'Size'}:</strong> {product.pillow.size}</p>
-    )}
-    {product.pillow.weight && (
-      <p><strong>{isGe ? 'წონა' : 'Weight'}:</strong> {product.pillow.weight} {isGe ? 'გრამი' : 'gram'}</p>
-    )}
-    {(isGe ? product.pillow.outerFabric : product.pillow.outerFabricEn) && (
-      <p><strong>{isGe ? 'გარეთა ქსოვილი' : 'Outer Fabric'}:</strong> {isGe ? product.pillow.outerFabric : product.pillow.outerFabricEn}</p>
-    )}
-    {(isGe ? product.pillow.filling : product.pillow.fillingEn) && (
-      <p><strong>{isGe ? 'შევსება' : 'Filling'}:</strong> {isGe ? product.pillow.filling : product.pillow.fillingEn}</p>
-    )}
-    {(isGe ? product.pillow.packaging : product.pillow.packagingEn) && (
-      <p><strong>{isGe ? 'შეფუთვა' : 'Packaging'}:</strong> {isGe ? product.pillow.packaging : product.pillow.packagingEn}</p>
-    )}
- 
-  </>
-)}
+<div className={`mt-4 ${isFlexMode ? 'flex flex-col gap-y-2' : 'grid grid-cols-1 sm:grid-cols-2 gap-4'}`}>
+  {product.type === 'PILLOW' && product.pillow && (
+    <>
+      {product.pillow.size && (
+        <p><strong>{isGe ? 'ზომა' : 'Size'}:</strong> {product.pillow.size}</p>
+      )}
+      {product.pillow.weight && (
+        <p><strong>{isGe ? 'წონა' : 'Weight'}:</strong> {product.pillow.weight} {isGe ? 'გრამი' : 'gram'}</p>
+      )}
+      {(isGe ? product.pillow.outerFabric : product.pillow.outerFabricEn) && (
+        <p><strong>{isGe ? 'გარეთა ქსოვილი' : 'Outer Fabric'}:</strong> {isGe ? product.pillow.outerFabric : product.pillow.outerFabricEn}</p>
+      )}
+      {(isGe ? product.pillow.filling : product.pillow.fillingEn) && (
+        <p><strong>{isGe ? 'შევსება' : 'Filling'}:</strong> {isGe ? product.pillow.filling : product.pillow.fillingEn}</p>
+      )}
+      {(isGe ? product.pillow.packaging : product.pillow.packagingEn) && (
+        <p><strong>{isGe ? 'შეფუთვა' : 'Packaging'}:</strong> {isGe ? product.pillow.packaging : product.pillow.packagingEn}</p>
+      )}
+    </>
+  )}
 
-{product.type === 'QUILT' && product.quilt && (
-  <>
-    {product.quilt.dimensions && (
-      <p><strong>{isGe ? 'ზომა' : 'Dimensions'}:</strong> {product.quilt.dimensions}</p>
-    )}
-    {(isGe ? product.quilt.fabric : product.quilt.fabricEn) && (
-      <p><strong>{isGe ? 'ქსოვილი' : 'Fabric'}:</strong> {isGe ? product.quilt.fabric : product.quilt.fabricEn}</p>
-    )}
-    {(isGe ? product.quilt.filling : product.quilt.fillingEn) && (
-      <p><strong>{isGe ? 'შევსება' : 'Filling'}:</strong> {isGe ? product.quilt.filling : product.quilt.fillingEn}</p>
-    )}
-    {product.quilt.weight && (
-      <p><strong>{isGe ? 'წონა' : 'Weight'}:</strong> {product.quilt.weight}</p>
-    )}
+  {product.type === 'QUILT' && product.quilt && (
+    <>
+      {product.quilt.dimensions && (
+        <p><strong>{isGe ? 'ზომა' : 'Dimensions'}:</strong> {product.quilt.dimensions}</p>
+      )}
+      {(isGe ? product.quilt.fabric : product.quilt.fabricEn) && (
+        <p><strong>{isGe ? 'ქსოვილი' : 'Fabric'}:</strong> {isGe ? product.quilt.fabric : product.quilt.fabricEn}</p>
+      )}
+      {(isGe ? product.quilt.filling : product.quilt.fillingEn) && (
+        <p><strong>{isGe ? 'შევსება' : 'Filling'}:</strong> {isGe ? product.quilt.filling : product.quilt.fillingEn}</p>
+      )}
+      {product.quilt.weight && (
+        <p><strong>{isGe ? 'წონა' : 'Weight'}:</strong> {product.quilt.weight}</p>
+      )}
+    </>
+  )}
 
+  {(product.type === 'PAD' || product.type === 'MATTRESS') && (
+    <>
+      {ALL_FEATURES.map((feature, index) => {
+        const value = getFeatureValue(feature.key);
+        if (!value) return null;
 
-  </>
-)}
-
-
-{(product.type === 'PAD' || product.type === 'MATTRESS') && (
-  <>
-    {ALL_FEATURES.map((feature, index) => {
-      const value = getFeatureValue(feature.key);
-      if (!value) return null;
-
-      return (
-        <div key={index}>
-          <div className="flex items-center space-x-2 p-2 rounded-lg transition">
-            <Link
-              href={feature.href}
-              className="font-semibold flex items-center gap-2 p-2 text-[15px] text-gray-800 hover:underline"
-            >
-              <Image
-                src={feature.logo}
-                alt="logo"
-                width={42}
-                height={42}
-                className="object-contain"
-              />
-              {isGe ? feature.label : feature.labelEn}
-            </Link>
-          </div>
-        </div>
-      );
-    })}
-
-
-
-
-  
-
-
-  </>
-)}
-
+        return (
+          <div key={index}>
+            <div className="flex items-center space-x-2 p-2 rounded-lg transition">
+              <Link
+                href={feature.href}
+                className="font-semibold flex items-center gap-2 p-2 text-[15px] text-gray-800 hover:underline"
+              >
+                <Image
+                  src={feature.logo}
+                  alt="logo"
+                  width={42}
+                  height={42}
+                  className="object-contain"
+                />
+                {isGe ? feature.label : feature.labelEn}
+              </Link>
             </div>
+          </div>
+        );
+      })}
+    </>
+  )}
+</div>
+
 
           </div>
           

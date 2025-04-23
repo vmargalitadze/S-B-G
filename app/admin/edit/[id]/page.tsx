@@ -29,7 +29,7 @@ const DetailPage = async(props: {
   delete (flattenedProduct as any).quilt;
 
   return (
-    <div className="p-6 max-w-4xl mx-auto">
+    <div className="p-6 max-w-2xl mx-auto">
       <h1 className="text-2xl font-semibold mb-4">პროდუქტის რედაქტირება</h1>
        <Link href='/admin'> უკან დაბრუნება </Link>
        <AdminProductUpdateForm initialData={flattenedProduct as z.infer<typeof ProductSchema> & { id: string }} />

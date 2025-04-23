@@ -14,6 +14,7 @@ function Filter({ selectedCategory, setSelectedCategory }: FilterProps) {
   const handleReset = () => {
     setSelectedCategory(undefined); // Reset to show all products
   };
+console.log(categories);
 
   return (
     <div className="pt-[70px] pb-[70px]">

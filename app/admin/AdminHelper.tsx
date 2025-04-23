@@ -10,17 +10,17 @@ async function AdminHelper() {
   const productsData = await getAllProduct();
 
   return (
-    <main className="sm:p-10 space-y-6 items-center">
-        <div className="mr-6">
-          <Link className="p-2 w-[200px] cursor-pointer" href="/">
+    <main className=" space-y-6 items-center">
+        <div className="ml-10">
+          <Link className="w-[200px] cursor-pointer" href="/">
             <div className="border w-[70px] border-gray-500 rounded-full">
               <Image src={logo} height={70}  width={70} alt="logo" className="rounded-full" />
             </div>
           </Link>
-          <h2 className="text-gray-600 text-4xl ml-0.5">Sleepandbad.ge</h2>
+      
         </div>
       <div className="flex flex-col   justify-center ">
-        <div className="sm:p-10 space-y-6 flex flex-col items-center">
+        <div className="space-y-6 flex flex-col items-center">
    
         <div className="w-full ">
     <AdminSwitch products={productsData.data} />

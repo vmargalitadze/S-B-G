@@ -10,10 +10,10 @@ export default function AdminSwitch({ products }: { products: ProductType[] }) {
 
   return (
     <>
-  <div className="flex flex-wrap justify-center gap-6 mt-4">
+  <div className="flex flex-wrap justify-center gap-6 ">
     <button
       onClick={() => setActiveComponent("all")}
-      className="inline-flex cursor-pointer px-5 py-3 text-purple-600 hover:text-purple-700 focus:text-purple-700 hover:bg-purple-100 focus:bg-purple-100 border border-purple-600 rounded-md"
+      className="inline-flex cursor-pointer px-5 py-3 text-black  hover:bg-[#052C46] hover:text-white border border-[#052C46] rounded-md"
     >
       <svg
         aria-hidden="true"
@@ -34,7 +34,7 @@ export default function AdminSwitch({ products }: { products: ProductType[] }) {
 
     <button
       onClick={() => setActiveComponent("form")}
-      className="inline-flex cursor-pointer px-5 py-3 text-white bg-purple-600 hover:bg-purple-700 focus:bg-purple-700 rounded-md"
+      className="inline-flex cursor-pointer px-5 py-3 text-white bg-[#052C46]  rounded-md"
     >
       <svg
         aria-hidden="true"

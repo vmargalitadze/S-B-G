@@ -27,7 +27,7 @@
   "navitems": {
     "products": "Products",
     "pillows": "Pillows",
-    "blanket": "Blanket",
+    "blanket": "Quilt",
     "matrass": "Matrass",
     "toper": "Toper",
     "catalogue": "Catalogue",
@@ -47,8 +47,13 @@
 "ourProducts":"Our products",
 "viewAll":"Exolore"
 },
+"text":{
+"first":"The Best of Sleep for Everyone",
+"sec":"The Most Natural Sleep for Everyone",
+"last":"The Most Comfortable Sleep for Everyone"
+},
 "hero":{
-"heroheader":"The latest stylish and useful products are waiting for you",
+"heroheader":"Make the best choice with SLEEP&BED ​​GEORGIA",
 "herolink":"Explore our products"
 },
   "about": {

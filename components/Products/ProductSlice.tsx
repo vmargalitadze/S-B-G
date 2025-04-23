@@ -15,7 +15,7 @@ export default function ProductSlice({ products }: { products: ProductType[] }) 
   const locale = useLocale();
 
   return (
-    <section className="mt-5 pt-16 lg:pb-16">
+    <section className="mt-5 pt-16">
       <div className="container px-6 mx-auto">
         <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center mb-6 lg:mb-0">
           <h2 className="text-xl lg:text-[25px] leading-tight text-center mb-4 font-semibold">

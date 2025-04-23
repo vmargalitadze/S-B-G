@@ -12,6 +12,7 @@ function Hero() {
           autoPlay
           loop
           muted
+          preload="none"
           playsInline
         >
           <source src="/hero/sleep-and-bed-video.mp4" type="video/mp4" />
