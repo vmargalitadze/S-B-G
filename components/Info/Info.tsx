@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 
 function Info() {
   const t = useTranslations("infopage");
+  console.log('tas');
   
   return (
     <>
