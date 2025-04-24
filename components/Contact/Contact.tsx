@@ -43,8 +43,8 @@ function Contact() {
 
               <div className="flex items-center mb-4">
                 <FaEnvelope className="text-2xl mr-4 text-white" />
-                <a href="mailto:kipianistore@gmail.com" className="text-[16px] lg:text-[20px] leading-relaxed text-white">
-                  kipianistore@gmail.com
+                <a href="mailto:Sleepandbedgeorgia@gmail.com" className="text-[16px] lg:text-[20px] leading-relaxed text-white">
+                Sleepandbedgeorgia@gmail.com
                 </a>
               </div>
 

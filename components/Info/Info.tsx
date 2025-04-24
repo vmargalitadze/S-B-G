@@ -10,7 +10,7 @@ function Info() {
   
   return (
     <>
-      <section className=" mt-[50px]  lg:mt-0">
+      <section className="">
         <section className="">
           <div className="container mx-auto">
             <div className="flex flex-col md:flex-row lg:flex-row lg:gap-x-[100px]">
