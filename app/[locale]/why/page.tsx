@@ -22,7 +22,7 @@ export default function FranchiseSection() {
         </div>
       </div>
      
-      <div className="mt-[70px] flex rounded-lg container bg-[#052C46] py-10">
+      <div className="mt-[70px] flex rounded-lg container  bg-[#203e72] py-10">
         <Video />
       </div>
 

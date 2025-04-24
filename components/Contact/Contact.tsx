@@ -20,7 +20,7 @@ function Contact() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Contact Info */}
-            <div className="bg-[#052C46] p-8 rounded-lg">
+            <div className=" bg-[#203e72] p-8 rounded-lg">
               <div className="flex items-center mb-4">
                 <FaMapMarkerAlt className="text-2xl mr-4 text-white" />
                 <span className="text-[13px] lg:text-[20px] leading-relaxed text-white">
