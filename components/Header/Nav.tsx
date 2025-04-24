@@ -2,10 +2,11 @@
 
 import React, { useState } from "react";
 import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
-import Link from "next/link";
+import LocalLanguage from "./language";
 
 import { useTranslations } from "next-intl";
-import LocalLanguage from "./language";
+import { Link } from "@/i18n/navigation";
+
 
 export default function Navbar() {
   const t = useTranslations("navitems");
@@ -47,7 +48,7 @@ export default function Navbar() {
   const handleMouseLeave = () => {
     const timeout = setTimeout(() => {
       setHovered(null);
-    }, 200); // Delay to allow mouse transition
+    }, 200); 
     setSubmenuCloseTimeout(timeout);
   };
 
@@ -140,7 +141,7 @@ export default function Navbar() {
               )}
             </div>
           ))}
-          < LocalLanguage />
+              < LocalLanguage />
         </div>
       )}
     </nav>

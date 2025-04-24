@@ -1,23 +1,40 @@
-import { NextRequest, NextFetchEvent } from 'next/server';
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
-import createIntlMiddleware from 'next-intl/middleware';
-import { routing } from './i18n/routing';
+import { NextRequest, NextResponse } from "next/server";
+import createMiddleware from "next-intl/middleware";
+import { routing } from "@/i18n/routing";
 
-const intlMiddleware = createIntlMiddleware(routing);
-const isProtectedRoute = createRouteMatcher(['/admin(.*)']);
+const intlMiddleware = createMiddleware(routing);
 
-export async function middleware(request: NextRequest, event: NextFetchEvent) {
-  // If it's an admin route, apply Clerk auth
-  if (isProtectedRoute(request)) {
-    return clerkMiddleware()(request, event);
+export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+
+  const isAdminPath = /^\/(ge|en)\/admin(\/.*)?$|^\/admin(\/.*)?$/.test(pathname);
+
+  if (isAdminPath) {
+    const basicAuth = request.headers.get("authorization");
+
+    if (basicAuth) {
+      const [user, pwd] = atob(basicAuth.split(" ")[1] || "").split(":");
+
+      const validUser = process.env.BASIC_AUTH_USER;
+      const validPassword = process.env.BASIC_AUTH_PASSWORD;
+
+      if (user === validUser && pwd === validPassword) {
+        return intlMiddleware(request); 
+      }
+    }
+
+   
+    const url = request.nextUrl.clone();
+    url.pathname = "/api/basicauth";
+    return NextResponse.rewrite(url);
   }
 
-  // Just return intlMiddleware with the request (only 1 argument)
+
   return intlMiddleware(request);
 }
 
+
 export const config = {
-  matcher: [
-    '/((?!api|_next/static|_next/image|favicon.png|.*\\..*).*)',
-  ],
+  matcher: ['/((?!api|trpc|_next|_vercel|.*\\..*).*)'],
 };

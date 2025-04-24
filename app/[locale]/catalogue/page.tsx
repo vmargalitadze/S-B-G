@@ -4,7 +4,7 @@ import image from "@/public/about/sleepandbed.svg";
 import Image from "next/image";
 import first from "@/public/catalog/1.jpg";
 import sec from "@/public/catalog/2.jpg";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
 function Page() {

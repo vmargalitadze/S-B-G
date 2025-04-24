@@ -2,14 +2,13 @@ import type { Metadata } from "next";
 import { Quicksand } from "next/font/google";
 import "../globals.css";
 import Header from "@/components/Header/Header";
-
+import {routing} from '@/i18n/routing';
 import Footer from "@/components/Footer/Footer";
-import {NextIntlClientProvider} from 'next-intl';
+import {NextIntlClientProvider, hasLocale} from 'next-intl';
+import {notFound} from 'next/navigation';
 import SIdeLogo from "@/components/SideLogo/SideLogo";
-import {
-  ClerkProvider,
 
-} from '@clerk/nextjs'
+import { getMessages } from "next-intl/server";
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",  
@@ -24,20 +23,22 @@ export const metadata: Metadata = {
   }
 };
 
-export default function RootLayout({
-  children,
+export default async function RootLayout({
+  children, params
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode;  params: Promise<{locale: string}>;
 }>) {
+  const {locale} = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
+  const messages = await getMessages();
   return (
-    <ClerkProvider>
-
-
-    <html lang="en" >
+    <html lang={locale} >
       <body
         className={`${quicksand.variable}  antialiased`}
       >
-        <NextIntlClientProvider>
+        <NextIntlClientProvider locale={locale} messages={messages}>
 
 
         <Header />
@@ -47,6 +48,7 @@ export default function RootLayout({
         </NextIntlClientProvider>
       </body>
     </html>
-    </ClerkProvider>
+ 
+ 
   );
 }

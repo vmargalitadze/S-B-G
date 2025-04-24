@@ -2,7 +2,7 @@
 import React from 'react';
 import ProductImages from '../ProductImage';
 import { getSingleProduct } from '@/lib/actions/actions';
-import Link from 'next/link';
+import { Link } from "@/i18n/navigation";
 import Image from 'next/image';
 import { Mattress, Pad } from '@prisma/client';
 import ProductCarousel from '../ProductCarousel';
@@ -16,28 +16,28 @@ type Feature = {
 };
 
 const HEIGHT_FEATURES: Feature[] = [
-  { key: 'height', label: '6 სმ', labelEn: '6 cm', href: '/6', logo: '/filters/6.jpg' },
-  { key: 'height', label: '7 სმ', labelEn: '7 cm', href: '/7', logo: '/filters/7.jpg' },
-  { key: 'height', label: '25 სმ', labelEn: '25 cm', href: '/25', logo: '/filters/25.jpg' },
-  { key: 'height', label: '26 სმ', labelEn: '26 cm', href: '/26', logo: '/filters/26.jpg' },
-  { key: 'height', label: '27 სმ', labelEn: '27 cm', href: '/27', logo: '/filters/27.jpg' },
-  { key: 'height', label: '28 სმ', labelEn: '28 cm', href: '/28', logo: '/filters/28.jpg' },
-  { key: 'height', label: '30 სმ', labelEn: '30 cm', href: '/30', logo: '/filters/30.jpg' },
-  { key: 'height', label: '32 სმ', labelEn: '32 cm', href: '/32', logo: '/filters/32.jpg' },
-  { key: 'height', label: '33 სმ', labelEn: '33 cm', href: '/33', logo: '/filters/33.jpg' },
+  { key: 'height', label: '6 სიმაღლე', labelEn: '6 height', href: '/6', logo: '/filters/6.jpg' },
+  { key: 'height', label: '7 სიმაღლე', labelEn: '7 height', href: '/7', logo: '/filters/7.jpg' },
+  { key: 'height', label: '25 სიმაღლე', labelEn: '25 height', href: '/25', logo: '/filters/25.jpg' },
+  { key: 'height', label: '26 სიმაღლე', labelEn: '26 height', href: '/26', logo: '/filters/26.jpg' },
+  { key: 'height', label: '27 სიმაღლე', labelEn: '27 height', href: '/27', logo: '/filters/27.jpg' },
+  { key: 'height', label: '28 სიმაღლე', labelEn: '28 height', href: '/28', logo: '/filters/28.jpg' },
+  { key: 'height', label: '30 სიმაღლე', labelEn: '30 height', href: '/30', logo: '/filters/30.jpg' },
+  { key: 'height', label: '32 სიმაღლე', labelEn: '32 height', href: '/32', logo: '/filters/32.jpg' },
+  { key: 'height', label: '33 სიმაღლე', labelEn: '33 height', href: '/33', logo: '/filters/33.jpg' },
 ];
 
 const FEATURES: Feature[] = [
-  { key: 'springTech', label: '7 ზონიანი ჯიბის ზამბარის ტექნოლოგია', labelEn: '7 Zone Pocket Spring Technology', href: '/zone', logo: '/filters/zone.jpg' },
+  { key: 'springTech', label: '7 ზონიანი შეფუთული ზამბარა', labelEn: '7 Zone Pocket Spring Technology', href: '/zone', logo: '/filters/zone.jpg' },
   { key: 'breathable', label: 'სუნთქვადი', labelEn: 'Breathable', href: '/brieth', logo: '/filters/brieth1.jpg' },
   { key: 'doubleSided', label: 'ორმხრივი', labelEn: 'Double Sided', href: '/double', logo: '/filters/ds.jpg' },
   { key: 'orthopaedic', label: 'ორთოპედიული', labelEn: 'Orthopaedic', href: '/ort', logo: '/filters/ort.jpg' },
   { key: 'knitte', label: 'ნაქსოვი', labelEn: 'Knitted', href: '/knitte', logo: '/filters/knitted.jpg' },
   { key: 'wool', label: 'ბამბა', labelEn: 'Wool', href: '/wool', logo: '/filters/wool.jpg' },
   { key: 'visco', label: 'ვისკო', labelEn: 'Visco', href: '/visco', logo: '/filters/visco.jpg' },
-  { key: 'dns', label: 'მაღალი  საჰაერო სადინარიანი დამხმარე სპონჯი', labelEn: 'High Dns Air Ducted Support Sponge', href: '/dns', logo: '/filters/dns.jpg' },
+  { key: 'dns', label: 'მაღალი საჰაერო გამტარობის DNS ღრუბელი', labelEn: 'High Dns Air Ducted Support Sponge', href: '/dns', logo: '/filters/dns.jpg' },
   { key: 'latex', label: 'ლატექსი', labelEn: 'Latex', href: '/latex', logo: '/filters/latex.jpg' },
-  { key: 'washable', label: 'გასარეცხი ჩასადები ქეისი', labelEn: 'Washable', href: '/wash', logo: '/filters/wash.jpg' },
+  { key: 'washable', label: 'რეცხვადი ქეისი', labelEn: 'Washable', href: '/wash', logo: '/filters/wash.jpg' },
 ];
 
 const DetailPage = async(props: {
@@ -81,13 +81,13 @@ const DetailPage = async(props: {
   const filtered = allSameTypeProducts.filter(p => p.id !== id).slice(0, 4);
   return (
     <section className="w-full mx-auto max-w-[1440px]">
-      <div className="text-black py-10">
+      <div className="text-black ">
         <div className="container mx-auto flex flex-col md:flex-row gap-6 lg:gap-12 items-center">
           <div className="w-full lg:w-1/2 flex justify-center">
             <ProductImages images={product.images} />
           </div>
-          <div className="w-full lg:w-1/2 lg:mt-28 p-4 sm:p-6 flex flex-col">
-            <h2 className="mt-5 text-xl lg:text-[30px] text-center lg:text-start mb-5 font-semibold">
+          <div className="w-full lg:w-1/2 lg:mt-28 p-4  sm:p-6 flex flex-col">
+            <h2 className="lg:mt-[120px] text-xl lg:text-[25px]  text-center lg:text-start mb-5 font-semibold">
               {title}
             </h2>
             <p className="text-[15px] lg:text-[17px] leading-tight mb-4 font-semibold">
@@ -197,7 +197,7 @@ const DetailPage = async(props: {
         {(product.type === 'MATTRESS' && product.mattress && (isGe ? product.mattress.descriptionKa : product.mattress.descriptionEn)) ||
  (product.type === 'PAD' && product.pad && (isGe ? product.pad.descriptionKa : product.pad.descriptionEn)) ? (
   <div className="container mt-10 text-center mx-auto gap-6 lg:gap-12">
-    <h1 className="text-3xl font-semibold">{isGe ? 'აღწერა' : 'Description'}:</h1>
+    <h1 className="text-xl lg:text-[25px] font-semibold">{isGe ? 'აღწერა' : 'Description'}:</h1>
     <p className="mt-4 text-[16px]">
       {product.type === 'MATTRESS' && product.mattress && (
         isGe ? product.mattress.descriptionKa : product.mattress.descriptionEn

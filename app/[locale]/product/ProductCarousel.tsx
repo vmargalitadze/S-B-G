@@ -3,7 +3,7 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import Link from 'next/link';
+import { Link } from "@/i18n/navigation";
 import Image from 'next/image';
 
 type SimplifiedProduct = {
@@ -23,7 +23,7 @@ const ProductCarousel = ({ products, locale }: Props) => {
 
   return (
     <div className="w-full overflow-y-hidden mt-10">
-      <h2 className="text-2xl  font-semibold mb-[50px] text-center">
+      <h2 className="text-xl lg:text-[25px]  font-semibold mb-[50px] text-center">
         {isGe ? 'მსგავსი პროდუქტები' : 'Similar Products'}
       </h2>
       <Swiper
