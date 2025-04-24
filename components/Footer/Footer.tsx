@@ -7,7 +7,7 @@ import {  FaFacebook, FaInstagram,  FaTiktok } from 'react-icons/fa'
 function Footer() {
     const t = useTranslations("navitems");
   return (
-    <footer className="relative bg-[#052032] text-white pt-8 pb-6">
+    <footer className="relative  bg-[#203e72] text-white pt-8 pb-6">
       <div className="container mx-auto px-4">
       <nav className="flex flex-wrap justify-center -mx-5 -my-2">
  

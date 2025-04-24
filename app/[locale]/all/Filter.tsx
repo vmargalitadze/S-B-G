@@ -26,8 +26,8 @@ console.log(categories);
             className={`outline-none rounded-lg cursor-pointer transition-all duration-150 ease-in-out 
             border border-solid border-black px-4 py-2 sm:px-6 sm:py-3 
             text-[14px] sm:text-[18px] uppercase focus:outline-none 
-            hover:bg-[#052C46] hover:text-white
-            ${selectedCategory === undefined ? "bg-[#052C46] text-white" : "text-black"}`}
+            hover: bg-[#203e72] hover:text-white
+            ${selectedCategory === undefined ? " bg-[#203e72] text-white" : "text-black"}`}
             onClick={handleReset}
           >
             {t("all")} {/* Translate "All" to Georgian or English */}
@@ -45,8 +45,8 @@ console.log(categories);
                 outline-none rounded-lg cursor-pointer transition-all duration-150 ease-in-out 
                 border border-solid border-black px-4 py-2 sm:px-6 sm:py-3 
                 text-[14px] sm:text-[18px] uppercase focus:outline-none 
-                hover:bg-[#052C46] hover:text-white
-                ${selectedCategory === category ? "bg-[#052C46] text-white" : "text-black"}
+                hover:bg-[#203e72] hover:text-white
+                ${selectedCategory === category ? " bg-[#203e72] text-white" : "text-black"}
               `}
             >
               {t(category)} {/* Translate category text */}

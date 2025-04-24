@@ -65,14 +65,14 @@ const OtherFilters = () => {
   
   
         <Button
-  className="swiper-button-prev absolute left-2 top-1/2 transform -translate-y-12 bg-gray-100 text-2xl text-gray-500 cursor-pointer z-10"
+  className="swiper-button-prev absolute left-[0.5px] top-1/2 transform -translate-y-12 bg-gray-100 text-2xl text-gray-500 cursor-pointer z-10"
   aria-label="Previous"
 >
   <FaArrowLeft />
 </Button>
 
 <Button
-  className="swiper-button-next absolute right-2 top-1/2 transform -translate-y-12 bg-gray-100 text-2xl text-gray-500 cursor-pointer z-10"
+  className="swiper-button-next absolute right-[0.5px] top-1/2 transform -translate-y-12 bg-gray-100 text-2xl text-gray-500 cursor-pointer z-10"
   aria-label="Next"
 >
   <FaArrowRight />

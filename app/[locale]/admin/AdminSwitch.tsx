@@ -7,13 +7,13 @@ import { ProductType } from '@/lib/ProductType';
 
 export default function AdminSwitch({ products }: { products: ProductType[] }) {
   const [activeComponent, setActiveComponent] = useState<"all" | "form">("all");
-
+ 
   return (
     <>
   <div className="flex flex-wrap justify-center gap-6 ">
     <button
       onClick={() => setActiveComponent("all")}
-      className="inline-flex cursor-pointer px-5 py-3 text-black  hover:bg-[#052C46] hover:text-white border border-[#052C46] rounded-md"
+      className="inline-flex cursor-pointer px-5 py-3 text-black  hover:bg-[#203e72] hover:text-white border border-[#203e72] rounded-md"
     >
       <svg
         aria-hidden="true"
@@ -34,7 +34,7 @@ export default function AdminSwitch({ products }: { products: ProductType[] }) {
 
     <button
       onClick={() => setActiveComponent("form")}
-      className="inline-flex cursor-pointer px-5 py-3 text-white bg-[#052C46]  rounded-md"
+      className="inline-flex cursor-pointer px-5 py-3 text-white  bg-[#203e72]  rounded-md"
     >
       <svg
         aria-hidden="true"

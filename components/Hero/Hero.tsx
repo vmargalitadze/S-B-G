@@ -31,7 +31,7 @@ function Hero() {
           className="outline-none rounded-lg cursor-pointer transition-all duration-150 ease-in-out 
                  border border-solid border-black px-4 py-2 sm:px-6 sm:py-3 
                  text-[14px] sm:text-[18px] uppercase focus:outline-none 
-                 bg-[#052C46] hover:text-white"
+                 bg-[#203e72] hover:text-white"
         >
           {t("herolink")}
         </Link>
