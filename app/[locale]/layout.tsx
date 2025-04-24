@@ -33,6 +33,9 @@ export default async function RootLayout({
   const messages = await getMessages();
   return (
     <html lang={locale} >
+       <head>
+       <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+      </head>
       <body
         className={`${quicksand.variable}  antialiased`}
       >
