@@ -104,7 +104,7 @@ function PageContentWrapper() {
             <PaginationComponent pageCount={pageCount} />
           </div>
 
-          <div className="container items-center lg:ml-[170px] mt-6 text-center">
+          <div className="container items-center lg:ml-[170px] mt-[80px] text-center">
             <OtherFilters />
           </div>
         </div>
