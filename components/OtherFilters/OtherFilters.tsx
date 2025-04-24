@@ -9,7 +9,8 @@ import 'swiper/css';
 import { Grid, Navigation } from 'swiper/modules';
 import 'swiper/css/grid';
 import SlugLinks from './Sluglinks';
-
+import { Button } from "@/components/ui/button";
+import {FaArrowLeft, FaArrowRight} from 'react-icons/fa'
 const OtherFilters = () => {
   const params = useParams();
   const locale = params?.locale as string;
@@ -60,13 +61,19 @@ const OtherFilters = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="flex  justify-between relative w-full">
-  <div className="swiper-button-prev text-2xl text-gray-800 cursor-pointer z-10">
-    &#8592; 
-  </div>
-  <div className="swiper-button-next text-2xl text-gray-800 cursor-pointer z-10">
-    &#8594;
-  </div>
+        <div className="flex justify-between w-full mb-4">
+  <Button
+    className="swiper-button-prev bg-gray-100 text-gray-500 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+    aria-label="Previous"
+  >
+    < FaArrowLeft />
+  </Button>
+  <Button
+    className="swiper-button-next bg-gray-100 text-gray-500 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+    aria-label="Next"
+  >
+     < FaArrowRight />
+  </Button>
 </div>
 
       </div>
