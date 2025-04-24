@@ -18,7 +18,8 @@ const OtherFilters = () => {
 
   return (
     <div className="w-full relative">
-      <div className="block lg:hidden">
+    <div className="block lg:hidden">
+      <div className="relative">
         <Swiper
           spaceBetween={16}
           slidesPerView={2}
@@ -36,8 +37,8 @@ const OtherFilters = () => {
             },
           }}
           navigation={{
-            prevEl: '.swiper-button-prev', 
-            nextEl: '.swiper-button-next', 
+            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
           }}
         >
           {SlugLinks.map((item, index) => (
@@ -61,45 +62,51 @@ const OtherFilters = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-        <div className="flex justify-between w-full mb-4">
-  <Button
-    className="swiper-button-prev bg-gray-100 text-gray-500 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
-    aria-label="Previous"
-  >
-    < FaArrowLeft />
-  </Button>
-  <Button
-    className="swiper-button-next bg-gray-100 text-gray-500 hover:bg-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
-    aria-label="Next"
-  >
-     < FaArrowRight />
-  </Button>
-</div>
+  
+  
+        <Button
+  className="swiper-button-prev absolute left-2 top-1/2 transform -translate-y-12 bg-gray-100 text-2xl text-gray-500 cursor-pointer z-10"
+  aria-label="Previous"
+>
+  <FaArrowLeft />
+</Button>
 
-      </div>
+<Button
+  className="swiper-button-next absolute right-2 top-1/2 transform -translate-y-12 bg-gray-100 text-2xl text-gray-500 cursor-pointer z-10"
+  aria-label="Next"
+>
+  <FaArrowRight />
+</Button>
 
-      <div className="hidden lg:grid grid-cols-4 xl:grid-cols-5 gap-6">
-        {SlugLinks.map((item, index) => (
-          <Link
-            key={index}
-            href={item.href}
-            className="group rounded-2xl p-4 transition duration-300 flex flex-col items-center justify-center"
-          >
-            <div className="w-[60px] h-[60px] relative mb-2">
-              <Image
-                src={item.logo}
-                alt={isGe ? item.label : item.labelEn}
-                fill
-                className="object-contain"
-              />
-            </div>
-            <span className="text-sm text-center font-medium text-gray-800 group-hover:text-black transition">
-              {isGe ? item.label : item.labelEn}
-            </span>
-          </Link>
-        ))}
+
+        
       </div>
     </div>
+  
+    {/* დიდ ეკრანზე grid */}
+    <div className="hidden lg:grid grid-cols-4 xl:grid-cols-5 gap-6">
+      {SlugLinks.map((item, index) => (
+        <Link
+          key={index}
+          href={item.href}
+          className="group rounded-2xl p-4 transition duration-300 flex flex-col items-center justify-center"
+        >
+          <div className="w-[60px] h-[60px] relative mb-2">
+            <Image
+              src={item.logo}
+              alt={isGe ? item.label : item.labelEn}
+              fill
+              className="object-contain"
+            />
+          </div>
+          <span className="text-sm text-center font-medium text-gray-800 group-hover:text-black transition">
+            {isGe ? item.label : item.labelEn}
+          </span>
+        </Link>
+      ))}
+    </div>
+  </div>
+  
   );
 };
 
