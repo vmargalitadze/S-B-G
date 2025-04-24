@@ -208,7 +208,7 @@ const DetailPage = async(props: {
     </p>
   </div>
 ) : null}
-<div className="container">
+<div className="container mb-8">
 
       <ProductCarousel products={filtered} locale={locale} />
 </div>

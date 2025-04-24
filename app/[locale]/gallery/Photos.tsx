@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import Image from "next/image";
 const images = Array.from({ length: 12 }, (_, i) => `/gallery/${i + 1}.jpg`);
 import bg from '@/public/prod/breadcumb.jpg'
+import { FiX } from "react-icons/fi";
 export default function GalleryPage() {
   const [data, setData] = useState({ img: "", i: 0 });
 
@@ -61,7 +62,7 @@ export default function GalleryPage() {
             className="absolute cursor-pointer top-6 right-6 text-white text-3xl font-bold hover:text-gray-500"
             onClick={closeImage}
           >
-            ✕
+           <FiX className="text-white mr-4" size={24} />
           </button>
 
           {data.i > 0 && (
@@ -77,7 +78,7 @@ export default function GalleryPage() {
             alt="fullscreen"
             src={data.img}
             width={350} height={350}
-            className="max-w-[90%] max-h-[90%] object-contain"
+            className="max-w-[75%] max-h-[90%] object-contain"
           />
 
           {data.i + 1 < images.length && (

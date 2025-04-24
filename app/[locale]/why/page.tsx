@@ -60,7 +60,7 @@ export default function FranchiseSection() {
             <h2 className="mb-2 text-left mt-5 text-lg font-semibold text-gray-900 dark:text-white">
               {t('ourProductPortfolio')}
             </h2>
-            <ul className="max-w-md text-left  space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+            <ul className="max-w-md text-left  space-y-1 text-black list-disc list-inside ">
               <li>{t('mattressesPillows')}</li>
               <li>{t('mattressProtectors')}</li>
               <li>{t('bedFramesBases')}</li>
@@ -86,7 +86,7 @@ export default function FranchiseSection() {
             <h2 className="mb-2 text-left mt-5 r text-lg font-semibold text-gray-900 dark:text-white">
               {t('comprehensiveSupport')}
             </h2>
-            <ul className="max-w-4xl text-left space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400 px-4">
+            <ul className="max-w-4xl text-left space-y-1 text-black list-disc list-inside  px-4">
               <li>{t('marketingSupport')}</li>
               <li>{t('storeSupport')}</li>
               <li>{t('salesTraining')}</li>
@@ -100,7 +100,7 @@ export default function FranchiseSection() {
               {t('advertisingSupport')}
             </h2>
 
-            <ul className="max-w-4xl text-left space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400 px-4">
+            <ul className="max-w-4xl text-left space-y-1 text-black list-disc list-inside  px-4">
               <li>{t('socialMediaCampaigns')}</li>
               <li>{t('promoPackages')}</li>
               <li>{t('emailMarketingStrategies')}</li>
@@ -119,7 +119,7 @@ export default function FranchiseSection() {
             <h2 className="mb-2 text-left mt-5  text-lg font-semibold text-gray-900 dark:text-white">
               {t('franchiseApplication')}
             </h2>
-            <ol className="max-w-4xl text-left space-y-1 text-gray-500 list-decimal list-inside dark:text-gray-400 px-4">
+            <ol className="max-w-4xl text-left space-y-1 text-black list-decimal list-inside  px-4">
               <li>{t('applicationForm')}</li>
               <li>{t('approval')}</li>
               <li>{t('storeLocation')}</li>
