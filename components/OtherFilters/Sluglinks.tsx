@@ -15,7 +15,7 @@ const SlugLinks = [
     { key: 'knitte', label: 'ნაქსოვი', labelEn: 'Knitted', href: '/knitte', logo: '/filters/knitted.jpg' },
     { key: 'wool', label: 'ბამბა', labelEn: 'Wool', href: '/wool', logo: '/filters/wool.jpg' },
     { key: 'visco', label: 'ვისკო', labelEn: 'Visco', href: '/visco', logo: '/filters/visco.jpg' },
-    { key: 'dns', label: 'საჰაერო გამტარობის DNS ღრუბელი', labelEn: 'High Dns Air Ducted Support Sponge', href: '/dns', logo: '/filters/dns.jpg' },
+    { key: 'dns', label: 'მაღალი საჰაერო გამტარობის DNS ღრუბელი', labelEn: 'High Dns Air Ducted Support Sponge', href: '/dns', logo: '/filters/dns.jpg' },
     { key: 'latex', label: 'ლატექსი', labelEn: 'Latex', href: '/latex', logo: '/filters/latex.jpg' },
     { key: 'washable', label: 'რეცხვადი ქეისი', labelEn: 'Washable', href: '/wash', logo: '/filters/wash.jpg' },
 ];
