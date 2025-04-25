@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import bg from '@/public/hero/hero-bg_cleanup.png'
 import Image from "next/image";
 import { useTranslations } from 'next-intl';
-import logo from "@/public/about/axali.jpg";
+
 const Text = () => {
     const [currentWordIndex, setCurrentWordIndex] = useState(0);
     const [hide, setHide] = useState(true);
@@ -79,9 +79,7 @@ const Text = () => {
   {/* Overlay */}
   <div className="absolute inset-0 bg-black/40 z-10" />
 
-    <div className="border absolute  mx-auto border-white z-20 rounded-full mb-14">
-      <Image src={logo} height={70} width={70} alt="logo" className="rounded-full" />
-    </div>
+ 
   <motion.div
   className="absolute z-20  mt-28 text-center min-h-[100px]" // ← აქ დავამატე min-h
   variants={wordVariants}
