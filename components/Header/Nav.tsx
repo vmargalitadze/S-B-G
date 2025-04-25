@@ -114,7 +114,7 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="absolute -top-8 -right-6  w-full h-[1200px] bg-[#EBEBEB] flex flex-col gap-4 shadow-l">
           <button onClick={() => setMobileMenuOpen(false)} className="self-end">
-            <FiX className="text-black mr-4" size={24} />
+            <FiX className="text-black mt-5 mr-9" size={24} />
           </button>
           {navItems.map((item, index) => (
             <div key={index} className="w-full px-3">
@@ -141,7 +141,7 @@ export default function Navbar() {
               )}
             </div>
           ))}
-              < LocalLanguage />
+              <LocalLanguage />
         </div>
       )}
     </nav>

@@ -62,7 +62,7 @@ const PaginationComponent: FC<PaginationProps> = ({ pageCount }) => {
   );
 
   return (
-    <div className="flex justify-center cursor-pointer items-center gap-2 lg:mt-8">
+    <div className="flex justify-center mb-9 lg:mb-0 cursor-pointer items-center gap-2 lg:mt-8">
       <PaginationArrow
         direction="left"
         onClick={() => goToPage(currentPage - 1)}
