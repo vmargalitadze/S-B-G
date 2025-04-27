@@ -18,7 +18,7 @@ export default function Navbar() {
       children: [
         { label: t("pillows"), link: "/pillows" },
         { label: t("blanket"), link: "/blanket" },
-        { label: t("mattress"), link: "/matrass" },
+        { label: t("matrass"), link: "/matrass" },
         { label: t("toper"), link: "/toper" },
         { label: t("catalogue"), link: "/catalogue" },
       ],
