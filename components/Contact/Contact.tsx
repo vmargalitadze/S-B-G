@@ -20,7 +20,7 @@ function Contact() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Contact Info */}
-            <div className="bg-[#052C46] p-8 rounded-lg">
+            <div className=" bg-[#203e72] p-8 rounded-lg">
               <div className="flex items-center mb-4">
                 <FaMapMarkerAlt className="text-2xl mr-4 text-white" />
                 <span className="text-[13px] lg:text-[20px] leading-relaxed text-white">
@@ -43,8 +43,8 @@ function Contact() {
 
               <div className="flex items-center mb-4">
                 <FaEnvelope className="text-2xl mr-4 text-white" />
-                <a href="mailto:kipianistore@gmail.com" className="text-[16px] lg:text-[20px] leading-relaxed text-white">
-                  kipianistore@gmail.com
+                <a href="mailto:Sleepandbedgeorgia@gmail.com" className="text-[16px] lg:text-[20px] leading-relaxed text-white">
+                Sleepandbedgeorgia@gmail.com
                 </a>
               </div>
 

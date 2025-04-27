@@ -3,8 +3,8 @@ import "./cat.css";
 import image from "@/public/about/sleepandbed.svg";
 import Image from "next/image";
 import first from "@/public/catalog/1.jpg";
-import sec from "@/public/catalog/2.jpg";
-import { Link } from "@/i18n/navigation";
+import sec from "@/public/catalog/2.jpg"
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 function Page() {
@@ -77,7 +77,7 @@ function Page() {
                       </p>
                     </div>
                     <Link
-                      className="outline-none mb-6 mx-auto rounded-lg cursor-pointer transition-all duration-150 ease-in-out border border-solid border-black px-4 py-2 sm:px-6 sm:py-3 text-[14px] sm:text-base uppercase focus:outline-none bg-[#052C46] text-white"
+                      className="outline-none mb-6 mx-auto rounded-lg cursor-pointer transition-all duration-150 ease-in-out border border-solid border-black px-4 py-2 sm:px-6 sm:py-3 text-[14px] sm:text-base uppercase focus:outline-none  bg-[#203e72] text-white"
                       target="_blank"
                       href={pdfUrl}
                     >
@@ -103,7 +103,7 @@ function Page() {
                     </p>
                   </div>
                   <Link
-                    className="outline-none mb-6 mx-auto rounded-lg cursor-pointer transition-all duration-150 ease-in-out border border-solid border-black px-4 py-2 sm:px-6 sm:py-3 text-[14px] sm:text-base uppercase focus:outline-none bg-[#052C46] text-white"
+                    className="outline-none mb-6 mx-auto rounded-lg cursor-pointer transition-all duration-150 ease-in-out border border-solid border-black px-4 py-2 sm:px-6 sm:py-3 text-[14px] sm:text-base uppercase focus:outline-none  bg-[#203e72] text-white"
                     target="_blank"
                     href={pdfUrl2}
                   >

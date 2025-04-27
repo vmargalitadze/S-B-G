@@ -59,7 +59,7 @@ function Page() {
               </div>
             </div>
 
-            <section className="py-14 rounded-lg bg-[#052C46] text-white lg:py-24 relative">
+            <section className="py-14 rounded-lg bg-[#203e72] text-white lg:py-24 relative">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-9">
                   <div className="img-box">

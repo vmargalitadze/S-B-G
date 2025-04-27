@@ -19,7 +19,7 @@ function Video() {
         />
 
 
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 bg-[#052C46] text-white flex items-center justify-center rounded-full shadow-lg transition-transform duration-200">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14  bg-[#203e72] text-white flex items-center justify-center rounded-full shadow-lg transition-transform duration-200">
           ▶
         </div>
       </div>

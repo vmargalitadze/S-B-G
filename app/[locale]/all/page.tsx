@@ -100,11 +100,11 @@ function PageContentWrapper() {
             <Cards products={currentPageProducts} />
           )}
 
-          <div className="col-span-full mb-6 flex justify-center items-center mt-2">
+          <div className="col-span-full mb-6 flex justify-center items-center ">
             <PaginationComponent pageCount={pageCount} />
           </div>
 
-          <div className="container items-center lg:ml-[170px] mt-6 text-center">
+          <div className="container items-center lg:ml-[170px] mt-[80px] text-center">
             <OtherFilters />
           </div>
         </div>

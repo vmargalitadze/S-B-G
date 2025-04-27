@@ -22,7 +22,7 @@ export default function FranchiseSection() {
         </div>
       </div>
      
-      <div className="mt-[70px] flex rounded-lg container bg-[#052C46] py-10">
+      <div className="mt-[70px] flex rounded-lg container  bg-[#203e72] py-10">
         <Video />
       </div>
 
@@ -32,19 +32,19 @@ export default function FranchiseSection() {
             <h2 className="mt-5 text-xl lg:text-[25px] leading-tight lg:text-start text-center mb-5 font-semibold">
               {t('whyFranchise')}
             </h2>
-            <p className="text-lg  leading-relaxed text-left">
+            <p className="text-lg text-center leading-relaxed md:text-left">
               {t('franchiseDescription1')}
             </p>
 
-            <p className="text-lg mt-5 leading-relaxed text-left">
+            <p className="text-lg mt-5 text-center leading-relaxed md:text-left">
               {t('franchiseDescription2')}
             </p>
 
-            <p className="text-lg mt-5  leading-relaxed text-left">
+            <p className="text-lg mt-5 text-center leading-relaxed md:text-left">
               {t('franchiseDescription3')}
             </p>
 
-            <p className="text-lg mt-5  leading-relaxedtext-left">
+            <p className="text-lg mt-5 text-center leading-relaxed md:text-left">
               {t('franchiseDescription4')}
             </p>
           </section>
@@ -53,14 +53,14 @@ export default function FranchiseSection() {
             <h2 className="mt-5 text-xl lg:text-[25px] leading-tight lg:text-start text-center mb-5 font-semibold">
               {t('targetMarketPosition')}
             </h2>
-            <p className="text-lg mt-5  leading-relaxedtext-left">
+            <p className="text-lg text-center leading-relaxed md:text-left">
               {t('marketDescription')}
             </p>
 
-            <h2 className="mb-2 text-left mt-5 text-lg font-semibold text-gray-900 dark:text-white">
+            <h2 className="mb-2 text-left mt-5 text-lg font-semibold text-black  dark:text-white">
               {t('ourProductPortfolio')}
             </h2>
-            <ul className="max-w-md text-left  space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400">
+            <ul className="max-w-md text-left  space-y-1 text-black list-disc list-inside ">
               <li>{t('mattressesPillows')}</li>
               <li>{t('mattressProtectors')}</li>
               <li>{t('bedFramesBases')}</li>
@@ -70,7 +70,7 @@ export default function FranchiseSection() {
               <li>{t('petCollection')}</li>
             </ul>
 
-            <p className="text-lg mt-5  leading-relaxedtext-left">
+            <p className="text-lg mt-5 text-center leading-relaxed md:text-left">
               {t('productPortfolioDescription')}
             </p>
           </section>
@@ -79,14 +79,14 @@ export default function FranchiseSection() {
             <h2 className="mt-5 text-xl lg:text-[25px] leading-tight lg:text-start text-center mb-5 font-semibold">
               {t('franchiseBenefits')}
             </h2>
-            <p className="text-lg mt-5  leading-relaxed text-left px-4">
+            <p className="text-lg text-center leading-relaxed md:text-left px-4">
               {t('franchiseSupport')}
             </p>
 
-            <h2 className="mb-2 text-left mt-5 r text-lg font-semibold text-gray-900 dark:text-white">
+            <h2 className="mb-2 lg:text-left mt-5 text-center text-lg font-semibold text-black  dark:text-white">
               {t('comprehensiveSupport')}
             </h2>
-            <ul className="max-w-4xl text-left space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400 px-4">
+            <ul className="max-w-4xl text-left space-y-1 text-black  list-disc list-inside  px-4">
               <li>{t('marketingSupport')}</li>
               <li>{t('storeSupport')}</li>
               <li>{t('salesTraining')}</li>
@@ -100,7 +100,7 @@ export default function FranchiseSection() {
               {t('advertisingSupport')}
             </h2>
 
-            <ul className="max-w-4xl text-left space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400 px-4">
+            <ul className="max-w-4xl text-left space-y-1 text-black  list-disc list-inside  px-4">
               <li>{t('socialMediaCampaigns')}</li>
               <li>{t('promoPackages')}</li>
               <li>{t('emailMarketingStrategies')}</li>
@@ -112,14 +112,14 @@ export default function FranchiseSection() {
             <h2 className="mt-5 text-xl lg:text-[25px] leading-tight lg:text-start text-center mb-5 font-semibold">
               {t('franchiseApplicationProcess')}
             </h2>
-            <p className="text-lg leading-relaxed text-left px-4">
+            <p className="text-lg text-center leading-relaxed md:text-left px-4">
               {t('franchiseSteps')}
             </p>
 
-            <h2 className="mb-2 text-left mt-5  text-lg font-semibold text-gray-900 dark:text-white">
+            <h2 className="mb-2 lg:text-left mt-5 text-center text-lg font-semibold text-black  dark:text-white">
               {t('franchiseApplication')}
             </h2>
-            <ol className="max-w-4xl text-left space-y-1 text-gray-500 list-decimal list-inside dark:text-gray-400 px-4">
+            <ol className="max-w-4xl text-left space-y-1 text-black list-decimal list-inside  px-4">
               <li>{t('applicationForm')}</li>
               <li>{t('approval')}</li>
               <li>{t('storeLocation')}</li>
@@ -137,19 +137,19 @@ export default function FranchiseSection() {
           </section>
 
           <section className="border-t border-gray-300 py-6">
-            <h2 className="mt-5 text-xl lg:text-[25px] leading-tight text-start  mb-5 font-semibold">
+            <h2 className="mt-5 text-xl lg:text-[25px] leading-tight lg:text-start text-center mb-5 font-semibold">
               {t('buildBetterSleep')}
             </h2>
 
-            <h2 className="mb-2text-left mt-5  text-lg font-semibold text-gray-900 dark:text-white">
+            <h2 className="mb-2 lg:text-left mt-5 text-center text-lg font-semibold text-gray-900 dark:text-white">
               {t('visionAndPhilosophy')}
             </h2>
 
-            <p className="text-lg py-4 leading-relaxed text-left">
+            <p className="text-lg py-4 text-center leading-relaxed md:text-left">
               {t('sleepIsIntegrity')}
             </p>
 
-            <p className="text-lg py-4 leading-relaxed text-left">
+            <p className="text-lg py-4 text-center leading-relaxed md:text-left">
               {t('sleepExperience')}
             </p>
           </section>
@@ -159,11 +159,11 @@ export default function FranchiseSection() {
               {t('strongFranchiseChain')}
             </h2>
 
-            <p className="text-lg py-4 leading-relaxed text-left">
+            <p className="text-lg py-4 text-center leading-relaxed md:text-left">
               {t('franchiseChainGrowth')}
             </p>
 
-            <p className="text-lg py-4 leading-relaxed text-left">
+            <p className="text-lg py-4 text-center leading-relaxed md:text-left">
               {t('global')}
             </p>
           </section>
@@ -173,7 +173,7 @@ export default function FranchiseSection() {
               {t('joinUs')}
             </h2>
 
-            <p className="text-lg py-4 leading-relaxed text-left">
+            <p className="text-lg py-4 text-center leading-relaxed md:text-left">
               {t('becomePartOfFamily')}
             </p>
           </section>

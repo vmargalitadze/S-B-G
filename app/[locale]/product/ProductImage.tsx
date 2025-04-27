@@ -9,7 +9,7 @@ const ProductImages = ({ images }: { images: string[] }) => {
   const [current, setCurrent] = useState(0);
 
   return (
-    <div className="flex mt-[200px] flex-col  space-y-4">
+    <div className="flex mt-[170px] lg:mt-[200px] flex-col  space-y-4">
     
       <Image
         src={images[current]}

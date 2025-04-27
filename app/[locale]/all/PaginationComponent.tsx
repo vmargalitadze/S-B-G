@@ -4,6 +4,7 @@ import React, { FC, useCallback } from "react";
 import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 interface PaginationProps {
   pageCount: number;
@@ -26,7 +27,7 @@ const PaginationArrow: FC<PaginationArrowProps> = React.memo(
         aria-label={isLeft ? "Previous page" : "Next page"}
         disabled={isDisabled}
       >
-        {isLeft ? "«" : "»"}
+        {isLeft ?  < FaArrowLeft /> :   < FaArrowRight /> }
       </Button>
     );
   }
@@ -61,7 +62,7 @@ const PaginationComponent: FC<PaginationProps> = ({ pageCount }) => {
   );
 
   return (
-    <div className="flex justify-center cursor-pointer items-center gap-2 mt-8">
+    <div className="flex justify-center mb-9 lg:mb-0 cursor-pointer items-center gap-2 lg:mt-8">
       <PaginationArrow
         direction="left"
         onClick={() => goToPage(currentPage - 1)}
