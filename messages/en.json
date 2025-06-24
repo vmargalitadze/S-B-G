@@ -15,10 +15,12 @@
     "Infoparagraph": "Currently, Sleep & Bed exports to more than 25 countries and 7 continents. The facility features an eco-friendly energy production system. Sleep & Bed facilities generate their own energy using solar panel systems and rely exclusively on eco-friendly and renewable energy sources."
   },
   "contactinfo": {
-    "address": "Batumi, A. Pushkin St. 117\nBatumi, A. Pushkin St. 44\nTbilisi, T. Eristavi St. 1",
+    "address": "Batumi: A. Pushkin 117 \nKutaisi: I. Chavchavadze 51\nTbilisi: T. Eristavi 1\nKobuleti: Sh. Rustaveli 151",
     "contacts": "Contact Info",
     "batumi": "batumi",
     "tbilisi":"tbilisi",
+    "kobuleti":"kobuleti",
+    "kutaisi":"kutaisi",
     "mondayToFriday": "Monday–Sunday",
     "saturday": "Saturday",
     "sunday": "Sunday: Closed"

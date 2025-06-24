@@ -37,7 +37,9 @@ function Contact() {
                 <FaPhone className="text-2xl mr-4 text-white" />
                 <span className="text-[13px] lg:text-[20px] leading-relaxed text-white">
                   {t('batumi')}: <br /> +995557394374, <br /> +995568613022 <br />
-                  {t('tbilisi')}: <br /> +995557226880
+                  {t('tbilisi')}: <br /> +995557226880 <br />
+                  {t('kutaisi')}: <br />  + 995514079898 <br />
+                  {t('kobuleti')}: <br />  + 995555244403 <br />  + 995597808047 <br />
                 </span>
               </div>
 
