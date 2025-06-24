@@ -10,6 +10,7 @@ function Contact() {
     // Wait until mounted in the browser
     setIsClient(true);
   }, []);
+console.log('new');
 
 
   return (
