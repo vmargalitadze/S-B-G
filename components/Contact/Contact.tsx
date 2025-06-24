@@ -10,7 +10,7 @@ function Contact() {
     // Wait until mounted in the browser
     setIsClient(true);
   }, []);
-console.log('new');
+
 
   return (
     <section className="mt-10   py-10 text-white">
