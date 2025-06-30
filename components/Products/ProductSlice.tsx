@@ -3,7 +3,7 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "@/i18n/navigation";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations} from "next-intl";
 
 import Cards from "../Cards/Cards";
 import { ProductType } from "@/lib/ProductType";
@@ -12,7 +12,7 @@ import "./single.css";
 
 export default function ProductSlice({ products }: { products: ProductType[] }) {
   const t = useTranslations("slice"); // გამოიყენე შენი namespace თუ გაქვს
-  const locale = useLocale();
+
 
   return (
     <section className="mt-5 pt-16">
@@ -23,7 +23,7 @@ export default function ProductSlice({ products }: { products: ProductType[] }) 
           </h2>
           <div className="flex items-center gap-2 group">
             <Link
-              href={`/${locale}/all`}
+              href={`/all`}
               className="flex text-[16px] lg:text-[18px] gap-2 items-center hover:text-primary font-medium transition-all border-primary"
             >
               <span>{t("viewAll")}</span> {/* მაგალითად: დაათვალიერე */}

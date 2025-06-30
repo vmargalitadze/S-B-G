@@ -1,4 +1,3 @@
-
 import Contact from "@/components/Contact/Contact";
 
 import Info from "@/components/Info/Info";
@@ -7,28 +6,28 @@ import Video from "./why/Video";
 
 import Hero from "@/components/Hero/Hero";
 import Text from "@/components/WaweText/Text";
-
+import NewProduct from "@/components/New/newProduct";
 
 export default function Home() {
   return (
-   <>
-   #203e72
-   <div className="w-full   bg-[#EBEBEB]">
-    <Hero />
+    <>
+      #203e72
+      <div className="w-full   bg-[#EBEBEB]">
+        <Hero />
+        <div className="mt-10 lg:mt-32">
+          <NewProduct />
+        </div>
+        <div className="flex rounded-lg text-white container bg-[#203e72] mt-10 lg:mt-32   py-10">
+          <Info />
+        </div>
+        <Products />
+        <div className="flex rounded-lg container bg-[#203e72] mt-10   py-10">
+          <Video />
+        </div>
+        <Contact />
 
-<div className="flex rounded-lg text-white container bg-[#203e72] mt-10 lg:mt-32   py-10">
-
-   <Info />
-</div>
-   <Products />
-   <div className="flex rounded-lg container bg-[#203e72] mt-10   py-10">
-
-   <Video />
-   </div>
-    <Contact />
-
-    <Text />
-   </div>
-   </>
+        <Text />
+      </div>
+    </>
   );
 }
