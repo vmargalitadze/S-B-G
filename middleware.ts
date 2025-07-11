@@ -10,6 +10,12 @@ export function middleware(request: NextRequest) {
 
   const isAdminPath = /^\/(ge|en)\/admin(\/.*)?$|^\/admin(\/.*)?$/.test(pathname);
 
+  if (pathname === '/' ) {
+    const url = request.nextUrl.clone();
+    url.pathname = '/ge';
+    return NextResponse.redirect(url);
+  }
+
   if (isAdminPath) {
     const basicAuth = request.headers.get("authorization");
 
