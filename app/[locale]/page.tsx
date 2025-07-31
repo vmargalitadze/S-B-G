@@ -14,14 +14,14 @@ export default function Home() {
       #203e72
       <div className="w-full   bg-[#EBEBEB]">
         <Hero />
-        <div className="mt-10 lg:mt-32">
+        <div className="mt-10 lg:mt-14">
           <NewProduct />
         </div>
-        <div className="flex rounded-lg text-white container bg-[#203e72] mt-10 lg:mt-32   py-10">
+        <div className="flex rounded-lg text-white container bg-[#203e72] mt-10 lg:mt-14   py-10">
           <Info />
         </div>
         <Products />
-        <div className="flex rounded-lg container bg-[#203e72] mt-10   py-10">
+        <div className="flex rounded-lg container bg-[#203e72] mt-14   py-10">
           <Video />
         </div>
         <Contact />
