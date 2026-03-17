@@ -99,7 +99,7 @@ export default function AdminForm() {
       images: [],
       type: "MATTRESS", 
       height: "",
-      firmnessLevel: 3,
+      firmnessLevel: 0,
       secondtextEn: "",
       secondtext: "",
       springTech:false,
@@ -315,14 +315,18 @@ const onSubmit = async (data: z.infer<typeof ProductSchema>) => {
       name="firmnessLevel"
       render={({ field }) => (
         <FormItem>
-          <FormLabel className="text-black">Firmness Level (1-5)</FormLabel>
-          <Select onValueChange={(v) => field.onChange(Number(v))} defaultValue={String(field.value ?? 3)}>
+          <FormLabel className="text-black">Firmness Level (0-5)</FormLabel>
+          <Select
+            onValueChange={(v) => field.onChange(Number(v))}
+            defaultValue={field.value ? String(field.value) : undefined}
+          >
             <FormControl>
               <SelectTrigger className={inputClass}>
                 <SelectValue placeholder="აირჩიე სიმაგრის დონე" />
               </SelectTrigger>
             </FormControl>
             <SelectContent className="bg-black border border-gray-700 text-white">
+              <SelectItem value="0">0</SelectItem>
               {[1, 2, 3, 4, 5].map((n) => (
                 <SelectItem key={n} value={String(n)}>
                   {n}

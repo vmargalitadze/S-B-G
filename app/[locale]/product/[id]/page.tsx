@@ -55,8 +55,13 @@ const DetailPage = async(props: {
   const title = isGe ? product.titleKa : product.titleEn;
   const second = isGe ? product.secondtext : product.secondtextEn;
 
+  const rawFirmnessLevel =
+    product.type === 'MATTRESS' ? product.mattress?.firmnessLevel : null;
+
   const firmnessLevel =
-    product.type === 'MATTRESS' ? product.mattress?.firmnessLevel ?? null : null;
+    typeof rawFirmnessLevel === 'number' && rawFirmnessLevel >= 1 && rawFirmnessLevel <= 5
+      ? rawFirmnessLevel
+      : null;
 
   const firmnessLabel =
     firmnessLevel === null

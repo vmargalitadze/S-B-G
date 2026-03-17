@@ -54,7 +54,7 @@ model Mattress {
   id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   product         Product  @relation(fields: [id], references: [id])
   height          String
-  firmnessLevel   Int      @default(3)
+  firmnessLevel   Int      @default(0)
   descriptionEn String
   descriptionKa String
    minitext    String
