@@ -54,6 +54,7 @@ model Mattress {
   id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   product         Product  @relation(fields: [id], references: [id])
   height          String
+  firmnessLevel   Int      @default(3)
   descriptionEn String
   descriptionKa String
    minitext    String
@@ -67,6 +68,7 @@ model Mattress {
   visco Boolean
   dns Boolean
   latex Boolean
+  coconutLayer Boolean @default(false)
  washable Boolean
 }
 
@@ -90,6 +92,7 @@ model Pad {
   visco Boolean
   dns Boolean
   latex Boolean
+  coconutLayer Boolean @default(false)
  washable Boolean
 }
 

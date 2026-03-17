@@ -18,6 +18,7 @@ const SlugLinks = [
     { key: 'dns', label: 'მაღალი საჰაერო გამტარობის DNS ღრუბელი', labelEn: 'High Dns Air Ducted Support Sponge', href: '/dns', logo: '/filters/dns.jpg' },
     { key: 'latex', label: 'ლატექსი', labelEn: 'Latex', href: '/latex', logo: '/filters/latex.jpg' },
     { key: 'washable', label: 'რეცხვადი ქეისი', labelEn: 'Washable', href: '/wash', logo: '/filters/wash.jpg' },
+    { key: 'coconutLayer', label: 'ქოქოსის შრე', labelEn: 'Coconut Layer', href: '/coconut', logo: '/filters/coconut.jpg' },
 ];
 
 export default SlugLinks;

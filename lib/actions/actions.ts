@@ -64,6 +64,7 @@ export async function createProduct(data: z.infer<typeof ProductSchema>) {
           data: {
             id: createdProduct.id,
             height: parsed.height,
+            firmnessLevel: parsed.firmnessLevel,
             descriptionEn: parsed.descriptionEn,
             descriptionKa: parsed.descriptionKa,
 
@@ -77,6 +78,7 @@ export async function createProduct(data: z.infer<typeof ProductSchema>) {
             dns: parsed.dns,
             latex: parsed.latex,
             washable: parsed.washable,
+            coconutLayer: parsed.coconutLayer,
             minitext: parsed.minitext,
             minitextEn: parsed.minitextEn,
           },
@@ -142,6 +144,7 @@ export async function createProduct(data: z.infer<typeof ProductSchema>) {
             dns: parsed.dns,
             latex: parsed.latex,
             washable: parsed.washable,
+            coconutLayer: parsed.coconutLayer,
           },
         });
 
@@ -203,7 +206,7 @@ export async function getAllProduct(type?: ProductType) {
         createdAt: true,
         images: true,
       },
-      orderBy: { createdAt: "asc" },
+      orderBy: { createdAt: "desc" },
     });
 
     return { data: products };
@@ -227,6 +230,7 @@ export async function getFilteredProducts(filters: any) {
         mattress: {
           select: {
             height: true, // ✅ height დაემატა
+            firmnessLevel: true,
             breathable: true,
             springTech: true,
             doubleSided: true,
@@ -237,6 +241,7 @@ export async function getFilteredProducts(filters: any) {
             dns: true,
             latex: true,
             washable: true,
+            coconutLayer: true,
           },
         },
         pad: {
@@ -252,6 +257,7 @@ export async function getFilteredProducts(filters: any) {
             dns: true,
             latex: true,
             washable: true,
+            coconutLayer: true,
           },
         },
       },
@@ -345,6 +351,7 @@ export async function updateProduct(data: z.infer<typeof updateProductSchema>) {
         where: { id: product.id },
         data: {
           height: product.height,
+          firmnessLevel: product.firmnessLevel,
           descriptionEn: product.descriptionEn,
           descriptionKa: product.descriptionKa,
           springTech: product.springTech,
@@ -359,6 +366,7 @@ export async function updateProduct(data: z.infer<typeof updateProductSchema>) {
           minitextEn:product.minitextEn,
           latex: product.latex,
           washable: product.washable,
+          coconutLayer: product.coconutLayer,
         },
       });
     } else if (product.type === "PAD") {
@@ -382,6 +390,7 @@ export async function updateProduct(data: z.infer<typeof updateProductSchema>) {
           washable: product.washable,
           minitext:product.minitext,
           minitextEn:product.minitextEn,
+          coconutLayer: product.coconutLayer,
         },
       });
     } else if (product.type === "PILLOW") {

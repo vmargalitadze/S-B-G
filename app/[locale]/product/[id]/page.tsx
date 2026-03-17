@@ -38,6 +38,7 @@ const FEATURES: Feature[] = [
   { key: 'dns', label: 'მაღალი საჰაერო გამტარობის DNS ღრუბელი', labelEn: 'High Dns Air Ducted Support Sponge', href: '/dns', logo: '/filters/dns.jpg' },
   { key: 'latex', label: 'ლატექსი', labelEn: 'Latex', href: '/latex', logo: '/filters/latex.jpg' },
   { key: 'washable', label: 'რეცხვადი ქეისი', labelEn: 'Washable', href: '/wash', logo: '/filters/wash.jpg' },
+  { key: 'coconutLayer', label: 'ქოქოსის შრე', labelEn: 'Coconut Layer', href: '/coconut', logo: '/filters/coconut.jpg' },
 ];
 
 const DetailPage = async(props: {
@@ -53,6 +54,24 @@ const DetailPage = async(props: {
 
   const title = isGe ? product.titleKa : product.titleEn;
   const second = isGe ? product.secondtext : product.secondtextEn;
+
+  const firmnessLevel =
+    product.type === 'MATTRESS' ? product.mattress?.firmnessLevel ?? null : null;
+
+  const firmnessLabel =
+    firmnessLevel === null
+      ? null
+      : firmnessLevel <= 2
+      ? isGe
+        ? 'რბილი'
+        : 'Soft'
+      : firmnessLevel === 3
+      ? isGe
+        ? 'საშუალო'
+        : 'Medium'
+      : isGe
+      ? 'მაგარი'
+      : 'Firm';
 
   const heightValue =
     product.type === 'MATTRESS'
@@ -86,13 +105,52 @@ const DetailPage = async(props: {
           <div className="w-full lg:w-1/2 flex justify-center">
             <ProductImages images={product.images} />
           </div>
-          <div className="w-full lg:w-1/2 lg:mt-28 p-4  sm:p-6 flex flex-col">
-            <h2 className="lg:mt-[120px] text-xl lg:text-[25px]  text-center lg:text-start mb-5 font-semibold">
+          <div className="w-full lg:w-1/2 lg:mt-28 p-4 sm:p-6 flex flex-col">
+            <h2 className="lg:mt-[80px] text-xl lg:text-[25px] text-center lg:text-start mb-5 font-semibold">
               {title}
             </h2>
             <p className="text-[15px] lg:text-[17px] leading-tight mb-4 font-semibold">
               {second}
             </p>
+
+            {firmnessLevel !== null && (
+              <div className="mt-4 mb-6">
+                <h3 className="text-sm font-semibold mb-2">
+                  {isGe ? 'მატრასის სიმაგრე' : 'Mattress Firmness Level'}
+                </h3>
+                <div className="relative flex items-center justify-between">
+                  <div className="absolute left-0 right-0 h-[2px] bg-gray-300 top-1/2 -translate-y-1/2" />
+                  {[1, 2, 3, 4, 5].map((value) => {
+                    const isActive = value === firmnessLevel;
+                    return (
+                      <div key={value} className="relative z-10 flex flex-col items-center">
+                        <div
+                          className={`flex items-center justify-center w-8 h-8 rounded-full border text-xs font-medium transition-colors ${
+                            isActive
+                              ? 'bg-blue-900 text-white border-blue-900'
+                              : 'bg-white text-gray-600 border-gray-300'
+                          }`}
+                        >
+                          {value}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+                <div className="mt-2 flex items-center justify-between text-xs text-gray-500">
+                  <span>{isGe ? 'რბილი' : 'Soft'}</span>
+                  <span>{isGe ? 'მაგარი' : 'Firm'}</span>
+                </div>
+                {firmnessLabel && (
+                  <p className="mt-3 text-sm text-center">
+                    {isGe ? 'სიმაგრის დონე: ' : 'Firmness level: '}
+                    <span className="font-semibold">
+                      {firmnessLabel}
+                    </span>
+                  </p>
+                )}
+              </div>
+            )}
 
 <div className="">
 {product.type === 'PILLOW' && product.pillow?.minitext && (

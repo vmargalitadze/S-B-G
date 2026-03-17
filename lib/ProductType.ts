@@ -30,6 +30,7 @@ export interface FeatureFields {
   dns?: boolean;
   latex?: boolean;
   washable?: boolean;
+  coconutLayer?: boolean;
 }
 
 export interface ProductTypes {

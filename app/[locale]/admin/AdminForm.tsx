@@ -46,6 +46,7 @@ const BooleanSchema = z.object({
   dns: z.boolean().optional(),
   latex: z.boolean().optional(),
   washable: z.boolean().optional(),
+  coconutLayer: z.boolean().optional(),
 });
 
 
@@ -60,6 +61,7 @@ const checkboxOptions: { name: keyof z.infer<typeof BooleanSchema>; label: strin
   { name: "dns", label: "High Dns Air Ducted Support Sponge" },
   { name: "latex", label: "Latex" },
   { name: "washable", label: "Washable Zipped Case" },
+  { name: "coconutLayer", label: "Coconut Layer" },
 ];
 
 const heightOptions = [
@@ -97,6 +99,7 @@ export default function AdminForm() {
       images: [],
       type: "MATTRESS", 
       height: "",
+      firmnessLevel: 3,
       secondtextEn: "",
       secondtext: "",
       springTech:false,
@@ -109,6 +112,7 @@ export default function AdminForm() {
       dns: false, 
       latex: false, 
       washable: false, 
+      coconutLayer: false,
     },
     
   });
@@ -306,6 +310,30 @@ const onSubmit = async (data: z.infer<typeof ProductSchema>) => {
     </FormItem>
   )}
 />
+    <FormField
+      control={form.control}
+      name="firmnessLevel"
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel className="text-black">Firmness Level (1-5)</FormLabel>
+          <Select onValueChange={(v) => field.onChange(Number(v))} defaultValue={String(field.value ?? 3)}>
+            <FormControl>
+              <SelectTrigger className={inputClass}>
+                <SelectValue placeholder="აირჩიე სიმაგრის დონე" />
+              </SelectTrigger>
+            </FormControl>
+            <SelectContent className="bg-black border border-gray-700 text-white">
+              {[1, 2, 3, 4, 5].map((n) => (
+                <SelectItem key={n} value={String(n)}>
+                  {n}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <FormMessage />
+        </FormItem>
+      )}
+    />
     <div className="grid grid-cols-2 gap-2">
     {checkboxOptions.map(({ name, label }) => (
   <Controller

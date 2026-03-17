@@ -14,6 +14,7 @@ export const BaseProductSchema = z.object({
 // Mattress-specific schema
 export const MattressSchema = z.object({
   height: z.string(),
+  firmnessLevel: z.coerce.number().int().min(1).max(5),
   descriptionEn: z.string(),
   descriptionKa: z.string(),
   springTech: z.boolean(),
@@ -26,6 +27,7 @@ export const MattressSchema = z.object({
   dns: z.boolean(),
   latex: z.boolean(),
   washable: z.boolean(),
+  coconutLayer: z.boolean(),
   minitext: z.string(),
   minitextEn: z.string(),
 });
@@ -47,6 +49,7 @@ export const PadSchema = z.object({
   dns: z.boolean(),
   latex: z.boolean(),
   washable: z.boolean(),
+  coconutLayer: z.boolean(),
   minitext: z.string(),
   minitextEn: z.string(),
 });
