@@ -29,11 +29,12 @@ export function middleware(request: NextRequest) {
         return intlMiddleware(request); 
       }
     }
-
-   
-    const url = request.nextUrl.clone();
-    url.pathname = "/api/basicauth";
-    return NextResponse.rewrite(url);
+    return new NextResponse("Authentication Required!", {
+      status: 401,
+      headers: {
+        "WWW-Authenticate": "Basic realm='private_pages'",
+      },
+    });
   }
 
 

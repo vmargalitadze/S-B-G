@@ -57,19 +57,27 @@ model Mattress {
   firmnessLevel   Int      @default(0)
   descriptionEn String
   descriptionKa String
-   minitext    String
+  minitext    String
   minitextEn  String
   springTech   Boolean
-  breathable      Boolean
-  doubleSided     Boolean
-  orthopaedic     Boolean
-  knitte Boolean
-  wool Boolean
-  visco Boolean
-  dns Boolean
-  latex Boolean
+  breathable   Boolean
+  doubleSided  Boolean
+  orthopaedic  Boolean
+  superSoftFoam Boolean @default(false)
+  visconFabric Boolean @default(false)
+  graphiteViscoFoam Boolean @default(false)
+  carbonYarnTechnologyPillowTopMattress Boolean @default(false)
+  middleComfortLayer Boolean @default(false)
+  visconFabricSoftComfortLayer Boolean @default(false)
+  copperViscoLayer Boolean @default(false)
+  cncFoamTechnology Boolean @default(false)
+  knitte       Boolean
+  wool         Boolean
+  visco        Boolean
+  dns          Boolean
+  latex        Boolean
   coconutLayer Boolean @default(false)
- washable Boolean
+  washable     Boolean
 }
 
 model Pad {

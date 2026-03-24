@@ -24,6 +24,14 @@ export interface FeatureFields {
   breathable?: boolean;
   doubleSided?: boolean;
   orthopaedic?: boolean;
+  superSoftFoam?: boolean;
+  visconFabric?: boolean;
+  graphiteViscoFoam?: boolean;
+  carbonYarnTechnologyPillowTopMattress?: boolean;
+  middleComfortLayer?: boolean;
+  visconFabricSoftComfortLayer?: boolean;
+  copperViscoLayer?: boolean;
+  cncFoamTechnology?: boolean;
   knitte?: boolean;
   wool?: boolean;
   visco?: boolean;
