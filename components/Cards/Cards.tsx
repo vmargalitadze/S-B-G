@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { Link } from "@/i18n/navigation";
 import React from "react";
 import { useLocale } from 'next-intl';
@@ -20,7 +18,8 @@ function Cards({ products }: CardsProps) {
       {products.map((product) => {
         const title = isGe ? product.titleKa : product.titleEn;
         const category = isGe ? product.categoryKa : product.categoryEn;
-        const imageUrl: string = product.images?.[0] ?? '/default-image.jpg';
+        const primaryImage: string = product.images?.[0] ?? '/default-image.jpg';
+        const secondaryImage: string = product.images?.[1] ?? primaryImage;
 
         return (
           <div key={product.id} className="max-w-sm w-full rounded-2xl shadow-xl mb-9 relative group">
@@ -31,9 +30,18 @@ function Cards({ products }: CardsProps) {
                   width={384}
                   quality={70}
                   loading="lazy"
-                  src={imageUrl}
+                  src={primaryImage}
                   alt={title}
-                  className="w-full h-full object-cover group-hover:scale-110 duration-500 rounded-lg"
+                  className="w-full h-full object-cover rounded-lg transition-all duration-500 group-hover:scale-105 group-hover:opacity-0"
+                />
+                <Image
+                  height={384}
+                  width={384}
+                  quality={70}
+                  loading="lazy"
+                  src={secondaryImage}
+                  alt={title}
+                  className="absolute inset-0 w-full h-full object-cover rounded-lg opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:scale-105"
                 />
               </Link>
             </div>
