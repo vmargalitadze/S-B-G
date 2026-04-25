@@ -106,6 +106,8 @@ const heightOptions = [
   { text: '31 სმ', value: '31' },
   { text: '32 სმ', value: '32' },
   { text: '33 სმ', value: '33' },
+  { text: '34 სმ', value: '34' },
+
 ];
 
 const categoryOptions = [
