@@ -29,7 +29,7 @@ import { Checkbox } from '@/components/ui/checkbox';
 import { Card, CardContent } from '@/components/ui/card';
 import ImageUpload from '../../ImageUpload'; 
 import { cn } from '@/lib/utils';
-import { redirect } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Controller } from "react-hook-form";
 const BooleanSchema = z.object({
   type: z.enum(["MATTRESS", "PILLOW", "QUILT", "PAD"]),
@@ -68,8 +68,11 @@ const heightOptions = [
   { text: '27 სმ', value: '27' },
   { text: '28 სმ', value: '28' },
   { text: '30 სმ', value: '30' },
+  { text: '31 სმ', value: '31' },
   { text: '32 სმ', value: '32' },
   { text: '33 სმ', value: '33' },
+  { text: '34 სმ', value: '34' },
+  { text: '35 სმ', value: '35' },
 ];
 
 
@@ -96,6 +99,7 @@ export default function AdminProductUpdateForm({
 }: {
   initialData: z.infer<typeof ProductSchema> & { id: string };
 }) {
+  const router = useRouter();
     const { id, ...formDefaults } = initialData;
 
     const form = useForm<z.infer<typeof ProductSchema>>({
@@ -108,7 +112,7 @@ export default function AdminProductUpdateForm({
   const onSubmit = async (data: z.infer<typeof ProductSchema>) => {
     const res = await updateProduct({ ...data, id: initialData.id });
     alert(res.message);
-    redirect('/')
+    router.push('/');
   };
 
   return (
