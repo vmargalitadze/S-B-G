@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 import React  from 'react';
 import { useForm } from 'react-hook-form';
@@ -38,6 +37,14 @@ const BooleanSchema = z.object({
   // ⬇️⬇️⬇️⬇️ ამ ველების დამატება საჭიროა
   springTech: z.boolean().optional(),
   orthopaedic: z.boolean().optional(),
+  superSoftFoam: z.boolean().optional(),
+  visconFabric: z.boolean().optional(),
+  graphiteViscoFoam: z.boolean().optional(),
+  carbonYarnTechnologyPillowTopMattress: z.boolean().optional(),
+  middleComfortLayer: z.boolean().optional(),
+  visconFabricSoftComfortLayer: z.boolean().optional(),
+  copperViscoLayer: z.boolean().optional(),
+  cncFoamTechnology: z.boolean().optional(),
   breathable: z.boolean().optional(),
   doubleSided: z.boolean().optional(),
   knitte: z.boolean().optional(),
@@ -50,7 +57,29 @@ const BooleanSchema = z.object({
 });
 
 
-const checkboxOptions: { name: keyof z.infer<typeof BooleanSchema>; label: string }[] = [
+const mattressCheckboxOptions: { name: keyof z.infer<typeof BooleanSchema>; label: string }[] = [
+  { name: "springTech", label: "7 Zone Pocket Spring System" },
+  { name: "orthopaedic", label: "Orthopaedic" },
+  { name: "superSoftFoam", label: "Super Soft Foam" },
+  { name: "visconFabric", label: "Viscon Fabric" },
+  { name: "graphiteViscoFoam", label: "Graphite Visco Foam" },
+  { name: "carbonYarnTechnologyPillowTopMattress", label: "Carbon Yarn Technology Pillow Top Mattress" },
+  { name: "middleComfortLayer", label: "Middle Comfort Layer" },
+  { name: "visconFabricSoftComfortLayer", label: "Viscon Fabric Soft Comfort Layer" },
+  { name: "copperViscoLayer", label: "Copper Visco Layer" },
+  { name: "cncFoamTechnology", label: "CNC Foam Technology" },
+  { name: "breathable", label: "Breathable" },
+  { name: "doubleSided", label: "Double Sided" },
+  { name: "knitte", label: "Knitte" },
+  { name: "wool", label: "Wool" },
+  { name: "visco", label: "Visco" },
+  { name: "dns", label: "High Dns Air Ducted Support Sponge" },
+  { name: "latex", label: "Latex" },
+  { name: "washable", label: "Washable Zipped Case" },
+  { name: "coconutLayer", label: "Coconut Layer" },
+];
+
+const padCheckboxOptions: { name: keyof z.infer<typeof BooleanSchema>; label: string }[] = [
   { name: "springTech", label: "7 Zone Pocket Spring System" },
   { name: "orthopaedic", label: "Orthopaedic" },
   { name: "breathable", label: "Breathable" },
@@ -67,16 +96,16 @@ const checkboxOptions: { name: keyof z.infer<typeof BooleanSchema>; label: strin
 const heightOptions = [
   { text: '6 სმ', value: '6' },
   { text: '7 სმ', value: '7' },
+  { text: '24 სმ', value: '24' },
   { text: '25 სმ', value: '25' },
   { text: '26 სმ', value: '26' },
   { text: '27 სმ', value: '27' },
   { text: '28 სმ', value: '28' },
+  { text: '29 სმ', value: '29' },
   { text: '30 სმ', value: '30' },
   { text: '31 სმ', value: '31' },
   { text: '32 სმ', value: '32' },
   { text: '33 სმ', value: '33' },
-  { text: '34 სმ', value: '34' },
-  { text: '35 სმ', value: '35' },
 ];
 
 const categoryOptions = [
@@ -107,6 +136,14 @@ export default function AdminForm() {
       secondtext: "",
       springTech:false,
       orthopaedic: false, 
+      superSoftFoam: false,
+      visconFabric: false,
+      graphiteViscoFoam: false,
+      carbonYarnTechnologyPillowTopMattress: false,
+      middleComfortLayer: false,
+      visconFabricSoftComfortLayer: false,
+      copperViscoLayer: false,
+      cncFoamTechnology: false,
       breathable: false, 
       doubleSided: false, 
       knitte: false, 
@@ -342,7 +379,7 @@ const onSubmit = async (data: z.infer<typeof ProductSchema>) => {
       )}
     />
     <div className="grid grid-cols-2 gap-2">
-    {checkboxOptions.map(({ name, label }) => (
+    {mattressCheckboxOptions.map(({ name, label }) => (
   <Controller
     key={name}
     name={name}
@@ -432,7 +469,7 @@ className="w-full h-32 resize-none rounded-2xl border border-gray-300 focus:bord
   )}
 />
     <div className="grid grid-cols-2 gap-2">
-    {checkboxOptions.map(({ name, label }) => (
+    {padCheckboxOptions.map(({ name, label }) => (
   <Controller
     key={name}
     name={name}

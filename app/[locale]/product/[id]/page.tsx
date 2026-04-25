@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import ProductImages from '../ProductImage';
 import { getSingleProduct } from '@/lib/actions/actions';
@@ -8,7 +7,27 @@ import { Mattress, Pad } from '@prisma/client';
 import ProductCarousel from '../ProductCarousel';
 import { getAllProduct } from '@/lib/actions/actions';
 type Feature = {
-  key: keyof Pad & keyof Mattress;
+  key:
+    | 'height'
+    | 'springTech'
+    | 'breathable'
+    | 'doubleSided'
+    | 'orthopaedic'
+    | 'superSoftFoam'
+    | 'visconFabric'
+    | 'graphiteViscoFoam'
+    | 'carbonYarnTechnologyPillowTopMattress'
+    | 'middleComfortLayer'
+    | 'visconFabricSoftComfortLayer'
+    | 'copperViscoLayer'
+    | 'cncFoamTechnology'
+    | 'knitte'
+    | 'wool'
+    | 'visco'
+    | 'dns'
+    | 'latex'
+    | 'coconutLayer'
+    | 'washable';
   label: string;
   labelEn: string;
   href: string;
@@ -32,13 +51,24 @@ const FEATURES: Feature[] = [
   { key: 'breathable', label: 'სუნთქვადი', labelEn: 'Breathable', href: '/brieth', logo: '/filters/brieth1.jpg' },
   { key: 'doubleSided', label: 'ორმხრივი', labelEn: 'Double Sided', href: '/double', logo: '/filters/ds.jpg' },
   { key: 'orthopaedic', label: 'ორთოპედიული', labelEn: 'Orthopaedic', href: '/ort', logo: '/filters/ort.jpg' },
+  { key: 'superSoftFoam', label: 'სუპერ რბილი ღრუბელი', labelEn: 'Super Soft Foam', href: '/super-soft-foam', logo: '/filters/ort.jpg' },
+  { key: 'visconFabric', label: 'ვისკონის ქსოვილი', labelEn: 'Viscon Fabric', href: '/viscon-fabric', logo: '/filters/knitted.jpg' },
+  { key: 'graphiteViscoFoam', label: 'გრაფიტ ვისკო ქაფი', labelEn: 'Graphite Visco Foam', href: '/graphite-visco-foam', logo: '/filters/visco.jpg' },
+  { key: 'carbonYarnTechnologyPillowTopMattress', label: 'Carbon Yarn ტექნოლოგიის Pillow Top', labelEn: 'Carbon Yarn Technology Pillow Top Mattress', href: '/carbon-yarn-pillow-top', logo: '/filters/zone.jpg' },
+  { key: 'middleComfortLayer', label: 'საშუალო კომფორტის ფენა', labelEn: 'Middle Comfort Layer', href: '/middle-comfort-layer', logo: '/filters/ds.jpg' },
+  { key: 'visconFabricSoftComfortLayer', label: 'Viscon Fabric რბილი კომფორტის ფენა', labelEn: 'Viscon Fabric Soft Comfort Layer', href: '/viscon-soft-comfort-layer', logo: '/filters/knitted.jpg' },
+  { key: 'copperViscoLayer', label: 'Copper Visco ფენა', labelEn: 'Copper Visco Layer', href: '/copper-visco-layer', logo: '/filters/visco.jpg' },
+  { key: 'cncFoamTechnology', label: 'CNC ქაფის ტექნოლოგია', labelEn: 'CNC Foam Technology', href: '/cnc-foam-technology', logo: '/filters/dns.jpg' },
   { key: 'knitte', label: 'ნაქსოვი', labelEn: 'Knitted', href: '/knitte', logo: '/filters/knitted.jpg' },
   { key: 'wool', label: 'ბამბა', labelEn: 'Wool', href: '/wool', logo: '/filters/wool.jpg' },
   { key: 'visco', label: 'ვისკო', labelEn: 'Visco', href: '/visco', logo: '/filters/visco.jpg' },
   { key: 'dns', label: 'მაღალი საჰაერო გამტარობის DNS ღრუბელი', labelEn: 'High Dns Air Ducted Support Sponge', href: '/dns', logo: '/filters/dns.jpg' },
   { key: 'latex', label: 'ლატექსი', labelEn: 'Latex', href: '/latex', logo: '/filters/latex.jpg' },
-  { key: 'washable', label: 'რეცხვადი ქეისი', labelEn: 'Washable', href: '/wash', logo: '/filters/wash.jpg' },
   { key: 'coconutLayer', label: 'ქოქოსის შრე', labelEn: 'Coconut Layer', href: '/coconut', logo: '/filters/coconut.jpg' },
+  { key: 'washable', label: 'რეცხვადი ქეისი', labelEn: 'Washable', href: '/wash', logo: '/filters/wash.jpg' },
+  { key: 'cncFoamTechnology', label: 'რეცხვადი ქეისი', labelEn: 'CNC Foam Technology', href: '/cnc-foam-technology', logo: '/filters/cnc.jpg' },
+  { key: 'middleComfortLayer', label: 'საშუალო კომფორტის ფენა', labelEn: 'Middle Comfort Layer', href: '/wash', logo: '/filters/comfort.jpg' },
+  { key: 'visconFabricSoftComfortLayer', label: 'რბილი კომფორტის ფენა', labelEn: 'Soft Comfort Layer', href: '/viscon-soft-comfort-layer', logo: '/filters/comfort.jpg' },
 ];
 
 const DetailPage = async(props: {
@@ -93,13 +123,26 @@ const DetailPage = async(props: {
     ? [matchedHeightFeature, ...FEATURES]
     : [...FEATURES];
     const isFlexMode = product.type === 'PILLOW' || product.type === 'QUILT';
-  const getFeatureValue = (key: keyof Mattress & keyof Pad) => {
+  const getFeatureValue = (key: Feature['key']) => {
     if (key === 'height') return true;
-    return product.type === 'MATTRESS'
-      ? product.mattress?.[key]
-      : product.type === 'PAD'
-      ? product.pad?.[key]
-      : undefined;
+    if (product.type === 'MATTRESS') {
+      return product.mattress?.[key as keyof Mattress];
+    }
+    if (product.type === 'PAD') {
+      const mattressOnlyFeatures: Feature['key'][] = [
+        'superSoftFoam',
+        'visconFabric',
+        'graphiteViscoFoam',
+        'carbonYarnTechnologyPillowTopMattress',
+        'middleComfortLayer',
+        'visconFabricSoftComfortLayer',
+        'copperViscoLayer',
+        'cncFoamTechnology',
+      ];
+      if (mattressOnlyFeatures.includes(key)) return false;
+      return product.pad?.[key as keyof Pad];
+    }
+    return undefined;
   };
   const { data: allSameTypeProducts } = await getAllProduct(product.type);
   const filtered = allSameTypeProducts.filter(p => p.id !== id).slice(0, 4);
